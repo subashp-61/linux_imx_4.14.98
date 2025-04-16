@@ -12,13 +12,14 @@
  * GNU General Public License for more details.
  */
 
+/dts-v1/;
 
 /memreserve/ 0x84000000 0x2200000;
 /memreserve/ 0x90000000 0x400000;
 /memreserve/ 0x90400000 0x400000;
 /memreserve/ 0x92400000 0x2000000;
 
-#include "fsl-imx8qxp-mek.dts"
+#include "fsl-imx8qxp-subash.dts"
 #include "fsl-imx8qxp-xen.dtsi"
 
 /delete-node/ &it6263_1_in;
