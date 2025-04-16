@@ -24,6 +24,7 @@
 
 / {
 	chosen {
+		model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
 		#address-cells = <2>;
 		#size-cells = <2>;
 		module@0 {
@@ -94,7 +95,7 @@
     pinctrl-names = "default";
     assigned-clock-rates = <60000000>;
     pinctrl-0 = <&pinctrl_lpspi0 &pinctrl_lpspi0_cs>;
-    cs-gpios = <&lsio_gpio1 8 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
     status = "okay";
     xen,passthrough;
 
@@ -105,7 +106,7 @@
     };
 };
 
-&lsio_gpio1 {
+&gpio1 {
     xen,passthrough;
 };
 
