@@ -14,7 +14,6 @@
 
 #include "fsl-imx8qxp-mek.dts"
 
-/delete-node/ &it6263_1_in;
 
 
 &i2c0_mipi_lvds1 {
