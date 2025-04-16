@@ -26,5 +26,5 @@
 };
 
 &ldb2 {
-	status = "disabled";
+	status = "okay";
 };
