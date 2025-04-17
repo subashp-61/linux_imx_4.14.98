@@ -89,10 +89,3 @@
 	/delete-property/ reg-names;
 };
 
-&gpio1 {
-    xen,passthrough;
-};
-
-&lpspi0 {
-	xen,passthrough;
-};
