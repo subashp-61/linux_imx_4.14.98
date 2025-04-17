@@ -1238,11 +1238,11 @@
 };
 
 &ldb1_phy {
-	status = "okay";
+	status = "disable";
 };
 
 &ldb1 {
-	status = "okay";
+	status = "disable";
 
 	lvds-channel@0 {
 		fsl,data-mapping = "jeida";
@@ -1325,11 +1325,11 @@
 };
 
 &ldb2_phy {
-	status = "okay";
+	status = "disable";
 };
 
 &ldb2 {
-	status = "okay";
+	status = "disable";
 
 	lvds-channel@0 {
 		fsl,data-mapping = "jeida";
