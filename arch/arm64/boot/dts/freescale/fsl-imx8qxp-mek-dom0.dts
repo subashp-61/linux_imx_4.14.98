@@ -36,9 +36,12 @@
 	};
 
 	passthrough {
-			compatible = "xen,passthrough";
+		compatible = "xen,passthrough";
+
+		DomU {
 			ldb1 = <&ldb1>;
 			ldb2 = <&ldb2>;
+		};
 	};
 
 	reserved-memory {
