@@ -15,7 +15,7 @@
 #include "fsl-imx8qxp.dtsi"
 
 / {
-	model = "Freescale i.MX8QXP MEK dtsi";
+	model = "Freescale i.MX8QXP MEK";
 	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
 
 	chosen {
@@ -1238,11 +1238,11 @@
 };
 
 &ldb1_phy {
-	status = "disable";
+	status = "okay";
 };
 
 &ldb1 {
-	status = "disable";
+	status = "okay";
 
 	lvds-channel@0 {
 		fsl,data-mapping = "jeida";
@@ -1325,11 +1325,11 @@
 };
 
 &ldb2_phy {
-	status = "disable";
+	status = "okay";
 };
 
 &ldb2 {
-	status = "disable";
+	status = "okay";
 
 	lvds-channel@0 {
 		fsl,data-mapping = "jeida";
