@@ -88,7 +88,3 @@
 	/delete-property/ reg;
 	/delete-property/ reg-names;
 };
-
-&i2c1{
-		xen,passthrough;	
-};
