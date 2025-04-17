@@ -30,7 +30,7 @@
 	passthrough {
         compatible = "xen,passthrough";
         lpspi0 = <&lpspi0>;
-        lsio_gpio1 = <&gpio1>;
+        gpio1 = <&gpio1>;
     };
 
 	chosen {
