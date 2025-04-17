@@ -30,7 +30,7 @@
 	passthrough {
         compatible = "xen,passthrough";
         lpspi0 = <&lpspi0>;
-        gpio1 = <&gpio1>;
+        lsio_gpio1 = <&gpio1>;
     };
 
 	chosen {
@@ -105,7 +105,7 @@
     pinctrl-names = "default";
     assigned-clock-rates = <60000000>;
     pinctrl-0 = <&pinctrl_lpspi0 &pinctrl_lpspi0_cs>;
-    cs-gpios = <&lsio_gpio1 8 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
     status = "okay";
     xen,passthrough;
 
