@@ -91,10 +91,8 @@
 
 &gpio1 {
     xen,passthrough;
-	status = disable;
 };
 
 &lpspi0 {
 	xen,passthrough;
-	status = disable;
 };
