@@ -1416,7 +1416,7 @@
     assigned-clock-rates = <60000000>;
     pinctrl-0 = <&pinctrl_lpspi0 &pinctrl_lpspi0_cs>;
     cs-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
-    status = "okay";
+    status = "disable";
 
     spidev0: spi@0 {
         reg = <0>;
