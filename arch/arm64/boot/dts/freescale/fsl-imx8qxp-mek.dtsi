@@ -15,7 +15,7 @@
 #include "fsl-imx8qxp.dtsi"
 
 / {
-	model = "Freescale i.MX8QXP MEK";
+	model = "Freescale i.MX8QXP MEK dtsi";
 	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
 
 	chosen {

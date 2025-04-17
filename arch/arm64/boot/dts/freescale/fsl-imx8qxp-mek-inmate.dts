@@ -25,7 +25,7 @@
 #include <dt-bindings/thermal/thermal.h>
 
 / {
-	model = "Freescale i.MX8QXP MEK";
+	model = "Freescale i.MX8QXP MEK dts";
 	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
 	interrupt-parent = <&gic>;
 	#address-cells = <0x2>;
