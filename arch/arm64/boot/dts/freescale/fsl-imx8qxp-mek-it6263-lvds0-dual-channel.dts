@@ -14,8 +14,6 @@
 
 #include "fsl-imx8qxp-mek.dts"
 
-
-
 &i2c0_mipi_lvds0 {
 	lvds-to-hdmi-bridge@4c {
 		split-mode;
