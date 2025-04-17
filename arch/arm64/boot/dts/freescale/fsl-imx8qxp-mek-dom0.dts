@@ -34,6 +34,45 @@
 			reg = <0x00000000 0x80a00000 0x00000000 0xf93a00>;
 		};
 
+		domu {
+		/*
+		 * There are 5 MUs, 0A is used by Dom0, 1A is used
+		 * by ATF, so for DomU, 2A/3A/4A could be used.
+		 * SC_R_MU_0A
+		 * SC_R_MU_1A
+		 * SC_R_MU_2A
+		 * SC_R_MU_3A
+		 * SC_R_MU_4A
+		 * The rsrcs and pads will be configured by uboot scu_rm cmd
+		 */
+		#address-cells = <1>;
+		#size-cells = <0>;
+		doma {
+			compatible = "xen,domu";
+			/*
+			 * The name entry in VM configuration file
+			 * needs to be same as here.
+			 */
+			domain_name = "DomU";
+			
+			reg = <0>;
+			init_on_rsrcs = <
+				SC_R_MU_2A
+			>;
+			/* Resources that will be transferred between
+			 * M41 and AP, when support android auto.
+			 */
+			pads = <
+				/* uart1 */
+				SC_P_UART1_RX
+				SC_P_UART1_TX
+				SC_P_UART1_CTS_B
+				SC_P_UART1_RTS_B
+				/* lvds pwm */
+				>;
+		};
+	};
+
 	};
 
 	reserved-memory {
