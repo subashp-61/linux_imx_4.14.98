@@ -62,7 +62,7 @@
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
 			 */
-			 changes added here need to add the pin here to boot successfuly
+			// changes added here need to add the pin here to boot successfuly
 			pads = <
 				/* uart1 */
 				SC_P_UART1_RX
