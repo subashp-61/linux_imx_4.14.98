@@ -314,6 +314,20 @@
 			>;
 		};
 
+		pinctrl_lpspi0: lpspi0grp {
+			fsl,pins = <
+				SC_P_SPI0_SCK_ADMA_SPI0_SCK		0x6000040
+				SC_P_SPI0_SDO_ADMA_SPI0_SDO		0x6000040
+				SC_P_SPI0_SDI_ADMA_SPI0_SDI		0x6000040
+			>;
+		};
+
+		pinctrl_lpspi0_cs: lpspi0cs {
+			fsl,pins = <
+				SC_P_SPI0_CS0_LSIO_GPIO1_IO08	0x21
+			>;
+		};
+
 		pinctrl_lpuart2: lpuart2grp {
 			fsl,pins = <
 				SC_P_UART2_TX_ADMA_UART2_TX	0x06000020
