@@ -61,8 +61,10 @@
 			>;
 
 			pads = <
-				SC_P_UART2_RX
-				SC_P_UART2_TX
+				SC_P_UART1_RX
+				SC_P_UART1_TX
+				SC_P_UART1_CTS_B
+				SC_P_UART1_RTS_B
 			>;
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
@@ -126,7 +128,7 @@
 	/delete-property/ reg-names;
 };
 
-&lpuart2 {
+&lpuart1 {
 	xen,passthrough;
 };
 
