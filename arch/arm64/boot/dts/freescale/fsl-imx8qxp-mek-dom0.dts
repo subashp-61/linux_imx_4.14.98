@@ -68,10 +68,10 @@
 			// changes added here need to add the pin here to boot successfuly
 			pads = <
 				/* uart1 */
-				SC_P_UART1_RX
-				SC_P_UART1_TX
-				SC_P_UART1_CTS_B
-				SC_P_UART1_RTS_B
+				//SC_P_UART1_RX
+				//SC_P_UART1_TX
+				//SC_P_UART1_CTS_B
+				//SC_P_UART1_RTS_B
 				SC_P_SPI0_SCK
 				SC_P_SPI0_SDO
 				SC_P_SPI0_SDI
@@ -138,9 +138,11 @@
 };
 
 //changes added here
+/*
 &lpuart1 {
 	xen,passthrough;
 };
+*/
 
 &lpspi0 {
 	fsl,spi-num-chipselects = <1>;
