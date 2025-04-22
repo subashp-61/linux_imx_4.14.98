@@ -162,7 +162,3 @@
 &gpio1 {
 	xen,shared;
 };
-
-&spi0_lpcg {
-	xen,passthrough;
-};
