@@ -165,4 +165,4 @@
 
 &spi0_lpcg {
 	xen,passthrough;
-}
+};
