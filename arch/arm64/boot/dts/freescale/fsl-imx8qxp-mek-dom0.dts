@@ -77,8 +77,6 @@
 				SC_P_SPI0_SDI
 				SC_P_SPI0_CS0_LSIO_GPIO1_IO08
 				>;
-
-			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>,
 		 	};
 	  	};
 	};
