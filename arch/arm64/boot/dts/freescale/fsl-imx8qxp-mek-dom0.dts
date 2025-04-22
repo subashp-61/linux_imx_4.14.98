@@ -59,6 +59,9 @@
 			init_on_rsrcs = <
 				SC_R_MU_2A
 			>;
+			rsrcs = <
+				SC_R_SPI_0
+				>;
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
 			 */
@@ -74,9 +77,10 @@
 				SC_P_SPI0_SDI
 				SC_P_SPI0_CS0_LSIO_GPIO1_IO08
 				>;
-		};
-	};
 
+			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>,
+		 	};
+	  	};
 	};
 
 	reserved-memory {
@@ -158,3 +162,7 @@
 &gpio1 {
 	xen,shared;
 };
+
+&spi0_lpcg {
+	xen,passthrough;
+}
