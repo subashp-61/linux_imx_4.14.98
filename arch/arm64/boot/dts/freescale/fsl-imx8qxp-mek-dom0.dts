@@ -59,9 +59,6 @@
 			init_on_rsrcs = <
 				SC_R_MU_2A
 			>;
-			rsrcs = <
-				SC_R_SPI_0
-				>;
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
 			 */
