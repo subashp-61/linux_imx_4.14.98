@@ -19,7 +19,7 @@
 / {
    model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
     aliases {
-    	serial2 = &lpuart2;
+    	serial2 = &serial_lpuart2;
 	};
 
     passthrough {
@@ -28,7 +28,7 @@
         #address-cells = <0x2>;
         #size-cells = <0x2>;
 
-        lpuart2: serial@5a080000 {
+        serial_lpuart2: serial@5a080000 {
             compatible = "fsl,imx8qxp-lpuart", "fsl,imx7ulp-lpuart";
             reg = <0x0 0x5a080000 0x0 0x1000>;
             interrupts = <GIC_SPI 227 IRQ_TYPE_LEVEL_HIGH>;
