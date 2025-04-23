@@ -59,13 +59,13 @@
 			init_on_rsrcs = <
 				SC_R_MU_2A
 			>;
-
+/*
 			rsrcs = <SC_R_UART_2>;
 			pads = <
 				SC_P_UART2_RX
 				SC_P_UART2_TX
 			>;
-
+*/
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
 			 */
@@ -129,6 +129,6 @@
 };
 
 &lpuart2 {
-	status = "disabled";
+	status = "okay";
 };
 
