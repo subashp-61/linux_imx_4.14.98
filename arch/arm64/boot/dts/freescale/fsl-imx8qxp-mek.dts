@@ -28,6 +28,7 @@
         ranges;
         #address-cells = <0x2>;
         #size-cells = <0x2>;
+        interrupt-parent = <&gic>;
 
         serial_lpuart2: serial@5a080000 {
             compatible = "fsl,imx8qxp-lpuart", "fsl,imx7ulp-lpuart";
