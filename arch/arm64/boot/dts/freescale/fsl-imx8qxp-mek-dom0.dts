@@ -130,7 +130,7 @@
 	/delete-property/ reg-names;
 };
 
-&lpuart1 {
+&lpuart2 {
 	xen,passthrough;
 };
 
