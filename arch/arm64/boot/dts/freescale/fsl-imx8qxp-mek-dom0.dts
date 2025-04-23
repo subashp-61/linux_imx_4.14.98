@@ -132,6 +132,6 @@
 };
 
 &lpuart2 {
-	status = disable;
+	status = "disabled";
 };
 
