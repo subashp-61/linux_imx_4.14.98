@@ -88,12 +88,6 @@
 		};
 	};
 
-	iomem_lpuart2@5a080000 {
-        compatible = "xen,device-memory";
-        reg = <0x0 0x5a080000 0x0 0x1000>;
-        xen,allow-domu;
-    };
-
 	/*
 	 * Dom0 memory is from 0x90000000, so add reg to make sure
 	 * the memory is mapped as device, because they are used
@@ -130,6 +124,21 @@
 		interrupts = <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
 		xen,passthrough;
 	};
+
+	uart2: serial@5a080000 {
+		compatible = "fsl,imx8qxp-lpuart", "fsl,imx7ulp-lpuart";
+		reg = <0x0 0x5a080000 0x0 0x1000>;
+		interrupts = <GIC_SPI 347 IRQ_TYPE_LEVEL_HIGH>;
+		status = "okay";
+		xen,passthrough;
+	};
+
+	iomem_lpuart2@5a080000 {
+    compatible = "xen,device-memory";
+    reg = <0x0 0x5a080000 0x0 0x1000>;
+    xen,allow-domu;
+	};
+
 };
 
 &imx8_gpu_ss {
@@ -137,7 +146,4 @@
 	/delete-property/ reg-names;
 };
 
-&lpuart2 {
-	xen,passthrough;
-};
 
