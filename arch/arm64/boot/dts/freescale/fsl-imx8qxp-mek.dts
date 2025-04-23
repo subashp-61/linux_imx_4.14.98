@@ -19,7 +19,7 @@
 / {
    model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
     aliases {
-    	serial1 = &serial_lpuart1;
+    	serial1 = &lpuart1;
 	};
 
     passthrough {
