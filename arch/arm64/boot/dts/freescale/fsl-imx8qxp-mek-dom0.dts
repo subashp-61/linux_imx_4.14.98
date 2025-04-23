@@ -131,6 +131,6 @@
 };
 
 &lpuart2 {
-	status=disabled;
+	status=disable;
 };
 
