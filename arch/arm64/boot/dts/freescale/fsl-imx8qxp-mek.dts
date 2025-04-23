@@ -32,9 +32,9 @@
     };
 };
 
-&lpuart2 {
+&serial_lpuart2 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_lpuart2>;
+	pinctrl-0 = <&pinctrl_lpuart2_test>;
 	status = "okay";
 };
 
@@ -50,7 +50,7 @@
 			>;
 		};
 
-        pinctrl_lpuart2: lpuart2grp {
+        pinctrl_lpuart2_test: lpuart2grp {
 			fsl,pins = <
 				SC_P_UART2_TX_ADMA_UART2_TX	0x06000020
 				SC_P_UART2_RX_ADMA_UART2_RX	0x06000020
