@@ -20,7 +20,7 @@
 / {
    model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
     aliases {
-    	serial2 = &serial_lpuart2;
+    	serial2 = &lpuart2;
 	};
 
     passthrough {
@@ -32,7 +32,7 @@
     };
 };
 
-&serial_lpuart2 {
+&lpuart2 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_lpuart2_test>;
 	status = "okay";
