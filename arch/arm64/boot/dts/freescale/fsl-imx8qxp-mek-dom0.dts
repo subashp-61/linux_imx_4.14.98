@@ -129,6 +129,6 @@
 };
 
 &lpuart2 {
-	status = "disabled";
+	xen,passthrough;
 };
 
