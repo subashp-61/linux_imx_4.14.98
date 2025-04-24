@@ -14,6 +14,12 @@
  */
 
 / {
+    model = "Freescale i.MX8DX";
+    compatible = "fsl,imx8dx", "fsl,imx8qxp";
+    interrupt-parent = <&gic>;
+    #address-cells = <2>;
+    #size-cells = <2>;
+
 	pmu {
 	interrupt-affinity = <&A35_0>, <&A35_1>;
 	};
