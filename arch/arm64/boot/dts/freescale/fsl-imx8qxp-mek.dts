@@ -23,7 +23,6 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/thermal/thermal.h>
 
-
 /dts-v1/;
 
 / {
@@ -294,6 +293,7 @@
 		};
     };
 };
+
 
 &lpuart1 {
 	/delete-property/ interrupt-parent;
