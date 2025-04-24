@@ -189,8 +189,7 @@
 		      <0x0 0x51b00000 0 0xC0000>; /* GICR (RD_base + SGI_base) */
 		#interrupt-cells = <3>;
 		interrupt-controller;
-		interrupts = <GIC_PPI 9
-			(GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
+		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
 		interrupt-parent = <&gic>;
 	};
 
