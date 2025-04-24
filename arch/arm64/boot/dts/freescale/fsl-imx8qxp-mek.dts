@@ -22,39 +22,6 @@
 		serial1 = &lpuart1;
 	};
     
-	cpus {
-		#address-cells = <0x2>;
-		#size-cells = <0x0>;
-
-		cpu@0 {
-			device_type = "cpu";
-			compatible = "arm,armv8";
-			enable-method = "psci";
-			reg = <0x0 0x2>;
-			/delete-property/ cpu-idle-states;
-		};
-
-		cpu@1 {
-			device_type = "cpu";
-			compatible = "arm,armv8";
-			enable-method = "psci";
-			reg = <0x0 0x3>;
-			/delete-property/ cpu-idle-states;
-		};
-
-		cpu@2 {
-			/delete-property/ cpu-idle-states;
-		};
-
-		cpu@3 {
-			/delete-property/ cpu-idle-states;
-		};
-	};
-
-    psci {
-		compatible = "arm,psci-1.0";
-		method = "smc";
-	};
 
 	memory@80000000 {
 		device_type = "memory";
