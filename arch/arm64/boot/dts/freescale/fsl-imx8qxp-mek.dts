@@ -22,23 +22,6 @@
     	serial1 = &lpuart1;
 	};
 
-    cpus {
-		#address-cells = <0x2>;
-		#size-cells = <0x0>;
-
-		cpu@0 {
-			device_type = "cpu";
-			compatible = "arm,armv8";
-			enable-method = "psci";
-			reg = <0x0 0x0>;
-		};
-    };
-
-    psci {
-		compatible = "arm,psci-1.0";
-		method = "hvc";
-	};
-
 	memory@80000000 {
 		device_type = "memory";
 		/* Will be updated by U-Boot or XEN TOOL */
