@@ -13,16 +13,6 @@
  */
 
 
-#include <dt-bindings/interrupt-controller/arm-gic.h>
-#include <dt-bindings/soc/imx_rsrc.h>
-#include <dt-bindings/soc/imx8_hsio.h>
-#include <dt-bindings/soc/imx8_pd.h>
-#include <dt-bindings/clock/imx8qxp-clock.h>
-#include <dt-bindings/input/input.h>
-#include <dt-bindings/pinctrl/pads-imx8qxp.h>
-#include <dt-bindings/gpio/gpio.h>
-#include <dt-bindings/thermal/thermal.h>
-
 /dts-v1/;
 
 / {
@@ -224,13 +214,6 @@
 		interrupt-parent = <&gic>;
 	};
 
-    hypervisor {
-		compatible = "xen,xen-4.11", "xen,xen";
-		reg = <0x0 0x38000000 0x0 0x1000000>;
-		interrupts = <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>; 
-		interrupt-parent = <&gic>;
-	};
-
     passthrough {
         compatible = "simple-bus";
         ranges;
@@ -238,47 +221,6 @@
         #size-cells = <0x2>;
 
         #include "fsl-imx8dx.dtsi"
-
-        mu: mu@5d1c0000 {
-		compatible = "fsl,imx8-mu";
-		reg = <0x0 0x5d1c0000 0x0 0x10000>;
-		interrupts = <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&gic>;
-		fsl,scu_ap_mu_id = <0>;
-		status = "okay";
-        };
-
-        mu13: mu13@5d280000 {
-            compatible = "fsl,imx8-mu-dsp";
-            reg = <0x0 0x5d280000 0x0 0x10000>;
-            interrupts = <GIC_SPI 192 IRQ_TYPE_LEVEL_HIGH>;
-            fsl,dsp_ap_mu_id = <13>;
-            status = "okay";
-        };
-
-        mu_m4: mu_m4@37440000 {
-            compatible = "fsl,imx8-mu0-vpu-m4";
-            reg = <0x0 0x37440000 0x0 0x10000>;
-            interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
-            fsl,vpu_ap_mu_id = <15>;
-            status = "okay";
-        };
-
-        mu_m0: mu_m0@2d000000 {
-            compatible = "fsl,imx8-mu0-vpu-m0";
-            reg = <0x0 0x2d000000 0x0 0x20000>;
-            interrupts = <GIC_SPI 469 IRQ_TYPE_LEVEL_HIGH>;
-            fsl,vpu_ap_mu_id = <16>;
-            status = "okay";
-        };
-
-        mu1_m0: mu1_m0@2d020000 {
-            compatible = "fsl,imx8-mu1-vpu-m0";
-            reg = <0x0 0x2d020000 0x0 0x20000>;
-            interrupts = <GIC_SPI 470 IRQ_TYPE_LEVEL_HIGH>;
-            fsl,vpu_ap_mu_id = <17>;
-            status = "okay";
-        };
 
         edma01: dma-controller1@5a1f0000 {
 			compatible = "fsl,imx8qm-edma";
@@ -293,7 +235,6 @@
 		};
     };
 };
-
 
 &lpuart1 {
 	/delete-property/ interrupt-parent;
