@@ -47,13 +47,13 @@
 	reg = <0x0 0x5a070000 0 0x1000>;
 	dmas = <&edma01 15 0 0>, <&edma01 14 0 1>;
 	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_lpuart1>;
+	pinctrl-0 = <&pinctrl_lpuart1_test>;
 	status = "okay";
 };
 
 &iomuxc {
 	imx8qm-mek {
-        pinctrl_lpuart1: lpuart1grp {
+        pinctrl_lpuart1_test: lpuart1grp {
 			fsl,pins = <
 				SC_P_UART1_TX_ADMA_UART1_TX		0x06000020
 				SC_P_UART1_RX_ADMA_UART1_RX		0x06000020
