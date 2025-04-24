@@ -305,17 +305,12 @@
 			>;
 		};
 
-		pinctrl_lpspi0: lpspi0grp {
+		pinctrl_lpuart1: lpuart1grp {
 			fsl,pins = <
-				SC_P_SPI0_SCK_ADMA_SPI0_SCK		0x6000040
-				SC_P_SPI0_SDO_ADMA_SPI0_SDO		0x6000040
-				SC_P_SPI0_SDI_ADMA_SPI0_SDI		0x6000040
-			>;
-		};
-
-		pinctrl_lpspi0_cs: lpspi0cs {
-			fsl,pins = <
-				SC_P_SPI0_CS0_LSIO_GPIO1_IO08	0x21
+				SC_P_UART1_TX_ADMA_UART1_TX		0x06000020
+				SC_P_UART1_RX_ADMA_UART1_RX		0x06000020
+				SC_P_UART1_RTS_B_ADMA_UART1_RTS_B	0x06000020
+				SC_P_UART1_CTS_B_ADMA_UART1_CTS_B	0x06000020
 			>;
 		};
 
@@ -678,6 +673,13 @@
 &lpuart0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_lpuart0>;
+	status = "okay";
+};
+
+&lpuart1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_lpuart1>;
+	resets = <&modem_reset>;
 	status = "okay";
 };
 
