@@ -18,88 +18,11 @@
 
 / {
    model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
+    
     aliases {
     	serial1 = &lpuart1;
 	};
-/*
-	memory@80000000 {
-		device_type = "memory";
-		/* Will be updated by U-Boot or XEN TOOL */
-		reg = <0x00000000 0x80000000 0 0x40000000>;
-	};
 
-    reserved-memory {
-		#address-cells = <2>;
-		#size-cells = <2>;
-		ranges;
-
-		/*
-		 * reserved-memory layout
-		 * 0x8800_0000 ~ 0x8FFF_FFFF is reserved for M4
-		 * Shouldn't be used at A core and Linux side.
-		 *
-		 */
-		decoder_boot: decoder_boot@0x84000000 {
-			no-map;
-			reg = <0 0x84000000 0 0x2000000>;
-		};
-		encoder_boot: encoder_boot@0x86000000 {
-			no-map;
-			reg = <0 0x86000000 0 0x200000>;
-		};
-		rpmsg_reserved: rpmsg@0x90000000 {
-			no-map;
-			reg = <0 0x90000000 0 0x400000>;
-		};
-		rpmsg_dma_reserved:rpmsg_dma@0x90400000 {
-			compatible = "shared-dma-pool";
-			no-map;
-			reg = <0 0x90400000 0 0x1C00000>;
-		};
-		decoder_rpc: decoder_rpc@0x92000000 {
-			no-map;
-			reg = <0 0x92000000 0 0x200000>;
-		};
-		encoder_rpc: encoder_rpc@0x92200000 {
-			no-map;
-			reg = <0 0x92200000 0 0x200000>;
-		};
-		dsp_reserved: dsp@0x92400000 {
-			no-map;
-			reg = <0 0x92400000 0 0x2000000>;
-		};
-		encoder_reserved: encoder_reserved@0x94400000 {
-			no-map;
-			reg = <0 0x94400000 0 0x800000>;
-		};
-		/* global autoconfigured region for contiguous allocations */
-		linux,cma {
-			compatible = "shared-dma-pool";
-			reusable;
-			size = <0 0x3c000000>;
-			alloc-ranges = <0 0x96000000 0 0x3c000000>;
-			linux,cma-default;
-		};
-	};
-
-    gic: interrupt-controller@51a00000 {
-		compatible = "arm,gic-v3";
-		reg = <0x0 0x51a00000 0 0x10000>, /* GIC Dist */
-		      <0x0 0x51b00000 0 0xC0000>; /* GICR (RD_base + SGI_base) */
-		#interrupt-cells = <3>;
-		interrupt-controller;
-		interrupts = <GIC_PPI 9
-			(GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
-		interrupt-parent = <&gic>;
-	};
-
-    hypervisor {
-		compatible = "xen,xen-4.11", "xen,xen";
-		reg = <0x0 0x38000000 0x0 0x1000000>;
-		interrupts = <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>; 
-		interrupt-parent = <&gic>;
-	};
-*/
     passthrough {
         compatible = "simple-bus";
         ranges;
