@@ -161,15 +161,15 @@
 		default-brightness-level = <80>;
 	};
 
+	iomuxc: iomuxc {
+        compatible = "fsl,imx8qxp-iomuxc";
+	};      
+
     passthrough {
         compatible = "simple-bus";
         ranges;
         #address-cells = <0x2>;
         #size-cells = <0x2>;
-
-        iomuxc: iomuxc {
-            compatible = "fsl,imx8qxp-iomuxc";
-        };        
 
         edma01: dma-controller1@5a1f0000 {
             compatible = "fsl,imx8qm-edma";
