@@ -91,7 +91,7 @@
 
 	lvds_backlight1: lvds_backlight@1 {
 		compatible = "pwm-backlight";
-		pwms = <&lvds1_pwm 0 100000 0>;
+		pwms = <&pwm_mipi_lvds1 0 100000 0>;
 
 		brightness-levels = < 0  1  2  3  4  5  6  7  8  9
 				     10 11 12 13 14 15 16 17 18 19
@@ -3476,7 +3476,7 @@
     };
 };
 
-&lvds1_pwm {
+&pwm_mipi_lvds1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_pwm_mipi_lvds0>;
 	status = "okay";
