@@ -21,7 +21,7 @@
     aliases {
     	serial1 = &lpuart1;
 	};
-
+/*
 	memory@80000000 {
 		device_type = "memory";
 		/* Will be updated by U-Boot or XEN TOOL */
@@ -99,7 +99,7 @@
 		interrupts = <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>; 
 		interrupt-parent = <&gic>;
 	};
-
+*/
     passthrough {
         compatible = "simple-bus";
         ranges;
