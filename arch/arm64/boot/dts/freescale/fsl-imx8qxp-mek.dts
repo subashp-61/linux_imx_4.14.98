@@ -14,7 +14,6 @@
 
 /dts-v1/;
 
-#include "fsl-imx8qxp-mek.dtsi"
 
 / {
    model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
@@ -27,6 +26,8 @@
         ranges;
         #address-cells = <0x2>;
         #size-cells = <0x2>;
+
+        #include "fsl-imx8qxp-mek.dtsi"
 
         edma01: dma-controller1@5a1f0000 {
 			compatible = "fsl,imx8qm-edma";

@@ -305,15 +305,6 @@
 			>;
 		};
 
-		pinctrl_lpuart1: lpuart1grp {
-			fsl,pins = <
-				SC_P_UART1_TX_ADMA_UART1_TX		0x06000020
-				SC_P_UART1_RX_ADMA_UART1_RX		0x06000020
-				SC_P_UART1_RTS_B_ADMA_UART1_RTS_B	0x06000020
-				SC_P_UART1_CTS_B_ADMA_UART1_CTS_B	0x06000020
-			>;
-		};
-
 		pinctrl_lpspi0: lpspi0grp {
 			fsl,pins = <
 				SC_P_SPI0_SCK_ADMA_SPI0_SCK		0x6000040
@@ -687,13 +678,6 @@
 &lpuart0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_lpuart0>;
-	status = "okay";
-};
-
-&lpuart1 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_lpuart1>;
-	resets = <&modem_reset>;
 	status = "okay";
 };
 
