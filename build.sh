@@ -3,7 +3,7 @@
 
 #set PATH and CROSS_COMPILE
 export ARCH=arm64
-export CROSS_COMPILE=/usr/bin/aarch64-linux-gnu-
+export CROSS_COMPILE=/opt/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 
 read -rn1 -p "clean build? [y/n]:" cb_rslt
 echo ""
