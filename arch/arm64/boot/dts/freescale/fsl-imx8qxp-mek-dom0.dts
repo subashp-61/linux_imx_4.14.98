@@ -136,7 +136,7 @@
 &lpuart1 {
 	xen,passthrough;
 };
-
+/*
 &mu13 {
 	xen,passthrough;
 };
@@ -152,7 +152,7 @@
 &mu_m4 {
 	xen,passthrough;
 };
-
+*/
 &gpio1 {
 	xen,shared;
 };
