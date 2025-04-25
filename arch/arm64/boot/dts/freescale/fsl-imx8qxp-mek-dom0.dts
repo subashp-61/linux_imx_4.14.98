@@ -159,7 +159,7 @@
 	xen,passthrough;
 };
 
-&mu2_m0 {
+&mu_m4 {
 	xen,passthrough;
 };
 
