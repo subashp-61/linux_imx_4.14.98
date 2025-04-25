@@ -90,16 +90,6 @@
 		};
 	};
 
-	mu: mu@5d1c0000 {
-		compatible = "fsl,imx8-mu";
-		reg = <0x0 0x5d1c0000 0x0 0x10000>;
-		interrupts = <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&gic>;
-		fsl,scu_ap_mu_id = <0>;
-		xen,passthrough;
-		status = "disabled";
-	};
-
 	/*
 	 * Dom0 memory is from 0x90000000, so add reg to make sure
 	 * the memory is mapped as device, because they are used
