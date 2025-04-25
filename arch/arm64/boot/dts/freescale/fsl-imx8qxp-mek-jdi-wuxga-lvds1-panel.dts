@@ -3553,7 +3553,7 @@
 &lpuart1 {
     // Add this back if you removed it
     interrupt-parent = <&gic>;
-    interrupts = <GIC_SPI 226 IRQ_TYPE_LEVEL_HIGH>;
+    interrupts = <GIC_SPI 346 IRQ_TYPE_LEVEL_HIGH>;
 
     reg = <0x0 0x5a070000 0x0 0x1000>;
 
