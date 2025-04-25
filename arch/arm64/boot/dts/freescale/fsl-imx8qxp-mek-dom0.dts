@@ -62,6 +62,8 @@
 
 			rsrcs = <
 				SC_R_UART_1
+				SC_R_DMA_0_CH10
+				SC_R_DMA_0_CH11
 			>;
 
 			pads = <
@@ -70,6 +72,19 @@
 				SC_P_UART1_CTS_B
 				SC_P_UART1_RTS_B
 			>;
+	
+			gpios = <&gpio1 13 GPIO_ACTIVE_LOW>,
+				<&gpio1 27 GPIO_ACTIVE_LOW>,
+				<&gpio1 28 GPIO_ACTIVE_LOW>,
+				<&gpio4 6 GPIO_ACTIVE_LOW>,
+				<&gpio4 9 GPIO_ACTIVE_LOW>,
+				<&gpio4 11 GPIO_ACTIVE_HIGH>,
+				<&gpio4 19 GPIO_ACTIVE_HIGH>,
+				<&gpio4 22 GPIO_ACTIVE_LOW>,
+				<&gpio4 26 GPIO_ACTIVE_HIGH>,
+				<&gpio4 25 GPIO_ACTIVE_HIGH>,
+				<&gpio4 27 GPIO_ACTIVE_LOW>,
+				<&gpio4 29 GPIO_ACTIVE_LOW>;
 
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
