@@ -3560,7 +3560,7 @@
 };
 
 &iomuxc {
-	imx8qm-mek {
+	imx8qxp-mek {
 		pinctrl_lpuart1: lpuart1grp {
 			fsl,pins = <
 				SC_P_UART1_TX_ADMA_UART1_TX		0x06000020
