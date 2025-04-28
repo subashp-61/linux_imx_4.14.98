@@ -2782,7 +2782,7 @@
 					pinctrl-names = "default";
 			pinctrl-0 = <&pinctrl_lpuart1>;
 			status = "okay";
-			xen,path = "/amba/serial@5a070000";
+			xen,path = "/soc/serial@5a070000";
 			xen,reg = <0x0 0x5a070000 0x1000 0x0 0x5a070000>;
 		};
 
