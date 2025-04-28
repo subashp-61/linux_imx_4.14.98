@@ -19,15 +19,23 @@
 /memreserve/ 0x90400000 0x400000;
 /memreserve/ 0x92400000 0x2000000;
 
-
-#include "fsl-imx8qxp-mek-jdi-wuxga-lvds0-panel.dts"
+#include "fsl-imx8qxp-mek.dtsi"
 #include "fsl-imx8qxp-xen.dtsi"
 
-/delete-node/&it6263_1_in;
 /delete-node/&it6263_0_in;
 
 / {
 	model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
+    lvds0_panel {
+        compatible = "rocktech,rk101ii01d-ct";
+        backlight = <&lvds_backlight1>;
+
+        port {
+            panel_lvds0_in: endpoint {
+                remote-endpoint = <&lvds0_out>;
+            };
+        };
+    };
 	chosen {
 		#address-cells = <2>;
 		#size-cells = <2>;
@@ -150,4 +158,20 @@
 
 &lpuart2 {
 	xen,passthrough;
+};
+
+&ldb1 {
+ 
+    lvds-channel@0 {
+        fsl,data-mapping = "spwg";
+        fsl,data-width = <24>;
+ 
+        port@1 {
+            reg = <1>;
+ 
+            lvds0_out: endpoint {
+                remote-endpoint = <&panel_lvds0_in>;
+            };
+        };
+    };
 };
