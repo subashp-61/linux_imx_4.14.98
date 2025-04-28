@@ -19,7 +19,8 @@
 /memreserve/ 0x90400000 0x400000;
 /memreserve/ 0x92400000 0x2000000;
 
-#include "fsl-imx8qxp-mek.dtsi"
+
+#include "fsl-imx8qxp-mek-jdi-wuxga-lvds0-panel.dts"
 #include "fsl-imx8qxp-xen.dtsi"
 
 /delete-node/&it6263_1_in;
