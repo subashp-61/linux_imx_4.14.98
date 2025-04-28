@@ -2807,7 +2807,8 @@
 		dma-names = "tx","rx";
 		dmas = <&edma2 11 0 0>,
 			<&edma2 10 0 1>;
-		status = "disabled";
+		status = "okay";
+		xen,passthrough; /* add this line */
 	};
 
 	lpuart2: serial@5a080000 {

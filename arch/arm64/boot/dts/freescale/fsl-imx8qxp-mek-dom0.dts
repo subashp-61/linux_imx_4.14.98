@@ -147,7 +147,3 @@
 	/delete-property/ reg;
 	/delete-property/ reg-names;
 };
-
-&lpuart1 {
-	xen,passthrough;
-};
