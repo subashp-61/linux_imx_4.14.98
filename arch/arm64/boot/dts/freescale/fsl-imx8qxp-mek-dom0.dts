@@ -27,7 +27,7 @@
 / {
 	model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
     lvds0_panel {
-        compatible = "rocktech,rk101ii01d-ct";
+        compatible = "auo_b101aw03";
         backlight = <&lvds_backlight1>;
 
         port {
