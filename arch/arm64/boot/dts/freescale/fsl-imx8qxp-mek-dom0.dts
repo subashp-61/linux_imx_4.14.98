@@ -161,6 +161,7 @@
 };
 
 &ldb1 {
+	status = "okay";
  
     lvds-channel@0 {
         fsl,data-mapping = "spwg";
@@ -174,4 +175,8 @@
             };
         };
     };
+};
+
+&ldb1_phy {
+	status = "okay";
 };
