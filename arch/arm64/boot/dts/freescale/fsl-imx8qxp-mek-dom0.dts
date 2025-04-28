@@ -61,16 +61,12 @@
 			>;
 
 			rsrcs = <
-				SC_R_UART_1
-				SC_R_DMA_0_CH10
-				SC_R_DMA_0_CH11
+				SC_R_UART_2
 			>;
 
 			pads = <
-				SC_P_UART1_RX
-				SC_P_UART1_TX
-				SC_P_UART1_CTS_B
-				SC_P_UART1_RTS_B
+				SC_P_UART2_RX
+				SC_P_UART2_TX
 			>;
 	
 			gpios = <&gpio1 13 GPIO_ACTIVE_LOW>,
@@ -146,4 +142,8 @@
 &imx8_gpu_ss {
 	/delete-property/ reg;
 	/delete-property/ reg-names;
+};
+
+&lpuart2 {
+	xen,passthrough;
 };
