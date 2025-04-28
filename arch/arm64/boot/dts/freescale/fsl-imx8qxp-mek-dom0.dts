@@ -137,13 +137,27 @@
 		interrupts = <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
 		xen,passthrough;
 	};
+
+	lpuart2: serial@5a080000 {
+		compatible = "fsl,imx8qm-lpuart";
+		reg = <0x0 0x5a080000 0x0 0x1000>;
+		interrupts = <GIC_SPI 347 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-parent = <&wu>;
+		clocks = <&clk IMX8QXP_UART2_CLK>,
+			<&clk IMX8QXP_UART2_IPG_CLK>;
+		clock-names = "per", "ipg";
+		assigned-clocks = <&clk IMX8QXP_UART2_CLK>;
+		assigned-clock-rates = <80000000>;
+		power-domains = <&pd_dma2_chan13>;
+		dma-names = "tx","rx";
+		dmas = <&edma2 13 0 0>,
+			<&edma2 12 0 1>;
+		status = "okay";
+		xen,passthrough;
+	};
 };
 
 &imx8_gpu_ss {
 	/delete-property/ reg;
 	/delete-property/ reg-names;
-};
-
-&lpuart2 {
-	xen,passthrough;
 };
