@@ -2791,6 +2791,7 @@
 				SC_P_UART1_RTS_B_ADMA_UART1_RTS_B	0x06000020
 				SC_P_UART1_CTS_B_ADMA_UART1_CTS_B	0x06000020
 			>;
+			status = "okay";
 		};
 
 		lpuart2: serial@5a080000 {
