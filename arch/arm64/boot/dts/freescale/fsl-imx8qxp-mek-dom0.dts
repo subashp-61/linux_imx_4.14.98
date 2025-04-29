@@ -26,46 +26,16 @@
 
 / {
 	model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
-	lvds0_panel {
-    	compatible = "rocktech,rk101ii01d-ct";
-    	backlight = <&lvds_backlight1>;
-    	status = "okay";
-    
-    	data-mapping = "vesa-24";
-    	width-mm = <217>;
-    	height-mm = <136>;
-    
-    	panel-timing {
-        	clock-frequency = <72400>;
+    lvds0_panel {
+        compatible = "auo_b101aw03";
+        backlight = <&lvds_backlight1>;
 
-        	hactive = <1280>;
-        	hsync-len = <220>;
-        	hsync-active = <0>;
-        	hback-porch = <90>;
-        	hfront-porch = <170>;
-        	vactive = <800>;
-        	vsync-len = <25>;
-        	vsync-active = <0>;
-        	vback-porch = <0>;
-        	vfront-porch = <105>;
-
-        	power-on-delay = <10>;
-        	power-off-delay = <500>;
-        	relax-delay = <200>;
-        	backlight-on-delay = <0>;
-        	backlight-off-delay = <0>;
-        	backlight-valid = <0>;
-        	backlight-invalid = <0>;
-        	backlight-delay = <500>;
-    	};
-    	port {
-        	panel_lvds0_in: endpoint {
-            	remote-endpoint = <&lvds0_out>;
-        	};
-    	};
-	};
-
-
+        port {
+            panel_lvds0_in: endpoint {
+                remote-endpoint = <&lvds0_out>;
+            };
+        };
+    };
 	chosen {
 		#address-cells = <2>;
 		#size-cells = <2>;
@@ -190,28 +160,25 @@
 	xen,passthrough;
 };
 
-&lvds_backlight1{
-	status = "okay";
-};
-
 &ldb1 {
+	status = "okay";
  
-	lvds-channel@0 {
-    	fsl,data-mapping = "spwg";
-    	fsl,data-width = <24>;
+    lvds-channel@0 {
+        fsl,data-mapping = "spwg";
+        fsl,data-width = <24>;
  
-    	port@1 {
-        	reg = <1>;
+        port@1 {
+            reg = <1>;
  
-        	lvds0_out: endpoint {
-            	remote-endpoint = <&panel_lvds0_in>;
-        	};
-    	};
-	};
+            lvds0_out: endpoint {
+                remote-endpoint = <&panel_lvds0_in>;
+            };
+        };
+    };
 };
 
-&ldb2 {
-	status = "disabled";
+&ldb1_phy {
+	status = "okay";
 };
 
 &pwm_mipi_lvds0 {
