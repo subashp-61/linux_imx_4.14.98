@@ -22,7 +22,6 @@
 #include "fsl-imx8qxp-mek.dtsi"
 #include "fsl-imx8qxp-xen.dtsi"
 
-/delete-node/&it6263_0_in;
 
 / {
 	model = "Ensemble i.MX8QXP v1";	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp";
