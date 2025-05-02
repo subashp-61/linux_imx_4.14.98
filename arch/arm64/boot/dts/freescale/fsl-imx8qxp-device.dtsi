@@ -3347,5 +3347,16 @@
 			compatible = "fsl,imx8-wdt";
 		};
 
+		A35_0: A35_0 {
+			operating-points = <
+				/* kHz	uV*/
+				/* voltage is maintained by SCFW, so no need here */
+				1200000 0
+				900000 0
+			>;
+			clocks = <&clk IMX8QXP_A35_DIV>;
+			clock-latency = <61036>;
+			#cooling-cells = <2>;
+		};
 
 
