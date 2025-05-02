@@ -240,6 +240,19 @@
 				SC_P_UART2_RX_ADMA_UART2_RX	0x06000020
 			>;
 		};
+		pinctrl_lpspi0: lpspi0grp {
+			fsl,pins = <
+				SC_P_SPI0_SCK_ADMA_SPI0_SCK		0x0600004c
+				SC_P_SPI0_SDO_ADMA_SPI0_SDO		0x0600004c
+				SC_P_SPI0_SDI_ADMA_SPI0_SDI		0x0600004c
+			>;
+		};
+
+		pinctrl_lpspi0_cs: lpspi0cs {
+			fsl,pins = <
+				SC_P_SPI0_CS0_LSIO_GPIO1_IO08		0x21
+			>;
+		};		
 	};
 };
 
@@ -249,7 +262,7 @@
     //assigned-clock-rates = <20000000>;
     assigned-clock-rates = <60000000>;
 	pinctrl-0 = <&pinctrl_lpspi0 &pinctrl_lpspi0_cs>;
-	cs-gpios = <&lsio_gpio1 8 GPIO_ACTIVE_LOW>;
+	cs-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
 	status = "okay";
 
 	spidev0: spi@0 {
@@ -259,19 +272,3 @@
 	};
 };
 
-
-&iomuxc {
-	pinctrl_lpspi0: lpspi0grp {
-		fsl,pins = <
-			SC_P_SPI0_SCK_ADMA_SPI0_SCK		0x0600004c
-			SC_P_SPI0_SDO_ADMA_SPI0_SDO		0x0600004c
-			SC_P_SPI0_SDI_ADMA_SPI0_SDI		0x0600004c
-		>;
-	};
-
-	pinctrl_lpspi0_cs: lpspi0cs {
-		fsl,pins = <
-			SC_P_SPI0_CS0_LSIO_GPIO1_IO08		0x21
-		>;
-	};
-};
