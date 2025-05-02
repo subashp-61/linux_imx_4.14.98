@@ -3,39 +3,31 @@ clean build? [y/n]:
   CLEAN   arch/arm64/kernel/vdso
   CLEAN   arch/arm64/kernel
   CLEAN   lib/raid6
-  CLEAN   kernel
-  CLEAN   crypto
   CLEAN   lib
-  CLEAN   drivers/firmware/efi/libstub
+  CLEAN   crypto
   CLEAN   usr
-  CLEAN   net/wireless
-  CLEAN   drivers/tty/vt
+  CLEAN   drivers/firmware/efi/libstub
   CLEAN   arch/arm64/boot/dts/al
+  CLEAN   arch/arm64/boot/dts/allwinner
   CLEAN   arch/arm64/boot/dts/altera
   CLEAN   arch/arm64/boot/dts/amd
-  CLEAN   arch/arm64/boot/dts/allwinner
   CLEAN   arch/arm64/boot/dts/amlogic
-  CLEAN   drivers/video/logo
   CLEAN   arch/arm64/boot/dts/apm
   CLEAN   arch/arm64/boot/dts/arm
-  CLEAN   arch/arm64/boot/dts/cavium
-  CLEAN   arch/arm64/boot/dts/broadcom/northstar2
-  CLEAN   arch/arm64/boot/dts/exynos
-  CLEAN   arch/arm64/boot/dts/broadcom/stingray
-  CLEAN   arch/arm64/boot/dts/broadcom
-  CLEAN   arch/arm64/boot/dts/hisilicon
-  CLEAN   arch/arm64/boot/dts/freescale
-  CLEAN   arch/arm64/boot/dts/lg
-  CLEAN   arch/arm64/boot/dts/marvell
   CLEAN   scripts/basic
-  CLEAN   arch/arm64/boot/dts/mediatek
+  CLEAN   arch/arm64/boot/dts/cavium
+  CLEAN   arch/arm64/boot/dts/exynos
   CLEAN   scripts/dtc
+  CLEAN   arch/arm64/boot/dts/broadcom/northstar2
+  CLEAN   arch/arm64/boot/dts/broadcom/stingray
+  CLEAN   arch/arm64/boot/dts/freescale
+  CLEAN   arch/arm64/boot/dts/broadcom
   CLEAN   scripts/kconfig
   CLEAN   scripts/mod
   CLEAN   scripts
   CLEAN   .tmp_versions
   CLEAN   include/config include/generated arch/arm64/include/generated
-  CLEAN   .config .version Module.symvers
+  CLEAN   .config .version
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/kconfig/conf.o
   SHIPPED scripts/kconfig/zconf.tab.c
@@ -58,22 +50,22 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   WRAP    arch/arm64/include/generated/uapi/asm/mman.h
   WRAP    arch/arm64/include/generated/uapi/asm/msgbuf.h
   WRAP    arch/arm64/include/generated/uapi/asm/poll.h
+  CHK     include/generated/uapi/linux/version.h
   WRAP    arch/arm64/include/generated/uapi/asm/resource.h
   WRAP    arch/arm64/include/generated/uapi/asm/sembuf.h
   WRAP    arch/arm64/include/generated/uapi/asm/shmbuf.h
   WRAP    arch/arm64/include/generated/uapi/asm/socket.h
-  WRAP    arch/arm64/include/generated/uapi/asm/sockios.h
+  UPD     include/generated/uapi/linux/version.h
   WRAP    arch/arm64/include/generated/uapi/asm/swab.h
+  WRAP    arch/arm64/include/generated/uapi/asm/sockios.h
   WRAP    arch/arm64/include/generated/uapi/asm/termbits.h
-  CHK     include/generated/uapi/linux/version.h
   WRAP    arch/arm64/include/generated/uapi/asm/termios.h
   WRAP    arch/arm64/include/generated/uapi/asm/types.h
-  UPD     include/generated/uapi/linux/version.h
   HOSTCC  scripts/basic/fixdep
   UPD     include/config/kernel.release
   HOSTCC  scripts/basic/bin2c
-  WRAP    arch/arm64/include/generated/asm/clkdev.h
   WRAP    arch/arm64/include/generated/asm/bugs.h
+  WRAP    arch/arm64/include/generated/asm/clkdev.h
   WRAP    arch/arm64/include/generated/asm/delay.h
   WRAP    arch/arm64/include/generated/asm/div64.h
   WRAP    arch/arm64/include/generated/asm/dma.h
@@ -88,11 +80,9 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   WRAP    arch/arm64/include/generated/asm/local64.h
   WRAP    arch/arm64/include/generated/asm/mcs_spinlock.h
   WRAP    arch/arm64/include/generated/asm/mm-arch-hooks.h
-  CHK     include/generated/utsrelease.h
   WRAP    arch/arm64/include/generated/asm/msi.h
   WRAP    arch/arm64/include/generated/asm/preempt.h
   WRAP    arch/arm64/include/generated/asm/rwsem.h
-  UPD     include/generated/utsrelease.h
   WRAP    arch/arm64/include/generated/asm/segment.h
   WRAP    arch/arm64/include/generated/asm/serial.h
   WRAP    arch/arm64/include/generated/asm/set_memory.h
@@ -100,47 +90,49 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   WRAP    arch/arm64/include/generated/asm/switch_to.h
   WRAP    arch/arm64/include/generated/asm/trace_clock.h
   WRAP    arch/arm64/include/generated/asm/unaligned.h
+  CHK     include/generated/utsrelease.h
   WRAP    arch/arm64/include/generated/asm/user.h
   WRAP    arch/arm64/include/generated/asm/vga.h
   WRAP    arch/arm64/include/generated/asm/xor.h
+  UPD     include/generated/utsrelease.h
   HOSTCC  scripts/dtc/dtc.o
-  CC      scripts/mod/empty.o
   HOSTCC  scripts/kallsyms
+  CC      scripts/mod/empty.o
   HOSTCC  scripts/pnmtologo
   HOSTCC  scripts/conmakehash
   HOSTCC  scripts/dtc/flattree.o
   HOSTCC  scripts/mod/mk_elfconfig
+  HOSTCC  scripts/dtc/fstree.o
+  HOSTCC  scripts/dtc/data.o
   CC      scripts/mod/devicetable-offsets.s
   HOSTCC  scripts/sortextable
   HOSTCC  scripts/asn1_compiler
-  HOSTCC  scripts/dtc/fstree.o
-  CC      kernel/bounds.s
-  HOSTCC  scripts/dtc/data.o
   HOSTCC  scripts/dtc/livetree.o
   HOSTCC  scripts/dtc/treesource.o
-  CHK     include/generated/timeconst.h
   HOSTCC  scripts/dtc/srcpos.o
-  UPD     include/generated/timeconst.h
   CHK     scripts/mod/devicetable-offsets.h
-  CHK     include/generated/bounds.h
+  UPD     scripts/mod/devicetable-offsets.h
   HOSTCC  scripts/dtc/checks.o
   MKELF   scripts/mod/elfconfig.h
-  UPD     scripts/mod/devicetable-offsets.h
-  UPD     include/generated/bounds.h
   HOSTCC  scripts/dtc/util.o
   HOSTCC  scripts/mod/modpost.o
-  CC      arch/arm64/kernel/asm-offsets.s
-  HOSTCC  scripts/mod/file2alias.o
   SHIPPED scripts/dtc/dtc-lexer.lex.c
   SHIPPED scripts/dtc/dtc-parser.tab.h
+  HOSTCC  scripts/mod/file2alias.o
   HOSTCC  scripts/mod/sumversion.o
   SHIPPED scripts/dtc/dtc-parser.tab.c
   HOSTCC  scripts/dtc/dtc-lexer.lex.o
   HOSTCC  scripts/dtc/dtc-parser.tab.o
+  CC      kernel/bounds.s
+  CHK     include/generated/timeconst.h
+  UPD     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  UPD     include/generated/bounds.h
+  CC      arch/arm64/kernel/asm-offsets.s
+  HOSTLD  scripts/dtc/dtc
   CHK     include/generated/asm-offsets.h
   UPD     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
-  HOSTLD  scripts/dtc/dtc
   LDS     arch/arm64/kernel/vdso/vdso.lds
   VDSOA   arch/arm64/kernel/vdso/gettimeofday.o
   VDSOA   arch/arm64/kernel/vdso/note.o
@@ -162,2759 +154,1429 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CC      arch/arm64/kernel/fpsimd.o
   AS      arch/arm64/kernel/entry-fpsimd.o
   CC      arch/arm64/kernel/process.o
+  UPD     include/generated/compile.h
   CC      arch/arm64/kernel/ptrace.o
   CC      arch/arm64/kernel/setup.o
-  CC      arch/arm64/mm/dma-mapping.o
   CC      arch/arm64/kernel/signal.o
+  CC      arch/arm64/kernel/sys.o
+  CC      arch/arm64/mm/dma-mapping.o
   CC      arch/arm64/mm/extable.o
   CC      arch/arm64/net/bpf_jit_comp.o
-  UPD     include/generated/compile.h
-  CC      init/version.o
-  CC      arch/arm64/kvm/../../../virt/kvm/kvm_main.o
-  CC      arch/arm64/kvm/../../../virt/kvm/coalesced_mmio.o
-  CC      arch/arm64/kernel/sys.o
-  CC      arch/arm64/kvm/../../../virt/kvm/eventfd.o
-  CC      arch/arm64/xen/../../arm/xen/enlighten.o
   CC      arch/arm64/kernel/stacktrace.o
+  CC      arch/arm64/kernel/time.o
+  CC      arch/arm64/kvm/../../../virt/kvm/kvm_main.o
+  CC      init/version.o
   GEN     usr/initramfs_data.cpio
+  CC      arch/arm64/kvm/../../../virt/kvm/coalesced_mmio.o
+  AS      usr/initramfs_data.o
+  CC      arch/arm64/kernel/traps.o
+  CC      arch/arm64/xen/../../arm/xen/enlighten.o
   CC      arch/arm64/xen/../../arm/xen/grant-table.o
   CC      arch/arm64/mm/fault.o
-  AS      usr/initramfs_data.o
-  CC      arch/arm64/crypto/sha1-ce-glue.o
+  CC      arch/arm64/kernel/io.o
   AR      usr/built-in.o
-  CC      arch/arm64/mm/init.o
-  AS      arch/arm64/mm/cache.o
-  AS      arch/arm64/crypto/sha1-ce-core.o
-  CC      arch/arm64/crypto/sha2-ce-glue.o
-  CC      arch/arm64/kvm/../../../virt/kvm/vfio.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/arm.o
-  CC      arch/arm64/mm/copypage.o
+  CC      arch/arm64/kernel/vdso.o
+  CC      arch/arm64/crypto/sha1-ce-glue.o
   CC      arch/arm64/xen/../../arm/xen/p2m.o
   CC      kernel/fork.o
-  CC      kernel/exec_domain.o
-  CC      arch/arm64/mm/flush.o
-  CC      arch/arm64/mm/ioremap.o
-  CC      arch/arm64/xen/../../arm/xen/mm.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/mmu.o
-  CC      kernel/panic.o
-  AR      init/mounts.o
-  AR      init/built-in.o
-  CC      kernel/cpu.o
-  CC      arch/arm64/kernel/time.o
-  CC      kernel/exit.o
-  CC      arch/arm64/mm/mmap.o
   AR      certs/built-in.o
-  AS      arch/arm64/crypto/sha2-ce-core.o
-  CC      arch/arm64/kernel/traps.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/mmio.o
-  CC      kernel/softirq.o
+  AS      arch/arm64/crypto/sha1-ce-core.o
   CC      mm/filemap.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/psci.o
-  CC      arch/arm64/mm/pgd.o
+  CC      arch/arm64/mm/init.o
+  CC      kernel/exec_domain.o
   CC      mm/mempool.o
-  AS      arch/arm64/xen/hypercall.o
-  AR      arch/arm64/net/built-in.o
-  CC      arch/arm64/mm/mmu.o
-  CC      arch/arm64/kernel/io.o
-  CC      fs/open.o
-  CC      arch/arm64/crypto/ghash-ce-glue.o
-  CC      arch/arm64/xen/../../arm/xen/efi.o
-  CC      kernel/resource.o
-  CC      fs/read_write.o
-  CC      arch/arm64/kernel/vdso.o
+  CC      arch/arm64/kvm/../../../virt/kvm/eventfd.o
   CC      mm/oom_kill.o
+  AS      arch/arm64/mm/cache.o
+  AR      init/mounts.o
+  CC      kernel/panic.o
+  AS      arch/arm64/kernel/hyp-stub.o
+  AR      init/built-in.o
   CC      mm/maccess.o
-  AS      arch/arm64/crypto/ghash-ce-core.o
+  CC      arch/arm64/crypto/sha2-ce-glue.o
+  CC      kernel/cpu.o
+  CC      mm/page_alloc.o
+  CC      arch/arm64/xen/../../arm/xen/mm.o
+  CC      mm/page-writeback.o
+  CC      kernel/exit.o
+  CC      arch/arm64/kernel/psci.o
+  CC      fs/open.o
+  CC      fs/read_write.o
+  CC      arch/arm64/mm/copypage.o
   CC      fs/file_table.o
-  AR      arch/arm64/xen/xen-arm.o
-  AR      arch/arm64/xen/built-in.o
-  CC      kernel/sysctl.o
-  CC      fs/super.o
   CC      ipc/compat.o
   CC      ipc/util.o
-  AS      arch/arm64/crypto/aes-ce-core.o
-  CC      arch/arm64/mm/context.o
-  AS      arch/arm64/kernel/hyp-stub.o
-  CC      ipc/msgutil.o
-  CC      security/integrity/iint.o
-  CC      arch/arm64/kernel/psci.o
-  CC      security/keys/gc.o
-  CC      arch/arm64/crypto/aes-ce-glue.o
-  CC      arch/arm64/crypto/aes-ce-ccm-glue.o
-  CC      fs/char_dev.o
-  CC      fs/stat.o
-  CC      security/keys/key.o
-  CC      security/integrity/integrity_audit.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/perf.o
-  CC      arch/arm64/kvm/inject_fault.o
-  CC      security/keys/keyring.o
+  AR      arch/arm64/net/built-in.o
+  CC      mm/readahead.o
+  CC      mm/swap.o
+  AS      arch/arm64/xen/hypercall.o
+  CC      arch/arm64/xen/../../arm/xen/efi.o
   CC      arch/arm64/kernel/cpu_ops.o
-  CC      security/keys/keyctl.o
-  CC      security/keys/permission.o
-  AS      arch/arm64/mm/proc.o
-  CC      security/keys/process_keys.o
-  CC      security/keys/request_key.o
-  CC      arch/arm64/mm/pageattr.o
+  CC      ipc/msgutil.o
+  AS      arch/arm64/crypto/sha2-ce-core.o
+  CC      arch/arm64/mm/flush.o
+  CC      arch/arm64/crypto/ghash-ce-glue.o
+  CC      ipc/msg.o
+  AR      arch/arm64/xen/xen-arm.o
+  AR      arch/arm64/xen/built-in.o
   CC      arch/arm64/kernel/insn.o
+  CC      arch/arm64/mm/ioremap.o
+  CC      mm/truncate.o
+  CC      arch/arm64/mm/mmap.o
+  CC      kernel/softirq.o
+  CC      fs/super.o
+  CC      arch/arm64/kernel/return_address.o
+  CC      arch/arm64/kvm/../../../virt/kvm/vfio.o
+  CC      ipc/sem.o
+  CC      security/integrity/iint.o
+  CC      security/keys/gc.o
+  CC      arch/arm64/mm/pgd.o
+  AS      arch/arm64/crypto/ghash-ce-core.o
+  CC      fs/char_dev.o
+  CC      mm/vmscan.o
+  CC      security/keys/key.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/arm.o
+  CC      crypto/api.o
+  AS      arch/arm64/crypto/aes-ce-core.o
+  CC      arch/arm64/kernel/cpuinfo.o
+  CC      security/integrity/integrity_audit.o
+  CC      arch/arm64/mm/mmu.o
+  CC      arch/arm64/crypto/aes-ce-glue.o
+  CC      crypto/cipher.o
+  CC      kernel/resource.o
+  CC      arch/arm64/mm/context.o
+  CC      block/bio.o
+  AS      arch/arm64/mm/proc.o
+  CC      arch/arm64/mm/pageattr.o
   CC      security/commoncap.o
+  CC      crypto/compress.o
+  CC      kernel/sysctl.o
   AR      security/integrity/integrity.o
   AR      security/integrity/built-in.o
-  CC      kernel/sysctl_binary.o
-  CC      arch/arm64/kvm/regmap.o
+  CC      arch/arm64/crypto/aes-ce-ccm-glue.o
   AS      arch/arm64/crypto/aes-ce-ccm-core.o
-  CC      mm/page_alloc.o
-  CC      ipc/msg.o
-  CC      ipc/sem.o
-  CC      security/min_addr.o
+  CC      security/keys/keyring.o
   CC      arch/arm64/crypto/aes-glue-ce.o
-  CC      kernel/capability.o
-  CC      security/keys/request_key_auth.o
-  CC      arch/arm64/mm/hugetlbpage.o
-  AS      arch/arm64/crypto/aes-ce.o
-  AS      arch/arm64/kvm/hyp.o
-  CC      arch/arm64/mm/numa.o
-  CC      security/security.o
-  CC      fs/exec.o
-  CC      kernel/ptrace.o
-  CC      kernel/user.o
-  CC      crypto/api.o
-  CC      mm/page-writeback.o
-  AS      arch/arm64/kvm/hyp-init.o
-  CC      mm/readahead.o
-  CC      arch/arm64/kernel/return_address.o
-  CC      kernel/signal.o
-  CC      arch/arm64/kvm/handle_exit.o
-  CC      security/keys/user_defined.o
-  CC      ipc/shm.o
-  CC      fs/pipe.o
-  CC      fs/namei.o
-  CC      fs/fcntl.o
-  CC      arch/arm64/kernel/cpuinfo.o
-  AR      arch/arm64/mm/built-in.o
-  CC      fs/ioctl.o
-  CC      security/keys/compat.o
-  CC      arch/arm64/crypto/sha256-glue.o
-  CC      security/keys/proc.o
-  CC      kernel/sys.o
-  CC      crypto/cipher.o
-  CC      arch/arm64/kvm/guest.o
-  CC      crypto/compress.o
-  CC      crypto/memneq.o
-  CC      arch/arm64/kernel/cpu_errata.o
-  CC      crypto/crypto_wq.o
-  CC      crypto/algapi.o
-  CC      security/keys/sysctl.o
-  CC      block/bio.o
-  AS      arch/arm64/crypto/sha256-core.o
-  AS      arch/arm64/crypto/aes-cipher-core.o
-  CC      arch/arm64/kvm/debug.o
-  CC      arch/arm64/crypto/aes-cipher-glue.o
-  CC      kernel/umh.o
-  CC      ipc/syscall.o
-  CC      block/elevator.o
-  AS [M]  arch/arm64/crypto/crct10dif-ce-core.o
-  AR      security/keys/built-in.o
-  CC      arch/arm64/kvm/reset.o
-  CC      arch/arm64/kernel/cpufeature.o
-  CC      kernel/workqueue.o
-  CC      crypto/scatterwalk.o
-  CC      security/lsm_audit.o
-  CC      mm/swap.o
-  CC      security/device_cgroup.o
-  CC [M]  arch/arm64/crypto/crct10dif-ce-glue.o
-  CC      crypto/proc.o
-  CC      ipc/ipc_sysctl.o
-  CC      arch/arm64/kernel/alternative.o
-  CC      kernel/pid.o
-  CC      arch/arm64/kvm/sys_regs.o
-  CC      block/blk-core.o
-  CC      fs/readdir.o
-  CC      arch/arm64/kvm/sys_regs_generic_v8.o
-  CC      ipc/mqueue.o
-  CC      mm/truncate.o
-  AS [M]  arch/arm64/crypto/crc32-ce-core.o
-  CC      crypto/aead.o
-  CC      arch/arm64/kernel/cacheinfo.o
   CC      drivers/acpi/tables.o
-  CC [M]  arch/arm64/crypto/crc32-ce-glue.o
-  CC      arch/arm64/kernel/smp.o
-  AR      security/built-in.o
-  CC      arch/arm64/kernel/smp_spin_table.o
-  CC      sound/sound_core.o
-  AR      sound/arm/built-in.o
-  CC      fs/select.o
-  CC      arch/arm64/kernel/topology.o
-  AR      sound/atmel/built-in.o
-  CC      crypto/ablkcipher.o
-  CC      ipc/namespace.o
-  CC      ipc/mq_sysctl.o
-  AR      firmware/built-in.o
-  AS      arch/arm64/kernel/smccc-call.o
-  CC      drivers/amba/bus.o
-  CC [M]  arch/arm64/crypto/aes-glue-neon.o
-  CC      sound/core/sound.o
-  AR      sound/drivers/mpu401/built-in.o
-  AR      sound/firewire/built-in.o
-  AR      sound/drivers/opl3/built-in.o
-  CC      block/blk-tag.o
+  CC      arch/arm64/kernel/cpu_errata.o
+  CC      fs/stat.o
   CC      drivers/acpi/osi.o
+  CC      security/keys/keyctl.o
+  CC      security/keys/permission.o
+  CC      drivers/amba/bus.o
+  CC      crypto/memneq.o
+  CC      arch/arm64/mm/hugetlbpage.o
+  CC      drivers/amba/tegra-ahb.o
+  CC      kernel/sysctl_binary.o
+  CC      arch/arm64/kernel/cpufeature.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/mmu.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/mmio.o
+  CC      drivers/acpi/osl.o
+  CC      ipc/shm.o
+  CC      mm/shmem.o
+  AS      arch/arm64/crypto/aes-ce.o
+  CC      crypto/crypto_wq.o
+  CC      drivers/ata/libata-core.o
+  CC      arch/arm64/crypto/sha256-glue.o
+  CC      fs/exec.o
+  CC      kernel/capability.o
+  CC      drivers/acpi/utils.o
+  CC      sound/sound_core.o
+  AR      drivers/amba/built-in.o
+  AR      drivers/auxdisplay/built-in.o
+  CC      security/keys/process_keys.o
+  CC      drivers/acpi/reboot.o
+  CC      crypto/algapi.o
+  AR      sound/arm/built-in.o
+  CC      arch/arm64/kernel/alternative.o
+  CC      kernel/ptrace.o
+  CC      arch/arm64/mm/numa.o
+  AR      sound/atmel/built-in.o
+  CC      sound/core/sound.o
+  CC      block/elevator.o
+  AS      arch/arm64/crypto/sha256-core.o
+  CC      drivers/ata/libata-scsi.o
+  AR      sound/drivers/mpu401/built-in.o
+  AS      arch/arm64/crypto/aes-cipher-core.o
+  CC      mm/util.o
+  AR      sound/drivers/opl3/built-in.o
+  CC      sound/core/init.o
   AR      sound/drivers/opl4/built-in.o
-  CC      mm/vmscan.o
-  CC      arch/arm64/kernel/sys32.o
+  CC      arch/arm64/crypto/aes-cipher-glue.o
+  CC      arch/arm64/kernel/cacheinfo.o
   AR      sound/drivers/pcsp/built-in.o
   AR      sound/drivers/vx/built-in.o
+  CC      fs/pipe.o
   AR      sound/drivers/built-in.o
-  AS      arch/arm64/kernel/kuser32.o
-  CC      mm/shmem.o
-  CC      arch/arm64/kernel/signal32.o
-  CC      fs/dcache.o
-  CC      fs/inode.o
-  CC      block/blk-sysfs.o
-  CC      block/blk-flush.o
-  AR      sound/hda/built-in.o
-  CC      crypto/blkcipher.o
-  CC      net/socket.o
-  CC      arch/arm64/kvm/vgic-sys-reg-v3.o
-  CC      drivers/acpi/osl.o
-  CC      sound/core/init.o
-  CC      drivers/ata/libata-core.o
-  AR      ipc/built-in.o
+  CC      security/keys/request_key.o
+  CC      drivers/ata/libata-eh.o
+  CC      drivers/acpi/nvs.o
+  CC      kernel/user.o
+  CC      ipc/syscall.o
+  AS [M]  arch/arm64/crypto/crct10dif-ce-core.o
+  CC      arch/arm64/kernel/smp.o
+  AR      arch/arm64/mm/built-in.o
+  CC      mm/mmzone.o
+  CC [M]  arch/arm64/crypto/crct10dif-ce-glue.o
+  AS [M]  arch/arm64/crypto/crc32-ce-core.o
+  CC      mm/vmstat.o
+  CC      mm/backing-dev.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/psci.o
+  CC      ipc/ipc_sysctl.o
+  CC      drivers/acpi/wakeup.o
+  CC      crypto/scatterwalk.o
+  CC      kernel/signal.o
+  CC      security/keys/request_key_auth.o
+  CC      sound/core/memory.o
+  AR      sound/firewire/built-in.o
+  CC      sound/core/control.o
+  AR      firmware/built-in.o
+  CC      drivers/acpi/device_sysfs.o
+  CC      block/blk-core.o
+  CC      ipc/mqueue.o
+  CC [M]  arch/arm64/crypto/crc32-ce-glue.o
+  CC      drivers/acpi/device_pm.o
+  CC      crypto/proc.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/perf.o
+  CC      security/keys/user_defined.o
+  CC      drivers/base/component.o
+  CC      drivers/block/loop.o
+  CC      arch/arm64/kernel/smp_spin_table.o
+  CC      fs/namei.o
+  CC      drivers/bluetooth/hci_vhci.o
+  CC      drivers/bus/arm-cci.o
+  CC      security/keys/compat.o
+  CC      crypto/aead.o
+  CC [M]  arch/arm64/crypto/aes-glue-neon.o
+  CC      arch/arm64/kernel/topology.o
+  CC      arch/arm64/kvm/inject_fault.o
+  CC      drivers/acpi/bus.o
+  CC      drivers/base/core.o
+  CC      security/keys/proc.o
+  CC      fs/fcntl.o
+  AS      arch/arm64/kernel/smccc-call.o
+  CC      security/min_addr.o
+  CC      mm/mm_init.o
+  CC      arch/arm64/kvm/regmap.o
+  CC      arch/arm64/kernel/sys32.o
+  CC      ipc/namespace.o
+  CC      kernel/sys.o
+  CC      sound/core/misc.o
   AS [M]  arch/arm64/crypto/aes-neon.o
-  CC      drivers/ata/libata-scsi.o
-  CC      drivers/amba/tegra-ahb.o
+  CC      crypto/ablkcipher.o
+  CC      drivers/ata/libata-transport.o
   CC [M]  arch/arm64/crypto/sha512-glue.o
   AS [M]  arch/arm64/crypto/sha512-core.o
+  CC      drivers/bluetooth/hci_ldisc.o
+  CC      security/keys/sysctl.o
+  CC      drivers/bus/brcmstb_gisb.o
+  CC      sound/core/device.o
+  CC      mm/mmu_context.o
+  CC      drivers/acpi/glue.o
+  AS      arch/arm64/kernel/kuser32.o
+  CC      ipc/mq_sysctl.o
+  CC      arch/arm64/kernel/signal32.o
+  CC      block/blk-tag.o
+  AS      arch/arm64/kvm/hyp.o
+  CC      drivers/block/virtio_blk.o
+  AS      arch/arm64/kvm/hyp-init.o
+  CC      drivers/base/bus.o
+  CC      arch/arm64/kvm/handle_exit.o
+  AR      security/keys/built-in.o
+  CC      security/security.o
+  CC      fs/ioctl.o
+  CC      mm/percpu.o
+  AR      ipc/built-in.o
+  CC      net/socket.o
+  CC      sound/core/info.o
+  CC      drivers/bus/qcom-ebi2.o
+  CC      crypto/blkcipher.o
   CC      net/802/p8022.o
-  AR      drivers/amba/built-in.o
-  CC      arch/arm64/kernel/sys_compat.o
-  CC      net/802/psnap.o
-  CC      kernel/task_work.o
-  CC      mm/util.o
-  CC      crypto/skcipher.o
-  CC      block/blk-settings.o
-  CC      sound/core/memory.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/aarch32.o
-  CC      net/8021q/vlan_core.o
   AS [M]  arch/arm64/crypto/chacha20-neon-core.o
   CC [M]  arch/arm64/crypto/chacha20-neon-glue.o
-  CC      crypto/seqiv.o
-  AS      arch/arm64/kernel/entry32.o
-  CC      kernel/extable.o
+  CC      drivers/acpi/scan.o
+  CC      block/blk-sysfs.o
+  CC      drivers/ata/libata-trace.o
+  CC      drivers/bus/sunxi-rsb.o
+  CC      arch/arm64/kvm/guest.o
+  CC      arch/arm64/kernel/sys_compat.o
+  CC      mm/slab_common.o
+  CC      drivers/ata/libata-sff.o
+  CC      drivers/bluetooth/hci_serdev.o
   AS [M]  arch/arm64/crypto/aes-neonbs-core.o
-  CC      arch/arm64/kernel/arm64ksyms.o
-  AR      drivers/auxdisplay/built-in.o
-  CC [M]  net/802/stp.o
-  CC      mm/mmzone.o
-  CC      sound/core/control.o
-  CC      drivers/ata/libata-eh.o
-  CC [M]  net/8021q/vlan.o
+  CC      drivers/block/xen-blkfront.o
+  CC      drivers/base/dd.o
   CC [M]  arch/arm64/crypto/aes-neonbs-glue.o
-  CC      drivers/acpi/utils.o
-  CC      block/blk-ioc.o
-  CC      block/blk-map.o
-  CC [M]  net/802/garp.o
-  CC      arch/arm64/kernel/module.o
-  CC      crypto/echainiv.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic.o
-  CC      block/blk-exec.o
-  AR      sound/i2c/other/built-in.o
-  CC      kernel/params.o
-  CC      fs/attr.o
-  AR      sound/i2c/built-in.o
-  AR      sound/isa/ad1816a/built-in.o
-  AR      sound/isa/ad1848/built-in.o
-  CC      sound/core/misc.o
-  AR      sound/isa/cs423x/built-in.o
-  AR      sound/isa/es1688/built-in.o
-  AR      sound/isa/galaxy/built-in.o
-  AR      sound/isa/gus/built-in.o
-  CC      arch/arm64/kernel/perf_regs.o
-  AR      sound/isa/msnd/built-in.o
-  AR      sound/isa/opti9xx/built-in.o
-  CC      drivers/acpi/reboot.o
-  CC      net/9p/mod.o
-  AR      sound/isa/sb/built-in.o
+  CC      crypto/skcipher.o
+  CC      net/802/psnap.o
+  CC      kernel/umh.o
+  CC      sound/core/ctljack.o
+  CC [M]  net/802/stp.o
+  AS      arch/arm64/kernel/entry32.o
+  CC      drivers/bus/uniphier-system-bus.o
+  CC      arch/arm64/kernel/arm64ksyms.o
+  CC      arch/arm64/kvm/debug.o
+  CC      fs/readdir.o
+  CC      sound/core/jack.o
+  CC      block/blk-flush.o
+  CC      arch/arm64/kvm/reset.o
+  AR      drivers/cdrom/built-in.o
   AR      arch/arm64/crypto/sha1-ce.o
   AR      arch/arm64/crypto/sha2-ce.o
   AR      arch/arm64/crypto/ghash-ce.o
-  AR      sound/isa/wavefront/built-in.o
+  CC      net/8021q/vlan_core.o
   AR      arch/arm64/crypto/aes-ce-cipher.o
-  AR      sound/isa/wss/built-in.o
   AR      arch/arm64/crypto/aes-ce-ccm.o
-  AR      sound/isa/built-in.o
   AR      arch/arm64/crypto/aes-ce-blk.o
   AR      arch/arm64/crypto/sha256-arm64.o
-  CC [M]  net/8021q/vlan_dev.o
   AR      arch/arm64/crypto/aes-arm64.o
   LD [M]  arch/arm64/crypto/crct10dif-ce.o
   LD [M]  arch/arm64/crypto/crc32-ce.o
+  CC      arch/arm64/kernel/module.o
+  CC      drivers/base/syscore.o
   LD [M]  arch/arm64/crypto/aes-neon-blk.o
-  CC      sound/core/device.o
+  CC      drivers/bus/vexpress-config.o
   LD [M]  arch/arm64/crypto/sha512-arm64.o
   LD [M]  arch/arm64/crypto/chacha20-neon.o
   LD [M]  arch/arm64/crypto/aes-neon-bs.o
-  CC      block/blk-merge.o
+  CC      mm/compaction.o
   AR      arch/arm64/crypto/built-in.o
+  CC      arch/arm64/kernel/perf_regs.o
+  CC      drivers/acpi/resource.o
+  CC [M]  net/802/garp.o
+  CC      security/lsm_audit.o
+  CC      kernel/workqueue.o
+  CC      drivers/bluetooth/hci_h4.o
+  CC      sound/core/timer.o
+  CC [M]  net/8021q/vlan.o
+  CC      arch/arm64/kvm/sys_regs.o
+  CC      fs/select.o
+  CC [M]  net/8021q/vlan_dev.o
   CC      arch/arm64/kernel/perf_callchain.o
-  CC      crypto/ahash.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-init.o
-  CC      drivers/ata/libata-transport.o
-  CC      fs/bad_inode.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-irqfd.o
-  CC      drivers/acpi/nvs.o
-  CC [M]  net/802/mrp.o
-  CC      net/9p/client.o
-  CC      mm/vmstat.o
-  CC      mm/backing-dev.o
-  CC      kernel/kthread.o
-  CC      kernel/sys_ni.o
-  CC      sound/core/info.o
-  AS      arch/arm64/lib/bitops.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-v2.o
-  CC      arch/arm64/kernel/perf_event.o
-  AS      arch/arm64/lib/clear_page.o
-  CC      fs/file.o
-  AS      arch/arm64/lib/clear_user.o
-  AS      arch/arm64/lib/copy_from_user.o
-  CC      crypto/shash.o
-  CC      drivers/acpi/wakeup.o
-  CC      arch/arm64/kernel/hw_breakpoint.o
+  AR      drivers/bus/built-in.o
   CC [M]  net/8021q/vlan_netlink.o
+  CC      block/blk-settings.o
+  CC      crypto/seqiv.o
+  CC      drivers/base/driver.o
+  CC      drivers/acpi/acpi_processor.o
+  CC      drivers/ata/libata-pmp.o
+  CC      arch/arm64/kvm/sys_regs_generic_v8.o
+  CC      security/device_cgroup.o
+  CC      arch/arm64/kernel/perf_event.o
+  CC [M]  net/802/mrp.o
+  CC      drivers/bluetooth/hci_bcsp.o
+  CC      arch/arm64/kvm/vgic-sys-reg-v3.o
+  CC      drivers/base/class.o
+  CC      block/blk-ioc.o
+  CC      mm/vmacache.o
+  CC      drivers/acpi/processor_core.o
+  CC      sound/core/pcm.o
+  CC      fs/dcache.o
+  CC      crypto/echainiv.o
+  CC      crypto/ahash.o
+  CC      drivers/block/xen-blkback/blkback.o
+  CC      fs/inode.o
+  CC      mm/swap_slots.o
+  CC      drivers/base/platform.o
+  AR      security/built-in.o
+  CC      crypto/shash.o
+  CC [M]  net/8021q/vlan_gvrp.o
+  CC      drivers/acpi/ec.o
+  CC      drivers/ata/libata-acpi.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/aarch32.o
+  CC      arch/arm64/kernel/hw_breakpoint.o
+  CC      crypto/akcipher.o
+  CC      block/blk-map.o
+  CC      crypto/kpp.o
+  AR      net/802/built-in.o
+  AR      sound/hda/built-in.o
+  CC      net/9p/mod.o
+  CC      drivers/bluetooth/hci_ath.o
+  CC      net/9p/client.o
+  CC      sound/core/pcm_native.o
+  CC      mm/interval_tree.o
+  CC [M]  net/8021q/vlan_mvrp.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic.o
+  AS      arch/arm64/kernel/sleep.o
+  AS      arch/arm64/lib/bitops.o
+  CC      fs/attr.o
+  CC      kernel/pid.o
+  CC      block/blk-exec.o
+  CC      drivers/ata/ahci.o
+  AS      arch/arm64/lib/clear_page.o
+  ASN.1   crypto/rsapubkey-asn1.c
+  CC      arch/arm64/kernel/suspend.o
+  ASN.1   crypto/rsaprivkey-asn1.c
+  CC      crypto/rsa.o
+  AS      arch/arm64/lib/clear_user.o
+  CC      drivers/base/cpu.o
+  AS      arch/arm64/lib/copy_from_user.o
+  CC      block/blk-merge.o
   AS      arch/arm64/lib/copy_in_user.o
-  CC      fs/filesystems.o
-  CC      net/9p/error.o
+  CC      sound/core/pcm_lib.o
+  CC      drivers/bluetooth/hci_h5.o
   AS      arch/arm64/lib/copy_page.o
   AS      arch/arm64/lib/copy_to_user.o
   CC      arch/arm64/lib/delay.o
-  CC      drivers/acpi/device_sysfs.o
-  CC      fs/namespace.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-v3.o
-  AR      net/802/built-in.o
-  CC      drivers/ata/libata-trace.o
-  CC      lib/lockref.o
-  CC      sound/core/ctljack.o
-  CC      drivers/acpi/device_pm.o
-  CC      kernel/nsproxy.o
-  CC      lib/bcd.o
-  CC      block/blk-softirq.o
-  CC      fs/seq_file.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-mmio.o
-  CC      crypto/akcipher.o
-  CC [M]  net/8021q/vlan_gvrp.o
-  CC      drivers/ata/libata-sff.o
-  CC      lib/div64.o
-  AS      arch/arm64/lib/memchr.o
-  CC      kernel/notifier.o
-  CC      net/9p/util.o
-  AS      arch/arm64/lib/memcmp.o
-  CC      lib/sort.o
-  AS      arch/arm64/lib/memcpy.o
-  CC      sound/core/jack.o
-  AS      arch/arm64/kernel/sleep.o
-  AS      arch/arm64/lib/memmove.o
-  CC      net/bluetooth/af_bluetooth.o
-  AS      arch/arm64/lib/memset.o
-  CC      lib/parser.o
-  CC      arch/arm64/kernel/suspend.o
-  CC      block/blk-timeout.o
-  AS      arch/arm64/lib/strchr.o
-  CC [M]  net/8021q/vlan_mvrp.o
-  AS      arch/arm64/lib/strcmp.o
-  CC      net/9p/protocol.o
-  AR      virt/lib/built-in.o
-  AS      arch/arm64/lib/strlen.o
-  CC      crypto/kpp.o
-  AR      virt/built-in.o
-  AR      sound/mips/built-in.o
-  AS      arch/arm64/lib/strncmp.o
-  ASN.1   crypto/rsapubkey-asn1.c
-  CC      lib/debug_locks.o
-  CC      fs/xattr.o
-  CC      block/blk-lib.o
-  CC      kernel/ksysfs.o
-  CC      sound/core/timer.o
-  AS      arch/arm64/lib/strnlen.o
-  CC      drivers/acpi/bus.o
-  CC      mm/mm_init.o
-  AS      arch/arm64/lib/strrchr.o
-  AR      sound/parisc/built-in.o
-  AR      arch/arm64/lib/lib.a
-  CC      net/bpf/test_run.o
-  EXPORTS arch/arm64/lib/lib-ksyms.o
-  CC      lib/random32.o
-  CC      drivers/base/component.o
-  AR      arch/arm64/lib/built-in.o
-  CC      arch/arm64/kernel/cpuidle.o
-  CC      drivers/block/loop.o
-  CC      drivers/base/core.o
-  AR      net/bridge/netfilter/built-in.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-mmio-v2.o
-  CC [M]  net/bridge/br.o
-  CC [M]  net/8021q/vlanproc.o
-  CC      kernel/cred.o
-  CC      mm/mmu_context.o
-  CC      lib/bust_spinlocks.o
-  ASN.1   crypto/rsaprivkey-asn1.c
-  CC      crypto/rsa.o
-  CC      block/blk-mq.o
-  CC      net/9p/trans_fd.o
-  CC      arch/arm64/kernel/jump_label.o
-  CC      net/bluetooth/hci_core.o
-  CC      crypto/rsa_helper.o
-  CC      mm/percpu.o
-  CC      arch/arm64/kernel/efi.o
-  CC      lib/kasprintf.o
-  AR      net/bpf/built-in.o
-  AS      arch/arm64/kernel/efi-entry.o
-  CC      block/blk-mq-tag.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-mmio-v3.o
-  AR      net/8021q/built-in.o
-  LD [M]  net/8021q/8021q.o
-  CC [M]  net/bridge/br_device.o
-  AR      sound/pci/ac97/built-in.o
-  CC [M]  net/bridge/br_fdb.o
-  CC      drivers/acpi/glue.o
-  AR      sound/pci/ali5451/built-in.o
-  CC      drivers/ata/libata-pmp.o
-  DTC     arch/arm64/boot/dts/al/alpine-v2-evp.dtb
-  AR      sound/pci/asihpi/built-in.o
-  AR      sound/pci/au88x0/built-in.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dtb
-  CC      crypto/rsa-pkcs1pad.o
-  AR      sound/pci/aw2/built-in.o
-  CC      lib/bitmap.o
-  CC      kernel/reboot.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-nanopi-a64.dtb
-  AR      sound/pci/ca0106/built-in.o
-  AR      sound/pci/cs46xx/built-in.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dtb
-  AR      sound/pci/cs5535audio/built-in.o
-  AR      sound/pci/ctxfi/built-in.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dtb
-  AR      sound/pci/echoaudio/built-in.o
-  CC      arch/arm64/kernel/pci.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dtb
-  AR      sound/pci/emu10k1/built-in.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dtb
-  AR      sound/pci/hda/built-in.o
-  AR      sound/pci/ice1712/built-in.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dtb
-  AR      sound/pci/korg1212/built-in.o
-  AR      sound/pci/lola/built-in.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dtb
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-prime.dtb
-  AR      sound/pci/lx6464es/built-in.o
-  AR      sound/pci/mixart/built-in.o
-  CC      sound/core/pcm.o
-  AR      sound/pci/nm256/built-in.o
-  CC      fs/libfs.o
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dtb
-  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo2.dtb
-  AR      sound/pci/oxygen/built-in.o
-  CC      net/9p/trans_common.o
-  CC      block/blk-stat.o
-  AR      sound/pci/pcxhr/built-in.o
-  DTC     arch/arm64/boot/dts/altera/socfpga_stratix10_socdk.dtb
-  AR      sound/pci/riptide/built-in.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-kvm-device.o
-  AR      sound/pci/rme9652/built-in.o
-  DTC     arch/arm64/boot/dts/amd/amd-overdrive.dtb
-  AR      sound/pci/trident/built-in.o
-  CC      drivers/acpi/scan.o
-  AR      sound/pci/vx222/built-in.o
-  DTC     arch/arm64/boot/dts/amd/amd-overdrive-rev-b0.dtb
-  CC      block/blk-mq-sysfs.o
-  AR      sound/pci/ymfpci/built-in.o
-  CC      lib/scatterlist.o
-  AR      sound/pci/built-in.o
-  DTC     arch/arm64/boot/dts/amd/amd-overdrive-rev-b1.dtb
-  CC      kernel/async.o
-  DTC     arch/arm64/boot/dts/amd/husky.dtb
-  CC      drivers/block/virtio_blk.o
-  CC      fs/fs-writeback.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dtb
-  CC      drivers/ata/libata-acpi.o
-  CC      crypto/acompress.o
-  CC      drivers/base/bus.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dtb
-  CC      net/9p/trans_virtio.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dtb
-  CC      arch/arm64/kernel/acpi.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dtb
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-p201.dtb
-  CC      kernel/range.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95-pro.dtb
-  CC      mm/slab_common.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95-meta.dtb
-  CC [M]  net/bridge/br_forward.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95-telos.dtb
-  CC      kernel/smpboot.o
-  CC      lib/gcd.o
-  CC      drivers/acpi/resource.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-its.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dtb
-  CC      net/bluetooth/hci_conn.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-play2.dtb
-  CC      block/blk-mq-cpumap.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-hwacom-amazetv.dtb
-  CC      lib/lcm.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dtb
-  CC      crypto/scompress.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dtb
-  CC [M]  net/bridge/br_if.o
-  CC      lib/list_sort.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dtb
-  CC      arch/arm64/kernel/acpi_numa.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtb
-  CC      drivers/base/dd.o
-  CC      sound/core/pcm_native.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dtb
-  CC      lib/uuid.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p231.dtb
-  CC      drivers/block/xen-blkfront.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dtb
-  CC      drivers/ata/ahci.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-q200.dtb
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-q201.dtb
-  CC      lib/flex_array.o
-  CC      kernel/ucount.o
-  CC      drivers/acpi/acpi_processor.o
-  CC      drivers/ata/libahci.o
-  AR      net/9p/9pnet.o
-  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dtb
-  AR      net/9p/9pnet_virtio.o
-  AR      net/9p/built-in.o
-  CC      drivers/base/syscore.o
-  DTC     arch/arm64/boot/dts/apm/apm-mustang.dtb
-  CC      mm/compaction.o
-  DTC     arch/arm64/boot/dts/apm/apm-merlin.dtb
-  CC      block/blk-mq-sched.o
-  CC      crypto/algboss.o
-  CC      block/ioctl.o
-  DTC     arch/arm64/boot/dts/arm/foundation-v8.dtb
-  DTC     arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtb
-  DTC     arch/arm64/boot/dts/arm/juno.dtb
-  CC      arch/arm64/kernel/paravirt.o
-  DTC     arch/arm64/boot/dts/arm/juno-r1.dtb
-  CC      kernel/kmod.o
-  CC      lib/iov_iter.o
-  AR      sound/pcmcia/pdaudiocf/built-in.o
-  CC      arch/arm64/kernel/machine_kexec.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-debug.o
-  DTC     arch/arm64/boot/dts/arm/juno-r2.dtb
-  AR      sound/pcmcia/vx/built-in.o
-  DTC     arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dtb
-  AR      sound/pcmcia/built-in.o
-  DTC     arch/arm64/boot/dts/arm/vexpress-v2f-1xv7-ca53x2.dtb
-  CC      block/genhd.o
-  DTC     arch/arm64/boot/dts/broadcom/northstar2/ns2-svk.dtb
-  CC      drivers/acpi/processor_core.o
-  CC      fs/pnode.o
-  DTC     arch/arm64/boot/dts/broadcom/northstar2/ns2-xmc.dtb
-  CC      drivers/base/driver.o
-  CC [M]  net/bridge/br_input.o
-  DTC     arch/arm64/boot/dts/broadcom/stingray/bcm958742k.dtb
-  CC      net/bluetooth/hci_event.o
-  CC      net/bluetooth/mgmt.o
-  DTC     arch/arm64/boot/dts/broadcom/stingray/bcm958742t.dtb
-  DTC     arch/arm64/boot/dts/broadcom/bcm2837-rpi-3-b.dtb
-  CC      block/partition-generic.o
-  AS      arch/arm64/kernel/relocate_kernel.o
-  CC      crypto/testmgr.o
-  DTC     arch/arm64/boot/dts/cavium/thunder-88xx.dtb
-  CC      crypto/cmac.o
-  DTC     arch/arm64/boot/dts/cavium/thunder2-99xx.dtb
-  AS      arch/arm64/kernel/cpu-reset.o
-  DTC     arch/arm64/boot/dts/exynos/exynos5433-tm2.dtb
-  CC      arch/arm64/kernel/crash_dump.o
-  CC      kernel/groups.o
-  CC      arch/arm64/kvm/../../../virt/kvm/irqchip.o
-  CC      drivers/acpi/ec.o
-  CC      drivers/base/class.o
-  DTC     arch/arm64/boot/dts/exynos/exynos5433-tm2e.dtb
-  CC      drivers/base/platform.o
-  CC      fs/splice.o
-  DTC     arch/arm64/boot/dts/exynos/exynos7-espresso.dtb
-  CC      fs/sync.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1012a-frdm.dtb
-  CC      mm/vmacache.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1012a-qds.dtb
-  CC [M]  net/bridge/br_ioctl.o
-  CC      drivers/ata/ahci_platform.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1012a-rdb.dtb
-  CC      crypto/hmac.o
-  CC      arch/arm64/kernel/ssbd.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1043a-qds.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dtb
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/arch_timer.o
-  CC      fs/utimes.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1088a-qds.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls2080a-qds.dtb
-  CC      kernel/bpf/core.o
-  CC      fs/stack.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls2080a-rdb.dtb
-  AS      arch/arm64/kernel/bpi.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls2080a-simu.dtb
-  CC      mm/swap_slots.o
-  AR      arch/arm64/kernel/probes/built-in.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls2088a-qds.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-ls2088a-rdb.dtb
-  CC      drivers/block/xen-blkback/blkback.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2.dtb
-  OBJCOPY arch/arm64/kernel/vdso/vdso.so
-  CC      lib/clz_ctz.o
-  AS      arch/arm64/kernel/vdso/vdso.o
-  CC      crypto/crypto_null.o
-  CC      drivers/ata/libahci_platform.o
   CC      drivers/block/xen-blkback/xenbus.o
-  CC      block/ioprio.o
-  AR      sound/ppc/built-in.o
-  AR      arch/arm64/kernel/vdso/built-in.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dom0.dtb
-  AS      arch/arm64/kernel/head.o
-  CC      drivers/base/cpu.o
-  LDS     arch/arm64/kernel/vmlinux.lds
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-domu.dtb
-  CC      drivers/acpi/pci_root.o
-  CC      lib/bsearch.o
-  CC      net/bluetooth/hci_sock.o
-  OBJCOPY arch/arm64/kernel/efi-entry.stub.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-ddr4-arm2.dtb
-  AR      arch/arm64/kernel/built-in.o
-  CC      mm/interval_tree.o
-  CC      net/bluetooth/hci_sysfs.o
-  CC      sound/core/pcm_lib.o
-  CC      lib/find_bit.o
-  CC [M]  net/bridge/br_stp.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-ddr4-arm2-hdmi.dtb
-  CC      fs/fs_struct.o
-  CC      sound/core/pcm_misc.o
-  CC      arch/arm64/kvm/../../../virt/kvm/arm/pmu.o
-  CC      lib/llist.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2_ca53.dtb
-  CC      crypto/md4.o
-  CC      lib/memweight.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2_ca72.dtb
-  CC      lib/kfifo.o
-  CC      block/badblocks.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek.dtb
-  CC      fs/statfs.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-rpmsg.dtb
-  CC      drivers/base/firmware.o
+  CC [M]  net/8021q/vlanproc.o
+  CC      drivers/bluetooth/hci_bcm.o
   CC      mm/list_lru.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dsp.dtb
-  CC      block/bounce.o
-  CC      block/partitions/check.o
-  AR      kernel/bpf/built-in.o
-  CC      kernel/cgroup/cgroup.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-ov5640.dtb
-  CC      drivers/ata/sata_sil24.o
+  CC      drivers/acpi/pci_root.o
+  CC      crypto/rsa_helper.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-init.o
+  AS      arch/arm64/lib/memchr.o
+  CC      drivers/base/firmware.o
+  CC      arch/arm64/kernel/cpuidle.o
+  AS      arch/arm64/lib/memcmp.o
+  CC      net/9p/error.o
+  CC      crypto/rsa-pkcs1pad.o
+  CC      drivers/bluetooth/hci_qca.o
+  CC      sound/core/pcm_misc.o
+  AS      arch/arm64/lib/memcpy.o
+  CC      drivers/ata/libahci.o
+  AS      arch/arm64/lib/memmove.o
+  CC      kernel/task_work.o
+  AS      arch/arm64/lib/memset.o
+  AR      net/8021q/built-in.o
+  AS      arch/arm64/lib/strchr.o
+  LD [M]  net/8021q/8021q.o
+  CC      fs/bad_inode.o
+  CC      drivers/base/init.o
+  CC      net/9p/util.o
+  CC      lib/lockref.o
+  AS      arch/arm64/lib/strcmp.o
+  CC      drivers/ata/ahci_platform.o
+  CC      arch/arm64/kernel/jump_label.o
+  AS      arch/arm64/lib/strlen.o
+  CC      arch/arm64/kernel/efi.o
+  AS      arch/arm64/lib/strncmp.o
+  CC      mm/workingset.o
+  AS      arch/arm64/lib/strnlen.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-irqfd.o
+  AS      arch/arm64/lib/strrchr.o
   CC      drivers/acpi/pci_link.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek_ca53.dtb
-  CC      arch/arm64/kvm/hyp/../../../../virt/kvm/arm/hyp/vgic-v2-sr.o
-  CC      drivers/ata/ahci_ceva.o
+  AR      virt/lib/built-in.o
+  CC      drivers/base/map.o
+  CC      block/blk-softirq.o
+  AR      virt/built-in.o
+  CC      kernel/extable.o
+  CC      lib/bcd.o
+  CC      drivers/base/devres.o
+  AR      arch/arm64/lib/lib.a
+  EXPORTS arch/arm64/lib/lib-ksyms.o
+  CC      block/blk-timeout.o
   AR      drivers/block/xen-blkback/xen-blkback.o
   AR      drivers/block/xen-blkback/built-in.o
   CC [M]  drivers/block/nbd.o
-  CC      crypto/md5.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek_ca72.dtb
-  CC [M]  net/bridge/br_stp_bpdu.o
-  CC      drivers/base/init.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-hdmi.dtb
-  CC      block/scsi_ioctl.o
-  CC      block/partitions/msdos.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-hdmi-in.dtb
-  CC      fs/fs_pin.o
-  CC      lib/percpu-refcount.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dsi-rm67191.dtb
-  CC      drivers/base/map.o
-  CC      mm/workingset.o
-  CC      lib/percpu_ida.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-enet2-tja1100.dtb
-  CC      arch/arm64/kvm/hyp/../../../../virt/kvm/arm/hyp/vgic-v3-sr.o
-  CC      fs/nsfs.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-jdi-wuxga-lvds1-panel.dtb
-  AR      sound/sh/built-in.o
-  CC      sound/soc/soc-core.o
-  AR      sound/sparc/built-in.o
+  CC      lib/div64.o
+  CC      fs/file.o
+  AR      arch/arm64/lib/built-in.o
+  CC      block/blk-lib.o
+  CC      net/9p/protocol.o
+  CC      crypto/acompress.o
+  CC      lib/sort.o
+  CC      drivers/bluetooth/btbcm.o
+  AS      arch/arm64/kernel/efi-entry.o
+  CC      arch/arm64/kernel/pci.o
   CC      sound/core/pcm_memory.o
-  CC      crypto/rmd128.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dom0.dtb
-  CC      drivers/acpi/pci_irq.o
-  CC      block/partitions/efi.o
-  CC      sound/soc/soc-dapm.o
-  CC      drivers/base/devres.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dom0-dpu2.dtb
-  CC      drivers/ata/ahci_mvebu.o
-  CC      drivers/ata/ahci_imx.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu.dtb
-  CC [M]  net/bridge/br_stp_if.o
-  CC      sound/soc/soc-jack.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu-car.dtb
-  CC      fs/buffer.o
-  CC      lib/rhashtable.o
-  CC      mm/debug.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu-dpu1.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu-dpu1-hdmi.dtb
-  CC      sound/soc/soc-cache.o
-  CC      sound/core/memalloc.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-root.dtb
-  CC      drivers/acpi/acpi_lpss.o
-  CC      crypto/rmd160.o
-  AR      block/partitions/built-in.o
+  CC      lib/parser.o
+  CC      net/9p/trans_fd.o
+  CC      net/9p/trans_common.o
+  CC      drivers/char/mem.o
+  CC      kernel/params.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-v2.o
+  AR      sound/i2c/other/built-in.o
   CC      drivers/base/attribute_container.o
-  CC      block/bsg.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-inmate.dtb
-  CC      sound/soc/soc-utils.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dp.dtb
-  CC      arch/arm64/kvm/hyp/../../../../virt/kvm/arm/hyp/timer-sr.o
-  CC      mm/gup.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-hdmi.dtb
-  CC      sound/core/pcm_timer.o
-  CC [M]  net/bridge/br_stp_timer.o
-  CC      net/bluetooth/l2cap_core.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-hdmi-in.dtb
-  AR      drivers/block/built-in.o
-  CC      drivers/bluetooth/hci_vhci.o
-  CC      drivers/bus/arm-cci.o
-  CC      drivers/acpi/acpi_apd.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-8cam.dtb
+  AR      sound/i2c/built-in.o
+  CC      mm/debug.o
+  CC      net/bluetooth/af_bluetooth.o
+  CC      drivers/acpi/pci_irq.o
+  CC      crypto/scompress.o
+  CC      drivers/acpi/acpi_lpss.o
+  CC      lib/debug_locks.o
+  CC      lib/random32.o
+  CC      block/blk-mq.o
+  CC      lib/bust_spinlocks.o
+  CC      crypto/algboss.o
+  CC      sound/core/memalloc.o
+  CC      arch/arm64/kernel/acpi.o
+  CC      fs/filesystems.o
   CC      drivers/base/transport_class.o
-  CC      drivers/bus/brcmstb_gisb.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-it6263-dual-channel.dtb
-  CC      kernel/cgroup/namespace.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-jdi-wuxga-lvds1-panel.dtb
-  CC      sound/core/pcm_drm_eld.o
-  CC      drivers/ata/ahci_xgene.o
-  CC      lib/reciprocal_div.o
-  CC      arch/arm64/kvm/hyp/sysreg-sr.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-lpspi.dtb
-  CC      crypto/rmd256.o
-  CC      lib/once.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-lpspi-slave.dtb
-  CC      drivers/acpi/acpi_platform.o
+  CC      mm/gup.o
+  CC      drivers/ata/libahci_platform.o
+  CC      drivers/bluetooth/btqca.o
+  CC      fs/namespace.o
   CC      drivers/base/topology.o
-  CC      block/bsg-lib.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-spdif.dtb
-  AR      sound/spi/built-in.o
-  CC      sound/core/pcm_iec958.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-mqs.dtb
-  CC [M]  net/bridge/br_netlink.o
-  CC      lib/refcount.o
-  CC      drivers/bluetooth/hci_ldisc.o
-  CC      mm/highmem.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-usb3.dtb
-  CC      fs/block_dev.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dsi-rm67191.dtb
-  CC      arch/arm64/kvm/hyp/debug-sr.o
+  CC      drivers/char/random.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-v3.o
+  CC      drivers/acpi/acpi_apd.o
+  CC      kernel/kthread.o
+  CC      lib/kasprintf.o
+  CC      arch/arm64/kernel/acpi_numa.o
+  CC      net/9p/trans_virtio.o
+  CC      net/bpf/test_run.o
+  CC      lib/bitmap.o
+  CC      sound/core/pcm_timer.o
+  CC      crypto/testmgr.o
+  CC      net/bluetooth/hci_core.o
   CC      drivers/base/container.o
-  CC      lib/usercopy.o
-  CC      drivers/bus/qcom-ebi2.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-enet2-tja1100.dtb
-  DTC     arch/arm64/boot/dts/hisilicon/hi3660-hikey960.dtb
-  CC      crypto/rmd320.o
-  DTC     arch/arm64/boot/dts/hisilicon/hi3798cv200-poplar.dtb
-  CC      drivers/acpi/acpi_pnp.o
-  DTC     arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-hsic.dtb
-  DTC     arch/arm64/boot/dts/lg/lg1312-ref.dtb
-  DTC     arch/arm64/boot/dts/hisilicon/hip05-d02.dtb
-  DTC     arch/arm64/boot/dts/lg/lg1313-ref.dtb
-  CC      lib/errseq.o
-  CC      sound/core/pcm_dmaengine.o
-  CC      sound/core/rawmidi.o
-  DTC     arch/arm64/boot/dts/hisilicon/hip06-d03.dtb
-  CC      block/blk-cgroup.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8dm-lpddr4-arm2.dtb
-  CC      drivers/ata/ahci_qoriq.o
-  DTC     arch/arm64/boot/dts/hisilicon/hip07-d05.dtb
-  CC      kernel/cgroup/cgroup-v1.o
-  CC      mm/memory.o
-  CC      lib/string_helpers.o
+  CC      fs/seq_file.o
+  CC      drivers/char/misc.o
+  CC      drivers/acpi/acpi_platform.o
+  AR      drivers/bluetooth/hci_uart.o
+  AR      drivers/bluetooth/built-in.o
+  CC      lib/scatterlist.o
+  AR      drivers/block/built-in.o
+  CC      sound/core/pcm_drm_eld.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-mmio.o
   CC      drivers/base/property.o
-  CC      drivers/base/cacheinfo.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qp-lpddr4-arm2.dtb
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dp-dig-pll.dtb
-  CC      drivers/bus/sunxi-rsb.o
-  CC      sound/soc/soc-pcm.o
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qxp-lpddr4-arm2.dtb
-  AS      arch/arm64/kvm/hyp/entry.o
-  CC      arch/arm64/kvm/hyp/switch.o
-  CC      drivers/acpi/acpi_amba.o
-make[2]: *** No rule to make target 'arch/arm64/boot/dts/freescale/fsl-imx8qxp-mek-domu.dtb', needed by '__build'.  Stop.
-make[2]: *** Waiting for unfinished jobs....
-  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qxp-mek.dtb
-  AS      arch/arm64/kvm/hyp/fpsimd.o
-make[1]: *** [scripts/Makefile.build:585: arch/arm64/boot/dts/freescale] Error 2
-make: *** [arch/arm64/Makefile:138: dtbs] Error 2
-  CC      drivers/ata/sata_rcar.o
-make: *** Waiting for unfinished jobs....
-  CC      crypto/sha1_generic.o
+  CC      arch/arm64/kernel/paravirt.o
+  CC      arch/arm64/kernel/machine_kexec.o
+  CC      kernel/sys_ni.o
+  CC      crypto/cmac.o
+  AR      net/bridge/netfilter/built-in.o
+  CC [M]  net/bridge/br.o
+  CC      kernel/nsproxy.o
+  AR      net/bpf/built-in.o
   CC      net/can/af_can.o
-  CC      drivers/bluetooth/hci_serdev.o
-  CC      sound/soc/soc-io.o
-  CC [M]  net/bridge/br_netlink_tunnel.o
-  CC      lib/hexdump.o
-  CC      drivers/bus/uniphier-system-bus.o
-  CC      lib/kstrtox.o
-  CC      drivers/acpi/power.o
-  CC      net/bluetooth/l2cap_sock.o
-  CC      kernel/cgroup/pids.o
-  CC      arch/arm64/kvm/hyp/tlb.o
-  CC      block/noop-iosched.o
-  CC      crypto/sha256_generic.o
-  CC      fs/direct-io.o
-  CC      drivers/base/devtmpfs.o
-  CC      sound/core/compress_offload.o
-  CC      fs/mpage.o
-  CC      drivers/ata/pata_platform.o
-  CC      drivers/bus/vexpress-config.o
-  CC [M]  net/bridge/br_sysfs_if.o
-  CC      lib/pci_iomap.o
-  CC      drivers/bluetooth/hci_h4.o
-  CC      kernel/cgroup/cpuset.o
-  CC      block/cfq-iosched.o
-  CC      net/can/proc.o
-  AS      arch/arm64/kvm/hyp/hyp-entry.o
-  CC      lib/iomap_copy.o
-  CC      arch/arm64/kvm/hyp/s2-setup.o
-  AR      drivers/bus/built-in.o
-  CC      lib/devres.o
-  CC      drivers/bluetooth/hci_bcsp.o
-  CC      drivers/base/dma-contiguous.o
-  CC      drivers/acpi/event.o
-  CC      drivers/ata/pata_of_platform.o
-  CC      drivers/bluetooth/hci_ath.o
-  CC      crypto/sha512_generic.o
-  CC      sound/soc/soc-devres.o
-  CC      kernel/events/core.o
-  CC [M]  sound/core/hwdep.o
-  AR      drivers/cdrom/built-in.o
+  CC      drivers/ata/sata_sil24.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dtb
+  DTC     arch/arm64/boot/dts/al/alpine-v2-evp.dtb
+  CC      kernel/notifier.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-nanopi-a64.dtb
+  CC      sound/core/pcm_iec958.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dtb
+  CC      mm/highmem.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dtb
+  CC      drivers/acpi/acpi_pnp.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dtb
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dtb
+  AR      net/9p/9pnet.o
+  AR      net/9p/9pnet_virtio.o
+  AR      net/9p/built-in.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dtb
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dtb
+  CC      sound/core/pcm_dmaengine.o
+  AR      drivers/char/ipmi/built-in.o
+  CC      lib/gcd.o
+  CC [M]  net/bridge/br_device.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-prime.dtb
+  CC      drivers/char/virtio_console.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-zero-plus2.dtb
+  CC      lib/lcm.o
+  DTC     arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo2.dtb
+  CC      crypto/hmac.o
+  AS      arch/arm64/kernel/relocate_kernel.o
+  DTC     arch/arm64/boot/dts/altera/socfpga_stratix10_socdk.dtb
+  CC      lib/list_sort.o
+  DTC     arch/arm64/boot/dts/amd/amd-overdrive.dtb
+  AS      arch/arm64/kernel/cpu-reset.o
+  DTC     arch/arm64/boot/dts/amd/amd-overdrive-rev-b0.dtb
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dtb
+  DTC     arch/arm64/boot/dts/apm/apm-mustang.dtb
+  DTC     arch/arm64/boot/dts/amd/amd-overdrive-rev-b1.dtb
+  CC      mm/memory.o
+  CC      arch/arm64/kernel/crash_dump.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dtb
+  DTC     arch/arm64/boot/dts/amd/husky.dtb
+  DTC     arch/arm64/boot/dts/apm/apm-merlin.dtb
   CC      mm/mincore.o
-  AR      arch/arm64/kvm/hyp/built-in.o
-  CC      net/core/sock.o
-  AR      arch/arm64/kvm/kvm.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dtb
+  CC      kernel/ksysfs.o
+  CC      kernel/cred.o
+  CC      lib/uuid.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-mmio-v2.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dtb
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-p201.dtb
+  CC      drivers/base/cacheinfo.o
+  CC      drivers/acpi/acpi_amba.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95-pro.dtb
+  CC      lib/flex_array.o
+  CC      block/blk-mq-tag.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95-meta.dtb
+  CC      sound/core/rawmidi.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95-telos.dtb
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dtb
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-play2.dtb
+  CC      drivers/ata/ahci_ceva.o
+  CC      arch/arm64/kernel/ssbd.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-hwacom-amazetv.dtb
+  CC      kernel/reboot.o
+  CC      net/can/proc.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dtb
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dtb
+  CC      lib/iov_iter.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dtb
+  AR      sound/isa/ad1816a/built-in.o
+  CC [M]  net/bridge/br_fdb.o
+  CC      fs/xattr.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtb
+  AR      sound/isa/ad1848/built-in.o
+  AR      sound/isa/cs423x/built-in.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dtb
+  AR      sound/isa/es1688/built-in.o
+  CC      drivers/acpi/power.o
+  AR      sound/mips/built-in.o
+  AR      sound/isa/galaxy/built-in.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p231.dtb
+  CC      drivers/clk/clk-devres.o
+  AR      sound/isa/gus/built-in.o
+  CC      crypto/crypto_null.o
+  AS      arch/arm64/kernel/bpi.o
+  AR      sound/isa/msnd/built-in.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dtb
+  AR      sound/isa/opti9xx/built-in.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-q200.dtb
+  AR      sound/isa/sb/built-in.o
+  AR      arch/arm64/kernel/probes/built-in.o
+  AR      sound/isa/wavefront/built-in.o
+  CC      drivers/clocksource/timer-of.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-q201.dtb
+  AR      sound/isa/wss/built-in.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-mmio-v3.o
+  AR      sound/isa/built-in.o
+  DTC     arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dtb
+  OBJCOPY arch/arm64/kernel/vdso/vdso.so
+  AS      arch/arm64/kernel/vdso/vdso.o
+  DTC     arch/arm64/boot/dts/arm/foundation-v8.dtb
+  CC      drivers/ata/ahci_imx.o
+  CC      drivers/base/devtmpfs.o
+  DTC     arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtb
+  AR      arch/arm64/kernel/vdso/built-in.o
+  AS      arch/arm64/kernel/head.o
+  CC [M]  net/bridge/br_forward.o
+  DTC     arch/arm64/boot/dts/arm/juno.dtb
+  CC      block/blk-stat.o
+  DTC     arch/arm64/boot/dts/arm/juno-r1.dtb
+  LDS     arch/arm64/kernel/vmlinux.lds
+  CC      drivers/clk/clk-bulk.o
+  DTC     arch/arm64/boot/dts/arm/juno-r2.dtb
+  OBJCOPY arch/arm64/kernel/efi-entry.stub.o
+  AR      arch/arm64/kernel/built-in.o
+  DTC     arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dtb
+  CC      drivers/clocksource/timer-probe.o
+  CC      kernel/async.o
+  CC      fs/libfs.o
+  DTC     arch/arm64/boot/dts/arm/vexpress-v2f-1xv7-ca53x2.dtb
+  AR      drivers/char/agp/built-in.o
+  DTC     arch/arm64/boot/dts/broadcom/northstar2/ns2-svk.dtb
+  CC      net/bluetooth/hci_conn.o
   CC      net/can/raw.o
-  AR      arch/arm64/kvm/built-in.o
-  CC [M]  net/bridge/br_sysfs_br.o
-  CC      lib/hweight.o
-  CC      drivers/base/power/sysfs.o
-  CC      lib/assoc_array.o
-  CC      net/dns_resolver/dns_key.o
+  CC      drivers/char/hw_random/core.o
+  CC      crypto/md4.o
+  DTC     arch/arm64/boot/dts/broadcom/northstar2/ns2-xmc.dtb
+  CC      drivers/acpi/event.o
+  DTC     arch/arm64/boot/dts/broadcom/stingray/bcm958742k.dtb
+  DTC     arch/arm64/boot/dts/broadcom/stingray/bcm958742t.dtb
+  DTC     arch/arm64/boot/dts/broadcom/bcm2837-rpi-3-b.dtb
+  CC      drivers/clk/clkdev.o
+  CC      kernel/range.o
+  DTC     arch/arm64/boot/dts/cavium/thunder-88xx.dtb
+  DTC     arch/arm64/boot/dts/cavium/thunder2-99xx.dtb
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-kvm-device.o
+  CC      drivers/clocksource/mmio.o
+  CC      drivers/cpufreq/cpufreq.o
+  DTC     arch/arm64/boot/dts/exynos/exynos5433-tm2.dtb
+  CC      block/blk-mq-sysfs.o
+  CC      kernel/smpboot.o
+  DTC     arch/arm64/boot/dts/exynos/exynos5433-tm2e.dtb
+  CC      sound/core/compress_offload.o
+  CC      drivers/base/dma-contiguous.o
+  DTC     arch/arm64/boot/dts/exynos/exynos7-espresso.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1012a-frdm.dtb
+  CC      crypto/md5.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1012a-qds.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1012a-rdb.dtb
+  CC [M]  net/bridge/br_if.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1043a-qds.dtb
+  CC      drivers/char/hw_random/omap-rng.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dtb
+  CC      drivers/ata/ahci_mvebu.o
   CC      drivers/acpi/evged.o
-  AR      drivers/ata/libata.o
-  AR      drivers/ata/built-in.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dtb
+  CC      drivers/clocksource/rockchip_timer.o
+  CC      drivers/clk/clk.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dtb
+  CC      drivers/cpuidle/cpuidle.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1088a-qds.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls2080a-qds.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls2080a-rdb.dtb
+  CC      fs/fs-writeback.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls2080a-simu.dtb
+  CC      drivers/base/power/sysfs.o
+  CC      kernel/ucount.o
+  CC      lib/clz_ctz.o
+  CC      net/can/bcm.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls2088a-qds.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-ls2088a-rdb.dtb
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2.dtb
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-its.o
+  CC      lib/bsearch.o
+  CC      block/blk-mq-cpumap.o
+  CC      drivers/acpi/sysfs.o
+  CC      lib/find_bit.o
+  CC      drivers/char/hw_random/hisi-rng.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dom0.dtb
+  CC [M]  sound/core/hwdep.o
+  CC      drivers/clocksource/mtk_timer.o
+  CC      lib/llist.o
+  CC      crypto/rmd128.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-domu.dtb
+  CC      drivers/ata/ahci_xgene.o
+  CC      net/bluetooth/hci_event.o
+  CC      kernel/kmod.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-ddr4-arm2.dtb
+  CC      lib/memweight.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-ddr4-arm2-hdmi.dtb
+  CC      drivers/char/hw_random/bcm2835-rng.o
+  CC      lib/kfifo.o
+  CC      drivers/cpuidle/driver.o
   CC      drivers/base/power/generic_ops.o
-  CC      sound/soc/soc-ops.o
-  CC      crypto/sha3_generic.o
-  CC      drivers/base/power/common.o
-  CC      fs/proc_namespace.o
+  CC [M]  net/bridge/br_input.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2_ca53.dtb
+  CC      block/blk-mq-sched.o
+  CC      drivers/clocksource/arm_arch_timer.o
+  CC      drivers/acpi/property.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2_ca72.dtb
+  CC      drivers/cpufreq/freq_table.o
+  CC      kernel/groups.o
+  CC      crypto/rmd160.o
+  CC      drivers/char/hw_random/iproc-rng200.o
+  CC      drivers/cpuidle/governor.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek.dtb
   AR      sound/core/snd.o
   AR      sound/core/snd-timer.o
-  CC      drivers/base/power/qos.o
   AR      sound/core/snd-pcm.o
   AR      sound/core/snd-pcm-dmaengine.o
   AR      sound/core/snd-rawmidi.o
-  CC      drivers/bluetooth/hci_h5.o
   AR      sound/core/snd-compress.o
-  CC      drivers/acpi/sysfs.o
   LD [M]  sound/core/snd-hwdep.o
   AR      sound/core/built-in.o
-  CC      block/mq-deadline.o
-  CC      drivers/bluetooth/hci_bcm.o
-  CC      net/dns_resolver/dns_query.o
-  AR      kernel/cgroup/built-in.o
-  CC      block/kyber-iosched.o
-  CC      lib/bitrev.o
-  CC      lib/rational.o
   CC      mm/mlock.o
-  CC      kernel/irq/irqdesc.o
-  CC      drivers/bluetooth/hci_qca.o
-  CC      lib/crc16.o
-  CC      drivers/bluetooth/btbcm.o
-  CC      crypto/wp512.o
-  CC      fs/9p/vfs_super.o
-  CC      net/can/bcm.o
-  CC      net/bluetooth/smp.o
-  CC [M]  net/bridge/br_nf_core.o
-  CC      sound/soc/soc-generic-dmaengine-pcm.o
-  AR      net/dns_resolver/dns_resolver.o
-  AR      net/dns_resolver/built-in.o
-  CC      crypto/tgr192.o
-  CC      lib/crc-t10dif.o
-  CC      drivers/acpi/property.o
-  CC      drivers/base/power/runtime.o
-  CC      net/bluetooth/lib.o
-  CC      fs/autofs4/init.o
-  CC      lib/crc-itu-t.o
-  CC      fs/9p/vfs_inode.o
-  CC      block/compat_ioctl.o
-  CC      net/core/request_sock.o
-  CC      kernel/irq/handle.o
-  AR      fs/btrfs/built-in.o
-  CC [M]  fs/btrfs/super.o
-  CC      crypto/gf128mul.o
-  CC [M]  fs/btrfs/ctree.o
-  CC      fs/autofs4/inode.o
-  CC      sound/soc/soc-compress.o
-  CC [M]  net/bridge/br_multicast.o
-  HOSTCC  lib/gen_crc32table
-  CC      mm/mmap.o
-  CC      drivers/bluetooth/btqca.o
-  CC [M]  fs/btrfs/extent-tree.o
-  CC      kernel/irq/manage.o
-  CC      fs/autofs4/root.o
-  CC      lib/crc7.o
-  CC      drivers/acpi/debugfs.o
-  CC      drivers/base/power/wakeirq.o
-  CC      net/core/skbuff.o
-  CC      block/bio-integrity.o
+  AR      sound/parisc/built-in.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-rpmsg.dtb
+  CC      drivers/ata/ahci_qoriq.o
+  AR      sound/pci/ac97/built-in.o
+  CC      drivers/cpuidle/sysfs.o
+  AR      sound/pci/ali5451/built-in.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dsp.dtb
+  AR      sound/pci/asihpi/built-in.o
+  CC      drivers/cpufreq/cpufreq_stats.o
+  AR      sound/pci/au88x0/built-in.o
+  CC      lib/percpu-refcount.o
+  AR      sound/pci/aw2/built-in.o
+  CC      drivers/base/power/common.o
+  AR      sound/pci/ca0106/built-in.o
+  AR      sound/pci/cs46xx/built-in.o
+  AR      sound/pci/cs5535audio/built-in.o
+  AR      sound/pci/ctxfi/built-in.o
+  CC      drivers/clk/clk-divider.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-ov5640.dtb
+  CC      drivers/char/hw_random/msm-rng.o
+  AR      sound/pci/echoaudio/built-in.o
+  AR      sound/pci/emu10k1/built-in.o
   CC      net/can/gw.o
-  CC      crypto/ecb.o
-  CC      net/bluetooth/ecdh_helper.o
-  CC      lib/genalloc.o
+  AR      sound/pci/hda/built-in.o
+  CC      block/ioctl.o
+  AR      sound/pci/ice1712/built-in.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek_ca53.dtb
+  CC [M]  net/bridge/br_ioctl.o
+  AR      sound/pci/korg1212/built-in.o
+  AR      sound/pci/lola/built-in.o
+  AR      sound/pci/lx6464es/built-in.o
+  AR      sound/pci/mixart/built-in.o
+  CC      kernel/bpf/core.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek_ca72.dtb
+  AR      sound/pci/nm256/built-in.o
+  AR      sound/pci/oxygen/built-in.o
+  AR      sound/pci/pcxhr/built-in.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-hdmi.dtb
+  CC      lib/percpu_ida.o
+  AR      sound/pci/riptide/built-in.o
+  CC      fs/pnode.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/vgic/vgic-debug.o
+  AR      sound/pci/rme9652/built-in.o
+  AR      sound/pci/trident/built-in.o
+  CC      crypto/rmd256.o
+  AR      sound/pci/vx222/built-in.o
+  CC      drivers/acpi/debugfs.o
+  CC      drivers/base/power/qos.o
+  AR      sound/pci/ymfpci/built-in.o
+  CC      drivers/cpufreq/cpufreq_performance.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-hdmi-in.dtb
+  AR      sound/pci/built-in.o
+  CC      drivers/char/hw_random/xgene-rng.o
+  CC      drivers/ata/sata_rcar.o
+  AR      sound/pcmcia/pdaudiocf/built-in.o
+  CC      drivers/cpuidle/governors/menu.o
+  AR      sound/pcmcia/vx/built-in.o
+  AR      sound/pcmcia/built-in.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dsi-rm67191.dtb
+  AR      sound/ppc/built-in.o
+  AR      sound/sh/built-in.o
+  CC      sound/soc/soc-core.o
+  CC      drivers/clk/clk-fixed-factor.o
+  CC      mm/mmap.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-enet2-tja1100.dtb
+  CC      drivers/cpufreq/cpufreq_powersave.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-jdi-wuxga-lvds1-panel.dtb
+  CC      block/genhd.o
+  CC      drivers/clocksource/timer-sp804.o
   CC      drivers/acpi/numa.o
-  CC      fs/9p/vfs_inode_dotl.o
-  AR      sound/soc/adi/built-in.o
-  AR      sound/soc/amd/built-in.o
-  CC      drivers/base/power/main.o
-  AR      sound/soc/atmel/built-in.o
-  AR      sound/soc/au1x/built-in.o
-  AR      drivers/bluetooth/hci_uart.o
-  AR      drivers/bluetooth/built-in.o
-  AR      sound/soc/bcm/built-in.o
-  CC [M]  sound/soc/bcm/bcm2835-i2s.o
-  CC      fs/autofs4/symlink.o
-  CC      drivers/base/power/wakeup.o
-  CC      crypto/cbc.o
-  CC      fs/autofs4/waitq.o
-  CC      net/bluetooth/hci_request.o
-  CC      block/blk-integrity.o
-  CC      block/t10-pi.o
-  CC      lib/fonts/fonts.o
-  CC      drivers/acpi/acpi_lpat.o
-  CC      lib/lz4/lz4_decompress.o
-  CC      kernel/irq/spurious.o
+  CC      fs/splice.o
+  CC      lib/rhashtable.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dom0.dtb
+  CC      arch/arm64/kvm/../../../virt/kvm/irqchip.o
+  AR      drivers/cpuidle/governors/built-in.o
+  CC      drivers/cpuidle/dt_idle_states.o
+  CC      drivers/cpufreq/cpufreq_userspace.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-dom0-dpu2.dtb
+  CC      crypto/rmd320.o
+  CC      drivers/char/hw_random/meson-rng.o
+  CC [M]  net/bridge/br_stp.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu.dtb
+  CC      drivers/clk/clk-fixed-rate.o
+  CC      drivers/base/power/runtime.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu-car.dtb
+  CC      drivers/clocksource/dummy_timer.o
+  CC      drivers/cpuidle/cpuidle-arm.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu-dpu1.dtb
+  CC      drivers/cpufreq/cpufreq_ondemand.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-domu-dpu1-hdmi.dtb
   AR      net/can/can.o
   AR      net/can/can-raw.o
-  CC      fs/9p/vfs_addr.o
+  CC      drivers/ata/pata_platform.o
+  CC      drivers/acpi/acpi_lpat.o
   AR      net/can/can-bcm.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-root.dtb
+  CC      drivers/char/hw_random/cavium-rng.o
   AR      net/can/can-gw.o
-  CC      lib/fonts/font_8x8.o
   AR      net/can/built-in.o
-  CC      block/blk-mq-pci.o
-  CC      crypto/cts.o
-  CC      lib/fonts/font_8x16.o
-  CC      fs/autofs4/expire.o
-  LD [M]  sound/soc/bcm/snd-soc-bcm2835-i2s.o
-  AR      sound/soc/blackfin/built-in.o
-  AR      sound/soc/cirrus/built-in.o
-  CC      sound/soc/codecs/ak4458.o
-  CC      drivers/base/power/opp/core.o
+  CC      drivers/clocksource/versatile.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-mek-inmate.dtb
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/arch_timer.o
+  AR      kernel/bpf/built-in.o
+  CC      kernel/cgroup/cgroup.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dp.dtb
+  CC      drivers/clk/clk-gate.o
+  CC      fs/sync.o
+  AR      drivers/cpuidle/built-in.o
+  CC      kernel/cgroup/namespace.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-hdmi.dtb
+  CC      net/bluetooth/mgmt.o
+  CC      crypto/sha1_generic.o
+  CC      drivers/clocksource/timer-imx-gpt.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-hdmi-in.dtb
+  CC      lib/reciprocal_div.o
+  CC      drivers/char/hw_random/cavium-rng-vf.o
   CC      drivers/acpi/irq.o
-  CC      sound/soc/codecs/ak4458-i2c.o
-  AR      lib/fonts/font.o
-  CC [M]  net/bridge/br_mdb.o
-  AR      lib/fonts/built-in.o
-  CC      kernel/irq/resend.o
-  CC      fs/9p/vfs_file.o
-  CC [M]  fs/btrfs/print-tree.o
-  CC      fs/autofs4/dev-ioctl.o
-  CC      crypto/lrw.o
-  CC      block/blk-mq-virtio.o
-  CC      drivers/base/regmap/regmap.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-8cam.dtb
+  CC      block/partition-generic.o
+  CC      lib/once.o
+  CC      drivers/ata/pata_of_platform.o
+  CC      drivers/clk/clk-multiplier.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-it6263-dual-channel.dtb
+  CC      drivers/cpufreq/cpufreq_conservative.o
+  CC [M]  net/bridge/br_stp_bpdu.o
+  CC      drivers/clocksource/timer-imx-sysctr.o
+  CC      net/core/sock.o
+  CC      drivers/base/power/wakeirq.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-jdi-wuxga-lvds1-panel.dtb
+  CC      lib/refcount.o
+  CC      fs/utimes.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-lpspi.dtb
+  CC      drivers/char/hw_random/mtk-rng.o
+  CC      drivers/base/power/main.o
+  CC      drivers/clk/clk-mux.o
+  CC      crypto/sha256_generic.o
+  CC      arch/arm64/kvm/../../../virt/kvm/arm/pmu.o
+  CC      lib/usercopy.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-lpspi-slave.dtb
+  AR      drivers/clocksource/built-in.o
   CC      mm/mprotect.o
+  CC      fs/stack.o
+  CC      drivers/cpufreq/cpufreq_interactive.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-spdif.dtb
   CC      drivers/acpi/acpica/dsargs.o
-  CC      kernel/irq/chip.o
-  CC      mm/mremap.o
-  CC      net/bluetooth/mgmt_util.o
-  AR      lib/lz4/built-in.o
+  AR      drivers/ata/libata.o
+  AR      drivers/ata/built-in.o
+  CC      drivers/base/power/wakeup.o
+  CC      net/bluetooth/hci_sock.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-mqs.dtb
+  CC      lib/errseq.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-usb3.dtb
   CC      drivers/acpi/acpica/dscontrol.o
-  CC      lib/lzo/lzo1x_compress.o
-  CC      sound/soc/codecs/ak4497.o
-  CC      drivers/base/power/opp/cpu.o
-  CC      block/blk-mq-debugfs.o
-  CC      fs/9p/vfs_dir.o
-  CC      drivers/char/mem.o
-  AR      fs/autofs4/autofs4.o
-  AR      fs/autofs4/built-in.o
-  AR      sound/synth/built-in.o
-  CC      kernel/events/ring_buffer.o
-  CC      net/core/datagram.o
-  CC      mm/msync.o
+  AR      drivers/char/hw_random/rng-core.o
+  CC      drivers/clk/clk-composite.o
+  AR      drivers/char/hw_random/built-in.o
+  AR      drivers/char/built-in.o
+  CC      lib/string_helpers.o
+  CC      kernel/events/core.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dsi-rm67191.dtb
+  CC      block/ioprio.o
+  CC      fs/fs_struct.o
+  CC      sound/soc/soc-dapm.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-enet2-tja1100.dtb
+  CC      block/badblocks.o
+  CC [M]  net/bridge/br_stp_if.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-hsic.dtb
   CC      drivers/acpi/acpica/dsdebug.o
-  CC [M]  net/bridge/br_vlan.o
-  CC      crypto/xts.o
-  CC      lib/lzo/lzo1x_decompress_safe.o
-  CC      drivers/base/power/opp/of.o
-  CC      kernel/irq/dummychip.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8dm-lpddr4-arm2.dtb
+  CC      arch/arm64/kvm/hyp/../../../../virt/kvm/arm/hyp/vgic-v2-sr.o
+  CC      mm/mremap.o
+  CC      drivers/clk/clk-fractional-divider.o
+  CC      fs/statfs.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qp-lpddr4-arm2.dtb
+  CC      crypto/sha512_generic.o
+  CC      lib/hexdump.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qm-lpddr4-arm2-dp-dig-pll.dtb
   CC      drivers/acpi/acpica/dsfield.o
-  CC      drivers/char/random.o
-  AR      sound/soc/davinci/built-in.o
-  CC      net/ethernet/eth.o
-  CC      fs/9p/vfs_dentry.o
-  CC      mm/page_vma_mapped.o
-  CC      net/bluetooth/sco.o
-  CC      sound/soc/codecs/ak4613.o
-  AR      kernel/livepatch/built-in.o
-  AR      lib/lzo/lzo_compress.o
-  AR      lib/lzo/lzo_decompress.o
-  AR      lib/lzo/built-in.o
-  CC      kernel/irq/devres.o
-  CC      lib/mpi/generic_mpih-lshift.o
-  AR      block/built-in.o
-  CC      net/bluetooth/leds.o
+  CC      drivers/cpufreq/cpufreq_governor.o
+  CC      mm/msync.o
+  CC      arch/arm64/kvm/hyp/../../../../virt/kvm/arm/hyp/vgic-v3-sr.o
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qxp-lpddr4-arm2.dtb
+  CC      block/partitions/check.o
+make[2]: *** No rule to make target 'arch/arm64/boot/dts/freescale/fsl-imx8qxp-mek-domu.dtb', needed by '__build'.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+  DTC     arch/arm64/boot/dts/freescale/fsl-imx8qxp-mek.dtb
+  CC      lib/kstrtox.o
+  CC      block/partitions/msdos.o
+  CC      drivers/clk/clk-gpio.o
+make[1]: *** [scripts/Makefile.build:585: arch/arm64/boot/dts/freescale] Error 2
+make: *** [arch/arm64/Makefile:138: dtbs] Error 2
+make: *** Waiting for unfinished jobs....
+  CC      crypto/sha3_generic.o
+  CC [M]  net/bridge/br_stp_timer.o
+  CC      drivers/base/power/opp/core.o
   CC      drivers/acpi/acpica/dsinit.o
-  CC      sound/soc/codecs/ak5558.o
-  CC      drivers/base/power/opp/debugfs.o
-  CC      drivers/base/regmap/regcache.o
-  CC      kernel/events/callchain.o
-  CC      fs/9p/v9fs.o
+  CC      fs/fs_pin.o
+  CC      sound/soc/soc-jack.o
+  CC      drivers/cpufreq/cpufreq_governor_attr_set.o
+  AR      drivers/crypto/bcm/built-in.o
+  CC [M]  drivers/crypto/bcm/util.o
+  CC      kernel/events/ring_buffer.o
+  CC      drivers/dma/dmaengine.o
+  CC      mm/page_vma_mapped.o
+  CC      lib/pci_iomap.o
   CC      drivers/acpi/acpica/dsmethod.o
-  CC      crypto/ctr.o
-  CC      kernel/irq/generic-chip.o
-  CC      fs/9p/fid.o
-  CC      kernel/events/hw_breakpoint.o
+  CC      drivers/clk/clk-conf.o
+  CC      fs/nsfs.o
+  CC      drivers/cpufreq/cpufreq-dt.o
+  CC      crypto/wp512.o
+  CC      block/partitions/efi.o
+  CC      net/core/request_sock.o
+  CC      arch/arm64/kvm/hyp/../../../../virt/kvm/arm/hyp/timer-sr.o
+  CC      drivers/acpi/acpica/dsmthdat.o
+  CC [M]  net/bridge/br_netlink.o
+  CC      drivers/clk/clk-cs2000-cp.o
+  CC      lib/iomap_copy.o
+  CC      drivers/base/power/opp/cpu.o
+  CC      lib/devres.o
   CC      mm/pagewalk.o
-  CC      net/core/stream.o
-  AR      drivers/char/ipmi/built-in.o
-  CC      net/ipv4/route.o
-  CC      lib/mpi/generic_mpih-mul1.o
+  CC      fs/buffer.o
+  CC [M]  drivers/crypto/bcm/spu.o
+  CC      drivers/cpufreq/cpufreq-dt-platdev.o
+  CC      drivers/dma-buf/dma-buf.o
+  CC      drivers/acpi/acpica/dsobject.o
+  CC      kernel/irq/irqdesc.o
+  AR      block/partitions/built-in.o
+  CC      block/bounce.o
+  CC      arch/arm64/kvm/hyp/sysreg-sr.o
+  CC      drivers/clk/clk-pwm.o
+  CC      drivers/dma/virt-dma.o
+  CC      net/core/skbuff.o
+  CC      kernel/cgroup/cgroup-v1.o
+  CC      crypto/tgr192.o
+  CC      drivers/cpufreq/arm_big_little.o
+  CC      drivers/base/power/opp/of.o
+  CC      mm/pgtable-generic.o
+  CC      lib/hweight.o
+  CC      drivers/acpi/acpica/dsopcode.o
+  CC      sound/soc/soc-cache.o
+  CC      lib/assoc_array.o
+  CC [M]  drivers/crypto/bcm/spu2.o
+  CC      drivers/clk/clk-qoriq.o
+  CC      drivers/dma/acpi-dma.o
+  CC      drivers/dma-buf/dma-fence.o
+  CC      drivers/cpufreq/brcmstb-avs-cpufreq.o
+  CC      arch/arm64/kvm/hyp/debug-sr.o
+  CC      drivers/acpi/acpica/dspkginit.o
+  CC      drivers/base/power/opp/debugfs.o
+  CC      kernel/irq/handle.o
+  CC      block/scsi_ioctl.o
+  CC      crypto/gf128mul.o
+  CC      mm/rmap.o
+  CC [M]  net/bridge/br_netlink_tunnel.o
+  CC      sound/soc/soc-utils.o
+  CC      net/bluetooth/hci_sysfs.o
+  CC [M]  drivers/crypto/bcm/cipher.o
+  CC      drivers/acpi/acpica/dsutils.o
+  CC      drivers/dma-buf/dma-fence-array.o
+  CC      drivers/clk/clk-rk808.o
+  CC      drivers/dma/of-dma.o
+  CC      lib/bitrev.o
+  CC      kernel/cgroup/pids.o
+  CC      drivers/cpufreq/imx8-cpufreq.o
   AR      drivers/base/power/opp/built-in.o
   CC      drivers/base/power/domain.o
-  AR      net/ethernet/built-in.o
-  CC      lib/mpi/generic_mpih-mul2.o
-  CC      lib/mpi/generic_mpih-mul3.o
-  CC      drivers/acpi/acpica/dsmthdat.o
-  CC      sound/soc/codecs/cs42xx8.o
-  CC      lib/mpi/generic_mpih-rshift.o
-  CC      drivers/base/regmap/regcache-rbtree.o
-  CC      mm/pgtable-generic.o
-  CC [M]  net/bridge/br_vlan_tunnel.o
-  CC      kernel/irq/autoprobe.o
-  CC      fs/9p/xattr.o
-  AR      sound/soc/dwc/built-in.o
-  AR      lib/raid6/built-in.o
-  CC      net/bluetooth/hci_debugfs.o
-  CC [M]  lib/raid6/algos.o
-  CC      crypto/gcm.o
-  CC      drivers/char/misc.o
+  CC      lib/rational.o
+  CC      lib/crc16.o
+  AS      arch/arm64/kvm/hyp/entry.o
+  CC      arch/arm64/kvm/hyp/switch.o
+  CC      kernel/irq/manage.o
+  CC      sound/soc/soc-pcm.o
+  CC      drivers/acpi/acpica/dswexec.o
+  CC      crypto/ecb.o
+  CC      drivers/dma-buf/reservation.o
+  CC      lib/crc-t10dif.o
+  CC      block/bsg.o
+  CC      net/bluetooth/l2cap_core.o
+  CC      kernel/cgroup/cpuset.o
+  CC      drivers/clk/clk-s2mps11.o
+  CC [M]  net/bridge/br_sysfs_if.o
+  CC      drivers/acpi/acpica/dswload.o
+  CC      drivers/cpufreq/imx8mq-cpufreq.o
+  CC      drivers/dma/fsl-edma-v3.o
+  CC      lib/crc-itu-t.o
+  CC      crypto/cbc.o
+  CC      fs/block_dev.o
+  AS      arch/arm64/kvm/hyp/fpsimd.o
+  CC      mm/vmalloc.o
+  CC      drivers/dma-buf/seqno-fence.o
+  CC      arch/arm64/kvm/hyp/tlb.o
+  CC      drivers/acpi/acpica/dswload2.o
+  HOSTCC  lib/gen_crc32table
+  CC      drivers/clk/clk-scpi.o
+  CC      kernel/irq/spurious.o
+  CC      lib/crc7.o
+  CC      drivers/cpufreq/scpi-cpufreq.o
+  CC      drivers/acpi/acpica/dswscope.o
+  CC      block/bsg-lib.o
+  CC [M]  net/bridge/br_sysfs_br.o
+  CC      drivers/base/power/domain_governor.o
+  CC      crypto/cts.o
+  CC      kernel/events/callchain.o
+  CC      drivers/dma-buf/sync_file.o
+  CC      drivers/dma/imx-sdma.o
+  CC      lib/genalloc.o
+  CC      drivers/acpi/acpica/dswstate.o
+  CC      drivers/clk/clk-xgene.o
+  AS      arch/arm64/kvm/hyp/hyp-entry.o
+  CC      drivers/cpufreq/tegra20-cpufreq.o
+  CC      arch/arm64/kvm/hyp/s2-setup.o
+  LD [M]  drivers/crypto/bcm/bcm_crypto_spu.o
+  CC      drivers/crypto/caam/ctrl.o
+  CC      kernel/irq/resend.o
+  CC      drivers/base/power/clock_ops.o
+  CC      block/blk-cgroup.o
+  AR      kernel/cgroup/built-in.o
+  CC      fs/direct-io.o
+  CC      drivers/cpufreq/tegra124-cpufreq.o
+  CC      drivers/acpi/acpica/evevent.o
+  CC      sound/soc/soc-io.o
+  CC      kernel/events/hw_breakpoint.o
+  CC      crypto/lrw.o
+  CC      kernel/irq/chip.o
+  AR      arch/arm64/kvm/hyp/built-in.o
+  AR      arch/arm64/kvm/kvm.o
+  AR      arch/arm64/kvm/built-in.o
+  CC      kernel/irq/dummychip.o
+  AR      drivers/dma-buf/built-in.o
+  CC      drivers/acpi/acpica/evgpe.o
+  CC      sound/soc/soc-devres.o
+  CC      drivers/clk/bcm/clk-iproc-armpll.o
+  CC      drivers/clk/bcm/clk-iproc-pll.o
+  AR      drivers/base/power/built-in.o
+  CC [M]  drivers/cpufreq/cppc_cpufreq.o
+  CC      drivers/base/regmap/regmap.o
+  CC      lib/fonts/fonts.o
+  CC      drivers/acpi/acpica/evgpeblk.o
+  CC [M]  net/bridge/br_nf_core.o
+  CC      mm/process_vm_access.o
+  CC [M]  net/bridge/br_multicast.o
+  CC      block/noop-iosched.o
+  CC      drivers/base/regmap/regcache.o
   AR      kernel/events/built-in.o
+  CC      sound/soc/soc-ops.o
+  AR      drivers/crypto/virtio/built-in.o
+  CC [M]  drivers/crypto/virtio/virtio_crypto_algs.o
+  CC      drivers/acpi/acpica/evgpeinit.o
+  CC      lib/fonts/font_8x8.o
+  CC      lib/fonts/font_8x16.o
+  CC      drivers/crypto/caam/jr.o
+  CC      crypto/xts.o
+  CC      drivers/clk/bcm/clk-iproc-asiu.o
+  CC      drivers/dma/k3dma.o
+  CC      net/core/datagram.o
+  CC [M]  drivers/crypto/virtio/virtio_crypto_mgr.o
+  CC      drivers/acpi/acpica/evgpeutil.o
+  AR      drivers/cpufreq/built-in.o
+  CC [M]  drivers/crypto/virtio/virtio_crypto_core.o
+  CC      block/cfq-iosched.o
+  CC      kernel/irq/devres.o
+  AR      lib/fonts/font.o
+  AR      lib/fonts/built-in.o
+  CC      lib/lz4/lz4_decompress.o
+  CC      net/dns_resolver/dns_key.o
+  CC      mm/init-mm.o
+  CC      net/ethernet/eth.o
+  CC      drivers/acpi/acpica/evglock.o
+  CC      net/dns_resolver/dns_query.o
+  CC      sound/soc/soc-generic-dmaengine-pcm.o
+  CC      mm/nobootmem.o
+  CC      drivers/clk/bcm/clk-bcm2835.o
+  CC      drivers/acpi/acpica/evhandler.o
+  CC      kernel/irq/generic-chip.o
+  CC      fs/mpage.o
+  CC [M]  net/bridge/br_mdb.o
+  CC      net/ipv4/route.o
+  AR      net/dns_resolver/dns_resolver.o
+  AR      net/dns_resolver/built-in.o
+  AR      kernel/livepatch/built-in.o
+  CC      drivers/acpi/apei/apei-base.o
+  CC      crypto/ctr.o
+  CC      drivers/acpi/acpica/evmisc.o
+  CC      drivers/dma/mv_xor_v2.o
+  CC      drivers/base/regmap/regcache-rbtree.o
+  CC      net/core/stream.o
+  CC      mm/fadvise.o
+  LD [M]  drivers/crypto/virtio/virtio_crypto.o
+  CC      net/bluetooth/l2cap_sock.o
+  CC      sound/soc/soc-compress.o
+  CC      drivers/acpi/acpica/evregion.o
+  CC      drivers/base/regmap/regcache-flat.o
+  CC      drivers/crypto/caam/key_gen.o
+  CC      kernel/irq/autoprobe.o
+  AR      net/ethernet/built-in.o
+  CC      kernel/locking/mutex.o
+  CC      drivers/clk/bcm/clk-bcm2835-aux.o
+  CC      fs/proc_namespace.o
+  CC      net/ipv4/inetpeer.o
+  CC      crypto/gcm.o
+  CC      drivers/acpi/arm64/iort.o
+  CC      mm/madvise.o
+  AR      lib/lz4/built-in.o
+  CC [M]  net/bridge/br_vlan.o
+  CC      drivers/base/regmap/regmap-debugfs.o
+  CC      lib/lzo/lzo1x_compress.o
+  CC      drivers/acpi/apei/hest.o
+  CC      drivers/acpi/acpica/evrgnini.o
+  CC      kernel/irq/irqdomain.o
+  CC      drivers/dma/mxs-dma.o
+  CC      drivers/clk/bcm/clk-ns2.o
+  CC      block/mq-deadline.o
+  CC      kernel/locking/semaphore.o
+  AR      sound/soc/adi/built-in.o
+  AR      sound/soc/amd/built-in.o
+  CC      net/core/scm.o
+  AR      sound/soc/atmel/built-in.o
+  CC      fs/9p/vfs_super.o
+  AR      sound/soc/au1x/built-in.o
+  AR      sound/soc/bcm/built-in.o
+  CC [M]  sound/soc/bcm/bcm2835-i2s.o
+  CC      drivers/acpi/acpica/evsci.o
+  CC      lib/lzo/lzo1x_decompress_safe.o
+  CC      drivers/crypto/caam/error.o
+  CC      drivers/clk/bcm/clk-sr.o
+  CC      mm/memblock.o
+  CC      drivers/acpi/apei/erst.o
+  CC      kernel/locking/rwsem.o
+  CC      drivers/base/regmap/regmap-i2c.o
+  CC      net/bluetooth/smp.o
+  AR      lib/lzo/lzo_compress.o
+  AR      lib/lzo/lzo_decompress.o
+  CC      drivers/acpi/acpica/evxface.o
+  AR      lib/lzo/built-in.o
+  CC      lib/mpi/generic_mpih-lshift.o
+  CC      drivers/dma/pl330.o
+  CC      net/bluetooth/lib.o
+  AR      drivers/clk/bcm/built-in.o
+  CC      drivers/acpi/arm64/gtdt.o
+  CC      drivers/clk/berlin/berlin2-avpll.o
+  LD [M]  sound/soc/bcm/snd-soc-bcm2835-i2s.o
+  AR      sound/soc/blackfin/built-in.o
+  CC      fs/9p/vfs_inode.o
+  AR      sound/soc/cirrus/built-in.o
+  CC      block/kyber-iosched.o
+  CC      crypto/ccm.o
+  CC      sound/soc/codecs/ak4458.o
+  CC      kernel/locking/percpu-rwsem.o
+  CC      net/core/gen_stats.o
+  CC      drivers/acpi/acpica/evxfevnt.o
+  CC      kernel/irq/proc.o
+  CC      drivers/base/regmap/regmap-spi.o
+  CC      lib/mpi/generic_mpih-mul1.o
+  CC      drivers/clk/berlin/berlin2-pll.o
+  CC      drivers/crypto/caam/inst_rng.o
+  CC      kernel/locking/spinlock.o
+  CC [M]  net/bridge/br_vlan_tunnel.o
+  AR      drivers/acpi/arm64/built-in.o
+  CC      drivers/acpi/acpica/evxfgpe.o
+  CC      drivers/base/regmap/regmap-spmi.o
+  CC      fs/9p/vfs_inode_dotl.o
+  CC      net/ipv4/protocol.o
+  CC      drivers/acpi/apei/bert.o
+  CC      lib/mpi/generic_mpih-mul2.o
+  CC      drivers/clk/berlin/berlin2-div.o
+  CC      kernel/locking/osq_lock.o
+  CC      mm/page_io.o
+  CC      drivers/acpi/acpica/evxfregn.o
+  CC      kernel/irq/cpuhotplug.o
+  CC      drivers/dma/qcom/bam_dma.o
+  CC      sound/soc/codecs/ak4458-i2c.o
+  CC      block/compat_ioctl.o
+  CC      net/core/gen_estimator.o
+  CC      drivers/base/regmap/regmap-mmio.o
+  CC      net/core/net_namespace.o
+  CC      kernel/locking/rtmutex.o
+  CC      drivers/acpi/acpica/exconcat.o
+  CC      drivers/acpi/apei/ghes.o
+  CC      lib/mpi/generic_mpih-mul3.o
+  AR      drivers/clk/berlin/built-in.o
+  CC      drivers/clk/hisilicon/clk.o
+  CC      crypto/chacha20poly1305.o
+  CC      sound/soc/codecs/ak4497.o
+  CC      kernel/irq/pm.o
+  CC      net/ipv4/ip_input.o
+  CC      fs/9p/vfs_addr.o
+  CC      drivers/acpi/acpica/exconfig.o
+  CC      mm/swap_state.o
+  CC      drivers/crypto/caam/caamalg.o
+  CC      crypto/cryptd.o
+  CC [M]  net/bridge/br_netfilter_hooks.o
+  CC      lib/mpi/generic_mpih-rshift.o
+  CC      drivers/base/regmap/regmap-irq.o
+  CC      kernel/locking/rwsem-xadd.o
+  CC      crypto/des_generic.o
+  CC      drivers/clk/hisilicon/clkgate-separated.o
+  CC      block/bio-integrity.o
+  CC      drivers/dma/qcom/hidma_mgmt.o
+  CC      drivers/acpi/acpica/exconvrt.o
+  CC      kernel/irq/msi.o
+  CC      lib/mpi/generic_mpih-sub1.o
+  CC      fs/9p/vfs_file.o
+  AR      drivers/acpi/apei/apei.o
+  CC      sound/soc/codecs/ak4613.o
+  AR      drivers/acpi/apei/built-in.o
+  CC      kernel/irq/affinity.o
+  CC      drivers/clk/hisilicon/clkdivider-hi6220.o
+  CC      drivers/acpi/acpica/excreate.o
+  CC      net/ipv4/ip_fragment.o
+  AR      kernel/locking/built-in.o
+  CC      drivers/edac/edac_mc.o
+  CC      net/core/secure_seq.o
+  CC      net/bluetooth/ecdh_helper.o
+  CC      lib/mpi/generic_mpih-add1.o
+  CC      mm/swapfile.o
+  CC      kernel/power/qos.o
+  CC      drivers/dma/qcom/hidma_mgmt_sys.o
+  CC      drivers/clk/hisilicon/crg-hi3516cv300.o
+  CC      kernel/printk/printk.o
+  AR      kernel/irq/built-in.o
+  CC      drivers/dma/qcom/hidma_ll.o
+  CC      drivers/acpi/acpica/exdebug.o
+  CC      block/blk-integrity.o
+  AR      drivers/base/regmap/built-in.o
+  AR      drivers/base/test/built-in.o
+  CC      drivers/base/dma-mapping.o
+  CC      drivers/acpi/acpica/exdump.o
+  CC      sound/soc/codecs/ak5558.o
+  CC      lib/mpi/mpicoder.o
+  CC      crypto/blowfish_generic.o
+  CC      fs/9p/vfs_dir.o
+  CC [M]  net/bridge/br_netfilter_ipv6.o
+  CC      fs/9p/vfs_dentry.o
+  CC      net/bluetooth/hci_request.o
+  CC      drivers/acpi/acpica/exfield.o
+  CC      drivers/clk/hisilicon/clk-hi3519.o
+  CC      net/core/flow_dissector.o
+  CC      drivers/clk/hisilicon/clk-hi3660.o
+  CC      drivers/dma/qcom/hidma.o
+  CC      block/t10-pi.o
+  CC      lib/mpi/mpi-bit.o
+  CC      drivers/acpi/acpica/exfldio.o
+  CC      kernel/power/main.o
+  CC      crypto/blowfish_common.o
+  CC      sound/soc/codecs/cs42xx8.o
+  CC      drivers/edac/edac_device.o
+  AR      lib/raid6/built-in.o
+  CC [M]  lib/raid6/algos.o
   CC      lib/xz/xz_dec_syms.o
+  CC      drivers/clk/hisilicon/crg-hi3798cv200.o
+  CC      net/ipv4/ip_forward.o
+  CC      fs/9p/v9fs.o
+  CC      lib/mpi/mpi-cmp.o
+  CC      drivers/base/dma-coherent.o
+  CC      drivers/acpi/acpica/exmisc.o
+  CC      lib/xz/xz_dec_stream.o
+  CC      block/blk-mq-pci.o
+  CC      crypto/twofish_generic.o
+  AR      net/bridge/built-in.o
+  LD [M]  net/bridge/bridge.o
+  LD [M]  net/bridge/br_netfilter.o
   CC [M]  lib/raid6/recov.o
-  CC      drivers/acpi/acpica/dsobject.o
+  CC      drivers/clk/hisilicon/clk-hi6220.o
+  CC      drivers/edac/edac_mc_sysfs.o
+  CC      drivers/acpi/acpica/exmutex.o
+  CC      lib/mpi/mpih-cmp.o
+  CC      drivers/crypto/caam/caamalg_desc.o
+  CC      kernel/power/console.o
+  CC      drivers/dma/qcom/hidma_dbg.o
+  CC      sound/soc/codecs/cs42xx8-i2c.o
+  CC      drivers/base/firmware_class.o
+  CC      fs/9p/fid.o
+  CC      block/blk-mq-virtio.o
+  CC      kernel/printk/printk_safe.o
+  CC      lib/xz/xz_dec_lzma2.o
+  CC      net/ipv4/ip_options.o
+  AR      sound/sparc/built-in.o
+  CC      drivers/acpi/acpica/exnames.o
+  CC      drivers/edac/edac_module.o
   HOSTCC  lib/raid6/mktables
+  CC      crypto/twofish_common.o
+  CC      net/core/sysctl_net_core.o
+  CC      net/bluetooth/mgmt_util.o
+  CC      drivers/clk/hisilicon/reset.o
+  CC      lib/mpi/mpih-div.o
+  CC      mm/dmapool.o
   UNROLL  lib/raid6/int1.c
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
-  CC      sound/soc/codecs/cs42xx8-i2c.o
-  CC      lib/mpi/generic_mpih-sub1.o
-  CC      net/core/scm.o
-  CC      lib/xz/xz_dec_stream.o
-  AR      fs/9p/9p.o
-  CC      drivers/base/regmap/regcache-flat.o
-  CC      kernel/irq/irqdomain.o
-  AR      fs/9p/built-in.o
-  CC      lib/xz/xz_dec_lzma2.o
-  CC      mm/rmap.o
-  CC      sound/soc/fsl/fsl_acm.o
-  CC      crypto/ccm.o
-  CC      drivers/base/power/domain_governor.o
+  AR      drivers/dma/qcom/hdma_mgmt.o
   UNROLL  lib/raid6/int2.c
-  CC      drivers/char/virtio_console.o
+  AR      kernel/printk/built-in.o
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+  AR      drivers/dma/qcom/hdma.o
+  CC      net/core/dev.o
   UNROLL  lib/raid6/int4.c
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+  AR      drivers/dma/qcom/built-in.o
   UNROLL  lib/raid6/int8.c
+  CC      sound/soc/codecs/fsl_mqs.o
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
   UNROLL  lib/raid6/int16.c
+  CC      drivers/dma/sh/shdma-base.o
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
   UNROLL  lib/raid6/int32.c
-  CC      drivers/acpi/acpica/dsopcode.o
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
   CC [M]  lib/raid6/neon.o
-  CC      sound/soc/codecs/fsl_mqs.o
-  CC      lib/mpi/generic_mpih-add1.o
-  CC      drivers/base/regmap/regmap-debugfs.o
-  UNROLL  lib/raid6/neon1.c
-  CC      drivers/acpi/acpica/dspkginit.o
-awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
-  CC      kernel/irq/proc.o
-  CC      sound/soc/fsl/fsl_amix.o
-  CC [M]  net/bridge/br_netfilter_hooks.o
-  CC      kernel/locking/mutex.o
+  CC      kernel/power/process.o
+  CC      block/blk-mq-debugfs.o
+  CC      drivers/acpi/acpica/exoparg1.o
+  CC      net/ipv4/ip_output.o
+  CC      fs/9p/xattr.o
+  CC      drivers/edac/edac_device_sysfs.o
   CC      lib/xz/xz_dec_bcj.o
-  CC      drivers/base/power/clock_ops.o
+  CC      drivers/clk/hisilicon/clk-hi6220-stub.o
+  CC      lib/mpi/mpih-mul.o
+  CC      sound/soc/codecs/hdmi-codec.o
+  UNROLL  lib/raid6/neon1.c
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
   UNROLL  lib/raid6/neon2.c
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
   UNROLL  lib/raid6/neon4.c
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
   UNROLL  lib/raid6/neon8.c
 awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+  CC      drivers/acpi/acpica/exoparg2.o
   CC [M]  lib/raid6/recov_neon.o
-  CC      kernel/locking/semaphore.o
-  CC      net/bluetooth/bnep/core.o
-  CC      drivers/acpi/acpica/dsutils.o
-  CC      net/core/gen_stats.o
-  CC      lib/mpi/mpicoder.o
-  CC      sound/soc/codecs/hdmi-codec.o
-  CC      net/bluetooth/bnep/sock.o
-  CC      kernel/irq/cpuhotplug.o
-  CC      drivers/base/regmap/regmap-i2c.o
-  CC      crypto/chacha20poly1305.o
+  CC      mm/hugetlb.o
+  AR      fs/9p/9p.o
+  AR      fs/9p/built-in.o
+  CC      fs/autofs4/init.o
+  CC      crypto/serpent_generic.o
   AR      lib/xz/xz_dec.o
+  CC      drivers/base/node.o
   AR      lib/xz/built-in.o
-  AR      sound/usb/6fire/built-in.o
-  CC [M]  lib/raid6/recov_neon_inner.o
-  AR      drivers/base/power/built-in.o
-  CC [M]  fs/btrfs/root-tree.o
-  AR      sound/usb/bcd2000/built-in.o
-  CC      sound/soc/fsl/fsl_asrc.o
-  AR      sound/usb/caiaq/built-in.o
-  CC [M]  fs/btrfs/dir-item.o
-  CC      sound/soc/generic/simple-card-utils.o
-  AR      sound/usb/hiface/built-in.o
-  AR      sound/usb/misc/built-in.o
-  CC      net/ipv4/inetpeer.o
-  CC      drivers/acpi/acpica/dswexec.o
-  AR      sound/usb/usx2y/built-in.o
-  CC      kernel/locking/rwsem.o
-  CC [M]  sound/usb/card.o
-  CC      mm/vmalloc.o
-  AR      drivers/char/agp/built-in.o
-  CC      kernel/irq/pm.o
-  CC      lib/mpi/mpi-bit.o
-  CC      drivers/char/hw_random/core.o
-  CC      drivers/base/regmap/regmap-spi.o
-  TABLE   lib/raid6/tables.c
-  CC [M]  lib/raid6/int1.o
-  CC      kernel/locking/percpu-rwsem.o
+  CC      mm/mempolicy.o
+  CC      net/bluetooth/sco.o
+  CC      drivers/edac/wq.o
+  CC      kernel/power/suspend.o
+  AR      drivers/clk/hisilicon/built-in.o
+  AR      drivers/clk/imgtec/built-in.o
+  CC      drivers/crypto/caam/caamhash.o
+  CC      drivers/clk/imx/clk.o
   CC      sound/soc/codecs/wm8524.o
-  CC      net/core/gen_estimator.o
-  CC      drivers/char/hw_random/omap-rng.o
-  CC [M]  net/bridge/br_netfilter_ipv6.o
-  CC      drivers/acpi/acpica/dswload.o
-  CC      net/bluetooth/bnep/netdev.o
-  CC      sound/soc/generic/simple-card.o
-  CC      lib/mpi/mpi-cmp.o
-  CC      kernel/locking/spinlock.o
-  CC      drivers/char/hw_random/hisi-rng.o
-  CC      crypto/cryptd.o
-  CC      kernel/irq/msi.o
-  CC      net/ipv4/protocol.o
-  CC      drivers/base/regmap/regmap-spmi.o
-  CC [M]  lib/raid6/int2.o
-  CC      drivers/acpi/acpica/dswload2.o
-  CC [M]  sound/usb/clock.o
-  CC [M]  lib/raid6/int4.o
-  CC [M]  fs/btrfs/file-item.o
-  CC      sound/soc/codecs/wm8960.o
-  CC [M]  lib/raid6/int8.o
-  CC      kernel/locking/osq_lock.o
-  CC      lib/mpi/mpih-cmp.o
-  CC      net/core/net_namespace.o
-  CC      drivers/char/hw_random/bcm2835-rng.o
-  CC      drivers/acpi/acpica/dswscope.o
-  AR      sound/soc/generic/snd-soc-simple-card-utils.o
-  AR      sound/soc/generic/snd-soc-simple-card.o
-  CC      drivers/base/regmap/regmap-mmio.o
-  AR      sound/soc/generic/built-in.o
-  CC      drivers/base/regmap/regmap-irq.o
-  AR      net/bluetooth/bnep/bnep.o
-  AR      net/bluetooth/bnep/built-in.o
-  CC      net/bluetooth/hidp/core.o
-  AR      sound/x86/built-in.o
-  CC      net/core/secure_seq.o
-  CC      kernel/irq/affinity.o
-  AR      net/bridge/built-in.o
-  LD [M]  net/bridge/bridge.o
-  CC      drivers/clk/clk-devres.o
-  CC      sound/soc/fsl/fsl_asrc_dma.o
-  LD [M]  net/bridge/br_netfilter.o
-  CC      kernel/locking/rtmutex.o
-  CC      net/ipv6/af_inet6.o
-  CC      lib/mpi/mpih-div.o
-  CC      net/ipv4/ip_input.o
-  CC      drivers/acpi/acpica/dswstate.o
-  CC [M]  sound/usb/endpoint.o
-  CC      drivers/char/hw_random/iproc-rng200.o
-  CC [M]  lib/raid6/int16.o
-  CC      crypto/des_generic.o
-  CC      sound/soc/codecs/wm8962.o
-  CC [M]  sound/usb/format.o
-  CC      drivers/clk/clk-bulk.o
-  AR      kernel/irq/built-in.o
-  CC [M]  lib/raid6/int32.o
-  CC      lib/mpi/mpih-mul.o
-  AR      drivers/base/regmap/built-in.o
-  CC      drivers/char/hw_random/msm-rng.o
-  CC      drivers/acpi/acpica/evevent.o
-  AR      drivers/base/test/built-in.o
-  CC      drivers/base/dma-mapping.o
-  CC      mm/process_vm_access.o
-  CC      kernel/locking/rwsem-xadd.o
-  CC      sound/soc/fsl/fsl_dsp.o
-  CC      drivers/char/hw_random/xgene-rng.o
-  CC      drivers/clk/clkdev.o
-  CC      drivers/char/hw_random/meson-rng.o
-  CC [M]  fs/btrfs/inode-item.o
-  CC      net/core/flow_dissector.o
-  CC      drivers/acpi/acpica/evgpe.o
-  CC      net/core/sysctl_net_core.o
-  CC [M]  lib/raid6/neon1.o
-  CC      net/ipv4/ip_fragment.o
-  CC      drivers/acpi/apei/apei-base.o
-  CC      net/bluetooth/hidp/sock.o
-  AR      kernel/locking/built-in.o
-  CC      crypto/blowfish_generic.o
-  CC      kernel/power/qos.o
-  CC      drivers/acpi/acpica/evgpeblk.o
-  CC [M]  sound/usb/helper.o
+  CC      drivers/acpi/acpica/exoparg3.o
+  AR      block/built-in.o
+  CC [M]  lib/raid6/recov_neon_inner.o
+  CC      drivers/dma/sh/shdma-of.o
+  CC      fs/autofs4/inode.o
   CC      lib/mpi/mpi-pow.o
-  CC      net/ipv6/anycast.o
-  CC      mm/init-mm.o
-  CC      drivers/clk/clk.o
-  CC      kernel/printk/printk.o
-  CC      drivers/base/dma-coherent.o
-  CC      drivers/char/hw_random/cavium-rng.o
-  CC [M]  lib/raid6/neon2.o
-  CC      drivers/acpi/acpica/evgpeinit.o
-  CC      mm/nobootmem.o
-  CC [M]  sound/usb/mixer.o
-  CC      sound/soc/codecs/rpmsg_wm8960.o
-  CC      sound/soc/fsl/fsl_dsp_proxy.o
-  CC      crypto/blowfish_common.o
-  CC      drivers/acpi/apei/hest.o
+  CC      kernel/power/suspend_test.o
+  CC      crypto/aes_generic.o
+  CC      drivers/clk/imx/clk-imx8qm.o
+  TABLE   lib/raid6/tables.c
+  CC      drivers/edac/edac_pci.o
+  CC [M]  lib/raid6/int1.o
+  CC      drivers/acpi/acpica/exoparg6.o
+  CC      drivers/base/module.o
+  CC      sound/soc/codecs/wm8960.o
+  CC      drivers/dma/sh/rcar-dmac.o
+  CC      drivers/clk/imx/clk-imx8.o
+  CC      fs/autofs4/root.o
+  CC      drivers/acpi/acpica/exprep.o
   CC      lib/mpi/mpiutil.o
-  CC [M]  fs/btrfs/inode-map.o
-  CC      sound/soc/fsl/fsl_dsp_pool.o
-  CC      drivers/acpi/acpica/evgpeutil.o
-  CC      drivers/char/hw_random/cavium-rng-vf.o
-  CC      kernel/power/main.o
-  CC [M]  lib/raid6/neon4.o
-  AR      net/bluetooth/hidp/hidp.o
-  AR      net/bluetooth/hidp/built-in.o
-  CC      net/bluetooth/rfcomm/core.o
-  CC      drivers/base/firmware_class.o
-  CC      net/ipv4/ip_forward.o
-  CC      mm/fadvise.o
-  CC      net/ipv6/ip6_output.o
+  CC      kernel/power/poweroff.o
+  CC      drivers/base/hypervisor.o
+  CC [M]  lib/raid6/int2.o
+  CC      drivers/edac/edac_pci_sysfs.o
+  AR      kernel/power/built-in.o
+  CC      kernel/rcu/update.o
+  CC      kernel/sched/core.o
+  CC      net/bluetooth/leds.o
+  CC      drivers/acpi/acpica/exregion.o
+  CC      drivers/base/soc.o
+  CC      kernel/sched/loadavg.o
+  CC      net/ipv4/ip_sockglue.o
   AR      lib/mpi/mpi.o
   AR      lib/mpi/built-in.o
-  CC      crypto/twofish_generic.o
-  CC      mm/madvise.o
-  CC [M]  lib/raid6/neon8.o
-  CC      drivers/char/hw_random/mtk-rng.o
-  CC      drivers/acpi/acpica/evglock.o
-  CC      net/bluetooth/rfcomm/sock.o
-  CC      drivers/acpi/apei/erst.o
-  CC      net/core/dev.o
-  CC      kernel/power/console.o
-  CC      sound/soc/fsl/fsl_dsp_library_load.o
-  CC      sound/soc/codecs/rpmsg_cs42xx8.o
-  CC      drivers/acpi/acpica/evhandler.o
-  CC [M]  fs/btrfs/disk-io.o
-  AR      drivers/char/hw_random/rng-core.o
-  CC [M]  lib/raid6/tables.o
-  AR      drivers/char/hw_random/built-in.o
-  AR      drivers/char/built-in.o
-  CC      drivers/base/node.o
-  CC      kernel/rcu/update.o
-  CC      drivers/acpi/acpica/evmisc.o
-  CC      crypto/twofish_common.o
-  CC      kernel/power/process.o
-  CC      drivers/clk/clk-divider.o
-  CC      net/ipv4/ip_options.o
-  CC [M]  sound/usb/mixer_quirks.o
   CC      kernel/rcu/sync.o
-  CC      mm/memblock.o
-  CC      drivers/acpi/acpica/evregion.o
-  CC      sound/soc/fsl/fsl_dsp_xaf_api.o
-  CC      sound/soc/codecs/rpmsg_ak4497.o
-  CC      kernel/printk/printk_safe.o
-  CC      drivers/base/module.o
-  LD [M]  lib/raid6/raid6_pq.o
-  CC      drivers/acpi/apei/bert.o
-  CC      lib/zlib_deflate/deflate.o
-  CC      drivers/base/hypervisor.o
-  CC      lib/zlib_deflate/deftree.o
-  CC      kernel/power/suspend.o
-  CC      net/bluetooth/rfcomm/tty.o
-  CC      kernel/rcu/srcutree.o
-  CC      drivers/clk/clk-fixed-factor.o
-  CC      drivers/acpi/acpica/evrgnini.o
-  CC      crypto/serpent_generic.o
-  CC      kernel/rcu/tree.o
-  AR      kernel/printk/built-in.o
-  CC      kernel/rcu/rcu_segcblist.o
-  CC      sound/soc/fsl/fsl_dsp_cpu.o
-  CC      drivers/base/soc.o
-  CC      drivers/acpi/apei/ghes.o
-  CC      net/ipv4/ip_output.o
-  CC      drivers/acpi/acpica/evsci.o
-  AR      sound/soc/codecs/snd-soc-ak4458.o
-  AR      sound/soc/codecs/snd-soc-ak4458-i2c.o
-  AR      sound/soc/codecs/snd-soc-ak4497.o
-  AR      sound/soc/codecs/snd-soc-ak4613.o
-  AR      sound/soc/codecs/snd-soc-ak5558.o
-  AR      sound/soc/codecs/snd-soc-cs42xx8.o
-  AR      sound/soc/codecs/snd-soc-cs42xx8-i2c.o
-  AR      sound/soc/codecs/snd-soc-fsl-mqs.o
-  AR      sound/soc/codecs/snd-soc-hdmi-codec.o
-  CC [M]  sound/usb/mixer_scarlett.o
-  AR      sound/soc/codecs/snd-soc-wm8524.o
-  AR      sound/soc/codecs/snd-soc-wm8960.o
-  CC      sound/last.o
-  AR      sound/soc/codecs/snd-soc-wm8962.o
-  CC      drivers/clk/clk-fixed-rate.o
-  AR      sound/soc/codecs/snd-soc-rpmsg-wm8960.o
-  AR      sound/soc/codecs/snd-soc-rpmsg-cs42xx8.o
-  AR      sound/soc/codecs/snd-soc-rpmsg-ak4497.o
-  CC      lib/zlib_deflate/deflate_syms.o
-  AR      sound/soc/codecs/built-in.o
-  CC [M]  fs/btrfs/transaction.o
-  CC      drivers/clocksource/timer-of.o
-  CC      kernel/power/suspend_test.o
-  CC      sound/soc/fsl/fsl_dsp_platform_compress.o
-  CC      drivers/base/pinctrl.o
-  CC      drivers/acpi/acpica/evxface.o
-  CC      drivers/base/platform-msi.o
-  CC      drivers/cpufreq/cpufreq.o
-  AR      lib/zlib_deflate/zlib_deflate.o
-  AR      lib/zlib_deflate/built-in.o
-  CC      lib/zlib_inflate/inffast.o
-  CC      mm/page_io.o
-  CC      drivers/clk/clk-gate.o
-  CC      drivers/clocksource/timer-probe.o
-  CC [M]  sound/usb/mixer_us16x08.o
-  CC      lib/zlib_inflate/inflate.o
-  CC      drivers/clocksource/mmio.o
-  CC      net/ipv6/ip6_input.o
-  CC      drivers/acpi/acpica/evxfevnt.o
-  AR      drivers/acpi/apei/apei.o
-  AR      net/bluetooth/rfcomm/rfcomm.o
-  AR      drivers/acpi/apei/built-in.o
-  CC      kernel/power/poweroff.o
-  AR      net/bluetooth/rfcomm/built-in.o
-  CC      net/llc/llc_core.o
-  AR      net/bluetooth/bluetooth.o
-  AR      net/bluetooth/built-in.o
-  CC      net/llc/llc_input.o
-  CC      sound/soc/fsl/fsl_sai.o
-  CC      drivers/base/arch_topology.o
-  CC      drivers/clk/clk-multiplier.o
-  AR      kernel/power/built-in.o
-  CC      drivers/clocksource/rockchip_timer.o
-  CC [M]  fs/btrfs/inode.o
-  AR      sound/soc/hisilicon/built-in.o
-  CC      drivers/acpi/acpica/evxfgpe.o
-  CC      drivers/cpuidle/cpuidle.o
-  AR      drivers/crypto/bcm/built-in.o
-  CC [M]  drivers/crypto/bcm/util.o
-  CC      mm/swap_state.o
-  CC      drivers/clk/clk-mux.o
-  CC      drivers/clocksource/mtk_timer.o
-  CC      drivers/acpi/acpica/evxfregn.o
-  CC      lib/zlib_inflate/infutil.o
-  CC [M]  sound/usb/pcm.o
-  CC      crypto/aes_generic.o
-  CC      drivers/dma/dmaengine.o
-  CC      net/llc/llc_output.o
-  AR      drivers/base/built-in.o
-  CC      lib/zlib_inflate/inftrees.o
-  AR      lib/zstd/built-in.o
-  CC      drivers/acpi/acpica/exconcat.o
-  CC [M]  lib/zstd/fse_compress.o
-  CC      drivers/dma/virt-dma.o
-  CC      drivers/clk/clk-composite.o
-  CC      drivers/clocksource/arm_arch_timer.o
-  CC      net/ipv6/addrconf.o
-  CC      lib/zlib_inflate/inflate_syms.o
-  CC      drivers/cpuidle/driver.o
-  CC      net/ipv4/ip_sockglue.o
-  CC      drivers/acpi/acpica/exconfig.o
-  CC      sound/soc/fsl/fsl_ssi.o
-  CC [M]  drivers/crypto/bcm/spu.o
-  CC      drivers/cpufreq/freq_table.o
-  AR      lib/zlib_inflate/zlib_inflate.o
-  AR      lib/zlib_inflate/built-in.o
-  CC      drivers/crypto/caam/ctrl.o
-  CC      mm/swapfile.o
-  CC      net/llc/llc_if.o
-  CC      drivers/clk/clk-fractional-divider.o
-  CC [M]  lib/zstd/huf_compress.o
-  AR      kernel/rcu/built-in.o
-  CC      kernel/sched/core.o
-  CC [M]  drivers/crypto/bcm/spu2.o
-  CC      drivers/cpuidle/governor.o
-  CC      drivers/acpi/acpica/exconvrt.o
   CC      crypto/camellia_generic.o
-  CC      drivers/cpufreq/cpufreq_stats.o
-  CC      drivers/dma/acpi-dma.o
-  CC [M]  sound/usb/proc.o
-  CC      drivers/cpuidle/sysfs.o
-  CC      drivers/clk/clk-gpio.o
-  CC      drivers/crypto/caam/jr.o
-  CC      drivers/acpi/acpica/excreate.o
-  CC      drivers/clocksource/timer-sp804.o
-  CC      sound/soc/fsl/fsl_ssi_dbg.o
-  CC      net/llc/llc_c_ev.o
-  CC [M]  drivers/crypto/bcm/cipher.o
-  CC      drivers/cpufreq/cpufreq_performance.o
-  CC [M]  lib/zstd/compress.o
-  CC [M]  sound/usb/quirks.o
-  CC      drivers/acpi/acpica/exdebug.o
-  CC      drivers/clk/clk-conf.o
-  CC      drivers/cpuidle/governors/menu.o
-  CC      sound/soc/fsl/fsl_spdif.o
-  CC      drivers/clocksource/dummy_timer.o
-  CC      drivers/cpufreq/cpufreq_powersave.o
-  CC      drivers/dma/of-dma.o
-  CC      drivers/clk/clk-cs2000-cp.o
-  CC      net/ipv4/inet_hashtables.o
-  CC      drivers/acpi/acpica/exdump.o
-  CC      drivers/cpufreq/cpufreq_userspace.o
-  CC      crypto/cast_common.o
-  CC      net/mac80211/main.o
-  AR      drivers/cpuidle/governors/built-in.o
-  CC      drivers/clocksource/versatile.o
-  CC      drivers/acpi/acpica/exfield.o
-  CC      drivers/cpuidle/dt_idle_states.o
-  CC      drivers/clk/clk-pwm.o
-  CC [M]  sound/usb/stream.o
-  CC      crypto/cast5_generic.o
-  CC      drivers/dma/fsl-edma-v3.o
-  CC      net/core/ethtool.o
-  CC      drivers/cpufreq/cpufreq_ondemand.o
-  CC      drivers/crypto/caam/key_gen.o
-  CC      net/llc/llc_c_ac.o
-  CC      drivers/cpuidle/cpuidle-arm.o
-  CC      drivers/clocksource/timer-imx-gpt.o
-  CC      drivers/acpi/acpica/exfldio.o
-  CC      drivers/clk/clk-qoriq.o
-  CC      sound/soc/fsl/fsl_esai.o
-  CC      crypto/cast6_generic.o
-  CC [M]  sound/usb/midi.o
-  CC      mm/dmapool.o
-  CC      drivers/acpi/acpica/exmisc.o
-  AR      drivers/cpuidle/built-in.o
-  CC      net/ipv4/inet_timewait_sock.o
-  CC      drivers/acpi/arm64/iort.o
-  CC      drivers/cpufreq/cpufreq_conservative.o
-  CC      drivers/clocksource/timer-imx-sysctr.o
-  LD [M]  drivers/crypto/bcm/bcm_crypto_spu.o
-  CC      drivers/clk/clk-rk808.o
-  CC      drivers/dma/imx-sdma.o
-  CC      drivers/crypto/caam/error.o
-  CC      drivers/acpi/acpica/exmutex.o
-  CC      net/mac80211/status.o
-  CC      net/mac80211/driver-ops.o
-  CC      drivers/cpufreq/cpufreq_interactive.o
-  CC      drivers/acpi/acpica/exnames.o
-  CC      net/llc/llc_conn.o
-  CC      mm/hugetlb.o
-  AR      drivers/clocksource/built-in.o
-  CC      crypto/arc4.o
-  CC      sound/soc/fsl/fsl_dma_workaround.o
-  CC [M]  fs/btrfs/file.o
-  CC      net/ipv6/addrlabel.o
-  CC      kernel/sched/loadavg.o
-  CC      drivers/clk/clk-s2mps11.o
-  CC      net/ipv4/inet_connection_sock.o
-  CC      drivers/acpi/arm64/gtdt.o
-  CC      drivers/acpi/acpica/exoparg1.o
-  CC      drivers/crypto/caam/inst_rng.o
-  CC      sound/soc/fsl/fsl_utils.o
-  CC      crypto/chacha20_generic.o
-  CC      drivers/clk/clk-scpi.o
-  CC      net/core/dev_addr_lists.o
-  AR      sound/usb/built-in.o
-  LD [M]  sound/usb/snd-usb-audio.o
-  CC      kernel/sched/clock.o
-  LD [M]  sound/usb/snd-usbmidi-lib.o
-  CC      drivers/acpi/acpica/exoparg2.o
-  CC      drivers/dma-buf/dma-buf.o
-  AR      drivers/acpi/arm64/built-in.o
-  CC      kernel/time/time.o
-  CC      net/core/dst.o
-  CC      net/mac80211/sta_info.o
-  CC      net/ipv6/route.o
-  CC      drivers/cpufreq/cpufreq_governor.o
-  CC      kernel/sched/cputime.o
-  CC      drivers/dma/k3dma.o
-  CC      drivers/acpi/acpica/exoparg3.o
-  CC      sound/soc/fsl/fsl_rpmsg_i2s.o
-  CC      crypto/poly1305_generic.o
-  CC      net/llc/llc_c_st.o
-  CC      drivers/clk/clk-xgene.o
-  CC      drivers/cpufreq/cpufreq_governor_attr_set.o
-  CC      drivers/acpi/acpica/exoparg6.o
-  CC      drivers/crypto/caam/caamalg.o
-  CC      net/ipv6/ip6_fib.o
-  CC      kernel/time/timer.o
-  CC      drivers/edac/edac_mc.o
-  CC      drivers/dma-buf/dma-fence.o
-  CC      net/ipv4/tcp.o
-  CC      kernel/sched/idle_task.o
-  CC      drivers/cpufreq/cpufreq-dt.o
-  CC      net/core/netevent.o
-  CC      sound/soc/fsl/fsl_micfil.o
-  CC      drivers/acpi/acpica/exprep.o
-  CC      crypto/deflate.o
-  CC      net/llc/llc_pdu.o
-  CC      drivers/clk/bcm/clk-iproc-armpll.o
-  CC      drivers/dma-buf/dma-fence-array.o
-  CC      drivers/dma/mv_xor_v2.o
-  CC      drivers/acpi/acpica/exregion.o
-  CC [M]  fs/btrfs/tree-defrag.o
-  CC      kernel/sched/fair.o
-  CC      net/core/neighbour.o
-  CC      drivers/cpufreq/cpufreq-dt-platdev.o
-  CC      crypto/michael_mic.o
-  CC      drivers/dma-buf/reservation.o
+  CC [M]  lib/raid6/int4.o
+  CC      sound/soc/codecs/wm8962.o
+  CC      fs/autofs4/symlink.o
   CC      drivers/acpi/acpica/exresnte.o
-  CC      drivers/clk/bcm/clk-iproc-pll.o
-  CC      net/llc/llc_sap.o
-  CC      drivers/edac/edac_device.o
-  CC      kernel/time/hrtimer.o
-  CC      drivers/acpi/acpica/exresolv.o
-  CC      drivers/cpufreq/arm_big_little.o
-  CC [M]  fs/btrfs/extent_map.o
-  CC      drivers/dma/mxs-dma.o
-  CC      net/mac80211/wep.o
-  CC      crypto/crc32c_generic.o
-  CC      mm/mempolicy.o
-  CC      drivers/clk/bcm/clk-iproc-asiu.o
-  CC      drivers/dma-buf/seqno-fence.o
-  CC      sound/soc/fsl/imx-audmux.o
-  CC      drivers/acpi/acpica/exresop.o
-  CC      drivers/dma/pl330.o
-  CC      drivers/edac/edac_mc_sysfs.o
-  CC      net/llc/llc_s_ac.o
-  CC      drivers/cpufreq/brcmstb-avs-cpufreq.o
-  CC      crypto/crct10dif_common.o
-  CC      drivers/dma-buf/sync_file.o
-  CC      drivers/clk/bcm/clk-bcm2835.o
-  CC      drivers/acpi/acpica/exstore.o
-  CC [M]  fs/btrfs/sysfs.o
-  CC      crypto/crct10dif_generic.o
-  CC      sound/soc/fsl/imx-pcm-dma.o
-  CC      net/ipv6/ipv6_sockglue.o
-  CC      kernel/time/timekeeping.o
-  CC      kernel/sched/rt.o
-  CC      drivers/crypto/caam/caamalg_desc.o
-  CC      net/mac80211/wpa.o
-  CC      net/llc/llc_s_ev.o
-  CC      drivers/cpufreq/imx8-cpufreq.o
-  AR      drivers/dma-buf/built-in.o
-  CC      drivers/crypto/caam/caamhash.o
-  CC      drivers/acpi/acpica/exstoren.o
-  CC      drivers/edac/edac_module.o
-  CC      crypto/authenc.o
-  CC      net/ipv4/tcp_input.o
-  CC      sound/soc/fsl/imx-pcm-dma-v2.o
-  CC      drivers/clk/bcm/clk-bcm2835-aux.o
-  CC      drivers/acpi/acpica/exstorob.o
-  CC      drivers/cpufreq/imx8mq-cpufreq.o
-  CC      drivers/edac/edac_device_sysfs.o
-  CC [M]  fs/btrfs/struct-funcs.o
-  CC      drivers/clk/bcm/clk-ns2.o
-  CC      mm/sparse.o
-  CC      sound/soc/fsl/imx-pcm-rpmsg.o
-  CC      drivers/acpi/acpica/exsystem.o
-  CC      net/llc/llc_s_st.o
-  CC      drivers/dma/qcom/bam_dma.o
-  CC      kernel/time/ntp.o
-  CC      net/mac80211/scan.o
-  CC      crypto/authencesn.o
-  CC      net/core/rtnetlink.o
-  CC      drivers/clk/bcm/clk-sr.o
-  CC      drivers/cpufreq/scpi-cpufreq.o
-  CC      drivers/acpi/acpica/extrace.o
-  CC      net/ipv6/ndisc.o
   CC      drivers/crypto/caam/caamrng.o
-  CC      drivers/edac/wq.o
-  CC      mm/sparse-vmemmap.o
-  CC [M]  fs/btrfs/xattr.o
-  CC      drivers/acpi/acpica/exutils.o
-  CC      drivers/cpufreq/tegra20-cpufreq.o
-  AR      drivers/clk/bcm/built-in.o
-  CC      drivers/clk/berlin/berlin2-avpll.o
-  CC      net/llc/af_llc.o
-  CC      kernel/time/clocksource.o
-  CC      sound/soc/fsl/imx-cs42888.o
-  CC      drivers/edac/edac_pci.o
-  CC      drivers/acpi/acpica/hwacpi.o
-  CC      drivers/dma/qcom/hidma_mgmt.o
-  CC      crypto/lzo.o
-  CC      drivers/cpufreq/tegra124-cpufreq.o
-  CC      drivers/clk/berlin/berlin2-pll.o
-  CC      drivers/acpi/acpica/hwesleep.o
-  CC      kernel/sched/deadline.o
-  CC      mm/mmu_notifier.o
-  CC      kernel/time/jiffies.o
-  CC      mm/ksm.o
-  CC [M]  fs/btrfs/ordered-data.o
-  CC      crypto/rng.o
-  CC      drivers/acpi/acpica/hwgpe.o
-  CC      net/mac80211/offchannel.o
-  CC      drivers/clk/berlin/berlin2-div.o
-  CC [M]  drivers/cpufreq/cppc_cpufreq.o
-  CC      sound/soc/fsl/imx-wm8960.o
-  CC      drivers/edac/edac_pci_sysfs.o
-  CC      kernel/time/timer_list.o
-  CC      drivers/dma/qcom/hidma_mgmt_sys.o
-  CC      drivers/acpi/acpica/hwpci.o
-  CC      net/ipv6/udp.o
-  AR      drivers/clk/berlin/built-in.o
-  AR      drivers/crypto/virtio/built-in.o
-  CC      drivers/clk/hisilicon/clk.o
-  CC [M]  drivers/crypto/virtio/virtio_crypto_algs.o
-  AR      drivers/clk/imgtec/built-in.o
-  CC      drivers/acpi/dptf/int340x_thermal.o
-  CC      drivers/acpi/acpica/hwregs.o
-  CC      crypto/ansi_cprng.o
-  CC      net/llc/llc_station.o
-  CC      kernel/time/timeconv.o
   AR      drivers/edac/edac_core.o
   AR      drivers/edac/built-in.o
-  CC      drivers/dma/sh/shdma-base.o
-  CC      sound/soc/fsl/imx-wm8524.o
-  CC      drivers/dma/qcom/hidma_ll.o
-  AR      drivers/cpufreq/built-in.o
-  CC [M]  lib/zstd/entropy_common.o
-  CC      net/ipv4/tcp_output.o
-  CC      drivers/crypto/caam/caampkc.o
-  AR      drivers/acpi/dptf/built-in.o
-  CC [M]  fs/btrfs/extent_io.o
-  CC      sound/soc/fsl/imx-wm8962.o
-  CC      drivers/acpi/acpica/hwsleep.o
-  CC      kernel/time/timecounter.o
-  CC      drivers/clk/hisilicon/clkgate-separated.o
-  CC [M]  lib/zstd/fse_decompress.o
-  CC      kernel/time/alarmtimer.o
-  CC      kernel/sched/wait.o
-  CC      net/mac80211/ht.o
-  CC [M]  drivers/crypto/virtio/virtio_crypto_mgr.o
-  CC      net/llc/llc_proc.o
-  CC [M]  fs/btrfs/volumes.o
-  CC      drivers/acpi/acpica/hwvalid.o
-  CC      crypto/drbg.o
-  CC      drivers/clk/hisilicon/clkdivider-hi6220.o
-  CC [M]  lib/zstd/zstd_common.o
-  CC      drivers/dma/qcom/hidma.o
-  CC [M]  lib/zstd/huf_decompress.o
-  CC      drivers/dma/sh/shdma-of.o
-  CC      drivers/acpi/acpica/hwxface.o
-  CC      net/core/utils.o
-  CC      sound/soc/fsl/imx-rpmsg.o
-  CC      kernel/sched/wait_bit.o
-  CC      drivers/clk/hisilicon/crg-hi3516cv300.o
-  CC [M]  drivers/crypto/virtio/virtio_crypto_core.o
-  CC      drivers/dma/sh/rcar-dmac.o
-  CC      kernel/time/posix-timers.o
-  CC      net/llc/sysctl_net_llc.o
-  CC      drivers/acpi/acpica/hwxfsleep.o
-  CC      drivers/acpi/acpica/nsaccess.o
-  CC      net/ipv6/udplite.o
-  CC      mm/slub.o
-  CC      kernel/sched/swait.o
-  CC      net/mac80211/agg-tx.o
-  CC      crypto/jitterentropy.o
-  CC      drivers/clk/hisilicon/clk-hi3519.o
-  CC      sound/soc/fsl/imx-spdif.o
-  CC      kernel/sched/completion.o
-  CC      crypto/jitterentropy-kcapi.o
-  CC      drivers/acpi/acpica/nsalloc.o
-  CC      drivers/dma/qcom/hidma_dbg.o
-  CC      drivers/crypto/caam/pkc_desc.o
-  AR      net/llc/llc.o
-  AR      net/llc/llc2.o
-  AR      net/llc/built-in.o
-  CC      kernel/sched/idle.o
-  CC      net/ipv6/raw.o
-  LD [M]  drivers/crypto/virtio/virtio_crypto.o
-  CC      net/mac80211/agg-rx.o
-  CC      drivers/clk/hisilicon/clk-hi3660.o
-  CC      net/core/link_watch.o
-  CC      drivers/clk/hisilicon/crg-hi3798cv200.o
-  CC      lib/percpu_counter.o
-  CC      drivers/acpi/acpica/nsarguments.o
-  CC      sound/soc/fsl/imx-micfil.o
-  CC      crypto/ghash-generic.o
-  AR      drivers/dma/qcom/hdma_mgmt.o
-  AR      drivers/dma/qcom/hdma.o
-  AR      drivers/dma/qcom/built-in.o
-  CC      kernel/time/posix-cpu-timers.o
-  CC      mm/memtest.o
+  CC      kernel/rcu/srcutree.o
+  CC      kernel/rcu/tree.o
+  CC      fs/autofs4/waitq.o
+  CC      drivers/base/pinctrl.o
+  CC [M]  lib/raid6/int8.o
+  CC      net/bluetooth/hci_debugfs.o
+  CC      drivers/clk/imx/clk-divider-scu.o
   AR      drivers/dma/sh/built-in.o
+  CC      drivers/acpi/acpica/exresolv.o
   AR      drivers/dma/xilinx/built-in.o
   CC      drivers/dma/tegra20-apb-dma.o
-  CC      drivers/acpi/acpica/nsconvert.o
-  AR      sound/soc/img/built-in.o
-  AR      sound/soundcore.o
-  CC      net/ipv6/icmp.o
-  CC      drivers/clk/hisilicon/clk-hi6220.o
-  CC      drivers/acpi/pci_mcfg.o
-  CC      kernel/sched/cpupri.o
-  CC      drivers/acpi/button.o
-  CC [M]  lib/zstd/decompress.o
-  CC      sound/soc/fsl/imx-mqs.o
-  CC      drivers/crypto/caam/sm_store.o
-  CC [M]  fs/btrfs/async-thread.o
-  CC      crypto/ecc.o
-  CC      drivers/acpi/acpica/nsdump.o
-  CC      net/ipv4/tcp_timer.o
-  CC      net/core/filter.o
-  CC      kernel/sched/cpudeadline.o
-  CC      drivers/clk/hisilicon/reset.o
-  CC      net/mac80211/vht.o
-  CC      kernel/time/posix-clock.o
-  CC      drivers/acpi/fan.o
-  CC [M]  fs/btrfs/ioctl.o
-  CC      sound/soc/fsl/imx-amix.o
-  CC      drivers/acpi/acpica/nseval.o
-  CC      kernel/sched/topology.o
-  CC      drivers/clk/imx/clk.o
+  AR      sound/spi/built-in.o
+  CC      drivers/acpi/acpica/exresop.o
+  CC      drivers/base/platform-msi.o
+  CC      kernel/time/time.o
+  CC      fs/autofs4/expire.o
+  CC      kernel/sched/clock.o
   CC [M]  drivers/dma/bcm-sba-raid.o
-  CC      drivers/clk/hisilicon/clk-hi6220-stub.o
-  CC      mm/migrate.o
-  CC      drivers/extcon/extcon.o
-  CC      drivers/acpi/acpica/nsinit.o
-  CC      kernel/freezer.o
-  CC      kernel/time/itimer.o
-  CC      drivers/clk/imx/clk-imx8qm.o
-  CC      sound/soc/fsl/imx-ak4458.o
-  CC      drivers/crypto/caam/sm_test.o
-  CC      net/ipv6/mcast.o
-  CC      net/ipv4/tcp_ipv4.o
-  CC      crypto/ecdh.o
-  AR      drivers/clk/hisilicon/built-in.o
-  CC      drivers/clk/imx/clk-imx8.o
-  CC      net/mac80211/ibss.o
-  CC      drivers/acpi/acpica/nsload.o
-  CC      kernel/time/clockevents.o
-  CC      drivers/acpi/acpica/nsnames.o
-  CC      drivers/clk/imx/clk-divider-scu.o
-  CC      net/mac80211/iface.o
-  CC      sound/soc/fsl/imx-ak4497.o
-  CC      kernel/sched/stop_task.o
-  CC      drivers/extcon/devres.o
-  CC      crypto/ecdh_helper.o
-  CC      drivers/acpi/acpica/nsobject.o
-  CC [M]  drivers/dma/bcm2835-dma.o
-  CC      drivers/crypto/caam/secvio.o
-  CC      net/mac80211/rate.o
-  CC      crypto/simd.o
-  CC      kernel/time/tick-common.o
-  CC      net/mac80211/michael.o
-  CC      kernel/sched/autogroup.o
-  CC      net/core/sock_diag.o
-  CC      drivers/extcon/extcon-ptn5150.o
-  CC      drivers/acpi/acpica/nsparse.o
-  LD [M]  lib/zstd/zstd_compress.o
-  LD [M]  lib/zstd/zstd_decompress.o
-  CC      lib/audit.o
-  CC      sound/soc/fsl/imx-ak5558.o
-  CC      drivers/acpi/acpica/nspredef.o
-  CC      lib/compat_audit.o
-  AR      drivers/extcon/extcon-core.o
-  AR      drivers/extcon/built-in.o
-  CC      lib/swiotlb.o
-  CC [M]  crypto/crypto_engine.o
-  CC      kernel/sched/cpuacct.o
-  CC      mm/huge_memory.o
-  CC      net/netfilter/core.o
-  CC      net/ipv6/reassembly.o
-  CC      kernel/time/tick-broadcast.o
-  CC      sound/soc/fsl/imx-cdnhdmi.o
-  CC      kernel/profile.o
-  CC      net/ipv4/tcp_minisocks.o
-  CC      drivers/acpi/acpica/nsprepkg.o
-  AR      drivers/dma/built-in.o
+  CC [M]  lib/raid6/int16.o
+  CC      drivers/acpi/acpica/exstore.o
+  CC      net/bluetooth/bnep/core.o
+  CC      mm/sparse.o
+  CC      crypto/cast_common.o
+  CC      drivers/acpi/acpica/exstoren.o
+  CC      net/bluetooth/hidp/core.o
+  CC      drivers/base/arch_topology.o
+  CC      sound/soc/codecs/rpmsg_wm8960.o
   CC      drivers/clk/imx/clk-gate-scu.o
-  AR      sound/soc/intel/boards/built-in.o
-  AR      drivers/crypto/caam/caam.o
-  CC      net/core/dev_ioctl.o
-  AR      drivers/crypto/caam/caam_jr.o
-  AR      sound/soc/intel/built-in.o
-  AR      drivers/crypto/caam/caam_pkc.o
-  CC      net/netfilter/nf_log.o
-  AR      drivers/crypto/caam/built-in.o
-  AR      drivers/crypto/built-in.o
-  CC      net/netfilter/nf_queue.o
-  CC      lib/iommu-helper.o
-  CC      drivers/acpi/acpica/nsrepair.o
-  CC      kernel/sched/cpufreq.o
-  CC      net/ipv6/tcp_ipv6.o
-  CC [M]  crypto/tcrypt.o
-  CC [M]  crypto/xor.o
-  CC      net/mac80211/tkip.o
-  CC      kernel/time/tick-broadcast-hrtimer.o
-  CC [M]  fs/btrfs/locking.o
-  CC      kernel/futex.o
-  CC      net/core/tso.o
-  CC      drivers/clk/imx/clk-mux-scu.o
-  CC      drivers/acpi/acpica/nsrepair2.o
-  CC      sound/soc/fsl/imx-dsp.o
-  CC      lib/iommu-common.o
-  CC      mm/khugepaged.o
-  CC      drivers/clk/imx/clk-imx8qxp.o
-  CC      kernel/sched/cpufreq_schedutil.o
-  CC      drivers/clk/imx/clk-imx8mq.o
-  CC      kernel/time/sched_clock.o
-  CC      net/ipv4/tcp_cong.o
-  CC      kernel/sched/membarrier.o
-  CC      net/netfilter/nf_sockopt.o
-  AR      sound/soc/jz4740/built-in.o
-  CC      drivers/acpi/acpica/nssearch.o
-  CC      drivers/clk/mediatek/clk-mtk.o
-  CC      net/netlink/af_netlink.o
-  CC      lib/syscall.o
-  CC [M]  fs/btrfs/orphan.o
-  AR      sound/soc/fsl/snd-soc-fsl-acm.o
-  AR      sound/soc/fsl/snd-soc-fsl-amix.o
-  CC      net/core/sock_reuseport.o
-  AR      sound/soc/fsl/snd-soc-fsl-asrc.o
-  AR      sound/soc/fsl/snd-soc-fsl-dsp.o
-  AR      sound/soc/fsl/snd-soc-fsl-sai.o
-  AR      sound/soc/fsl/snd-soc-fsl-ssi.o
-  AR      sound/soc/fsl/snd-soc-fsl-spdif.o
-  AR      sound/soc/fsl/snd-soc-fsl-esai.o
-  AR      sound/soc/fsl/snd-soc-fsl-utils.o
-  AR      sound/soc/fsl/snd-soc-fsl-rpmsg-i2s.o
-  CC      drivers/acpi/acpica/nsutils.o
-  AR      sound/soc/fsl/snd-soc-fsl-micfil.o
-  CC      net/mac80211/aes_ccm.o
-  AR      sound/soc/fsl/snd-soc-imx-audmux.o
-  AR      sound/soc/fsl/snd-soc-imx-cs42888.o
-  AR      sound/soc/fsl/snd-soc-imx-wm8960.o
-  AR      sound/soc/fsl/snd-soc-imx-wm8524.o
-  AR      sound/soc/fsl/snd-soc-imx-wm8962.o
-  AR      sound/soc/fsl/snd-soc-imx-rpmsg.o
-  AR      sound/soc/fsl/snd-soc-imx-spdif.o
-  CC      net/netlink/genetlink.o
-  CC      kernel/time/tick-oneshot.o
-  AR      sound/soc/fsl/snd-soc-imx-micfil.o
-  AR      sound/soc/fsl/snd-soc-imx-mqs.o
-  AR      kernel/sched/built-in.o
-  AR      sound/soc/fsl/snd-soc-imx-amix.o
-  AR      sound/soc/fsl/snd-soc-imx-ak4458.o
-  AR      sound/soc/fsl/snd-soc-imx-ak4497.o
-  CC      net/packet/af_packet.o
-  AR      sound/soc/fsl/snd-soc-imx-ak5558.o
-  AR      sound/soc/fsl/snd-soc-imx-cdnhdmi.o
-  AR      sound/soc/fsl/snd-soc-imx-dsp.o
-  AR      sound/soc/fsl/built-in.o
-  CC      drivers/clk/mediatek/clk-pll.o
-  AR      sound/soc/kirkwood/built-in.o
-  AR      sound/soc/mediatek/built-in.o
-  AR      sound/soc/mxs/built-in.o
-  CC      drivers/clk/mediatek/clk-gate.o
-  AR      sound/soc/nuc900/built-in.o
-  CC      lib/nlattr.o
-  CC      drivers/clk/meson/clk-pll.o
-  AR      sound/soc/omap/built-in.o
-  CC [M]  fs/btrfs/export.o
-  CC [M]  net/netfilter/nf_conntrack_core.o
-  AR      sound/soc/pxa/built-in.o
-  AR      sound/soc/qcom/built-in.o
-  AR      sound/soc/rockchip/built-in.o
-  CC      kernel/time/tick-sched.o
-  CC      sound/soc/samsung/dmaengine.o
-  AR      crypto/crypto.o
-  AR      crypto/crypto_algapi.o
-  CC      drivers/acpi/acpica/nswalk.o
-  AR      crypto/crypto_blkcipher.o
-  AR      crypto/crypto_hash.o
-  CC      crypto/rsapubkey-asn1.o
-  CC      net/core/fib_notifier.o
-  CC      net/ipv4/tcp_metrics.o
-  CC      crypto/rsaprivkey-asn1.o
-  CC      drivers/clk/mvebu/armada-37xx-xtal.o
-  CC      net/ipv6/ping.o
-  CC      drivers/clk/meson/clk-cpu.o
-  CC      drivers/clk/mediatek/clk-apmixed.o
-  CC      fs/configfs/inode.o
-  AR      crypto/crypto_acompress.o
-  AR      crypto/cryptomgr.o
-  CC      drivers/clk/imx/clk-frac-pll.o
-  AR      crypto/jitterentropy_rng.o
-  CC      net/mac80211/aes_gcm.o
-  AR      crypto/ecdh_generic.o
-  AR      crypto/crypto_simd.o
-  AR      crypto/rsa_generic.o
-  AR      crypto/built-in.o
-  CC      mm/page_counter.o
-  CC      fs/configfs/file.o
-  CC      drivers/acpi/acpica/nsxfeval.o
-  AR      sound/soc/samsung/snd-soc-s3c-dma.o
-  AR      sound/soc/samsung/built-in.o
-  CC      lib/checksum.o
-  CC      sound/soc/sh/rcar/core.o
-  CC      drivers/clk/mvebu/armada-37xx-tbg.o
-  CC      drivers/clk/meson/clk-mpll.o
-  CC      drivers/clk/mediatek/clk-cpumux.o
-  CC      mm/memcontrol.o
-  CC [M]  fs/btrfs/tree-log.o
-  CC      kernel/time/timekeeping_debug.o
-  CC      net/core/net-sysfs.o
-  CC      drivers/clk/imx/clk-sccg-pll.o
-  CC      net/mac80211/aes_cmac.o
-  CC      lib/cpu_rmap.o
-  CC      net/mac80211/aes_gmac.o
-  CC      drivers/acpi/acpica/nsxfname.o
-  CC      drivers/clk/meson/clk-audio-divider.o
-  CC      drivers/clk/mediatek/reset.o
-  CC      net/ipv6/exthdrs.o
-  CC      fs/configfs/dir.o
-  CC      drivers/clk/mvebu/armada-37xx-periph.o
-  AR      kernel/time/built-in.o
-  CC      kernel/futex_compat.o
-  CC      drivers/clk/imx/clk-gate2.o
-  CC      lib/dynamic_queue_limits.o
-  CC      drivers/clk/meson/gxbb.o
-  CC      drivers/clk/mediatek/clk-mt6797.o
-  CC      drivers/acpi/acpica/nsxfobj.o
-  CC      net/mac80211/fils_aead.o
-  CC      net/ipv4/tcp_fastopen.o
-  AR      net/netlink/built-in.o
-  CC      net/core/net-procfs.o
-  CC      lib/glob.o
-  CC      drivers/acpi/acpica/psargs.o
-  CC      drivers/clk/imx/clk-composite-8m.o
-  CC      drivers/acpi/acpica/psloop.o
-  CC      drivers/clk/qcom/common.o
-  CC      kernel/smp.o
-  CC      drivers/clk/mvebu/ap806-system-controller.o
-  CC      drivers/clk/mediatek/clk-mt8173.o
-  CC      drivers/clk/meson/gxbb-aoclk.o
-  CC      lib/strncpy_from_user.o
-  CC      drivers/clk/imx/clk-imx8mm.o
-  CC [M]  net/netfilter/nf_conntrack_standalone.o
-  CC      drivers/clk/qcom/clk-regmap.o
-  CC      sound/soc/sh/rcar/gen.o
-  CC      drivers/acpi/acpica/psobject.o
-  CC      fs/configfs/symlink.o
-  CC      lib/strnlen_user.o
-  AR      sound/soc/sirf/built-in.o
-  CC      drivers/acpi/processor_driver.o
-  CC      net/ipv6/datagram.o
-  CC      net/sched/sch_generic.o
-  CC      net/core/ptp_classifier.o
-  CC      drivers/clk/meson/gxbb-aoclk-regmap.o
-  AR      drivers/clk/mediatek/built-in.o
-  CC      drivers/clk/mvebu/cp110-system-controller.o
-  CC      drivers/clk/imx/clk-intpll.o
-  CC      net/mac80211/cfg.o
-  CC      lib/net_utils.o
-  CC      drivers/clk/qcom/clk-alpha-pll.o
-  CC      kernel/uid16.o
-  CC      fs/configfs/mount.o
-  CC      drivers/clk/meson/gxbb-aoclk-32k.o
-  CC      drivers/acpi/acpica/psopcode.o
-  CC      net/ipv4/tcp_rate.o
-  CC      net/ipv6/ip6_flowlabel.o
-  CC      sound/soc/sh/rcar/dma.o
-  CC      net/core/dst_cache.o
-  AR      net/packet/built-in.o
-  CC      drivers/acpi/processor_idle.o
-  AR      drivers/clk/mvebu/built-in.o
-  CC [M]  net/netfilter/nf_conntrack_expect.o
-  CC      drivers/acpi/acpica/psopinfo.o
-  CC [M]  fs/btrfs/free-space-cache.o
-  AR      drivers/clk/meson/built-in.o
-  CC      drivers/acpi/processor_perflib.o
-  AR      drivers/firewire/built-in.o
-  CC      lib/sg_pool.o
-  CC      mm/vmpressure.o
-  CC      fs/configfs/item.o
-  CC      drivers/clk/qcom/clk-pll.o
-  CC      drivers/acpi/acpica/psparse.o
-  CC      kernel/module.o
-  AR      fs/configfs/configfs.o
-  AR      fs/configfs/built-in.o
-  CC      net/sched/sch_mq.o
-  CC      drivers/acpi/container.o
-  CC      lib/stmp_device.o
-  CC      net/ipv4/tcp_recovery.o
-  CC [M]  fs/btrfs/zlib.o
-  CC      net/ipv6/inet6_connection_sock.o
-  CC      net/core/gro_cells.o
-  CC      sound/soc/sh/rcar/adg.o
-  CC      lib/asn1_decoder.o
-  CC      drivers/clk/renesas/r8a7795-cpg-mssr.o
-  CC      drivers/clk/imx/clk-cpu.o
-  CC      drivers/clk/qcom/clk-rcg.o
-  CC      drivers/acpi/acpica/psscope.o
-  AR      sound/soc/spear/built-in.o
-  CC      drivers/firmware/psci.o
-  CC      kernel/kallsyms.o
-  CC      net/mac80211/ethtool.o
-  CC      drivers/clk/qcom/clk-rcg2.o
-  CC [M]  net/netfilter/nf_conntrack_helper.o
-  CC      drivers/clk/renesas/r8a7796-cpg-mssr.o
-  GEN     lib/oid_registry_data.c
-  AR      drivers/clk/imx/built-in.o
-  CC      lib/ucs2_string.o
-  CC      drivers/firmware/arm_scpi.o
-  CC      drivers/acpi/acpica/pstree.o
-  AR      net/sched/built-in.o
-  CC      drivers/firmware/scpi_pm_domain.o
-  CC      drivers/firmware/dmi_scan.o
-  AR      net/core/built-in.o
-  CC      drivers/gpio/devres.o
-  CC      net/ipv4/tcp_ulp.o
-  CC      net/ipv6/udp_offload.o
-  CC      drivers/clk/renesas/rcar-gen3-cpg.o
-  CC      lib/sbitmap.o
-  CC      drivers/acpi/acpica/psutils.o
-  CC      sound/soc/sh/rcar/ssi.o
-  CC      lib/argv_split.o
-  CC      sound/soc/sh/rcar/ssiu.o
-  CC      net/ipv6/seg6.o
-  CC      lib/bug.o
-  CC      mm/swap_cgroup.o
-  CC      drivers/acpi/acpica/pswalk.o
-  CC [M]  net/netfilter/nf_conntrack_proto.o
-  CC      drivers/clk/qcom/clk-branch.o
-  CC      drivers/gpio/gpiolib.o
-  CC      net/mac80211/rx.o
-  CC      drivers/clk/qcom/clk-regmap-divider.o
-  CC      drivers/clk/renesas/renesas-cpg-mssr.o
-  CC      drivers/clk/renesas/clk-div6.o
-  CC      drivers/acpi/acpica/psxface.o
-  CC      net/sunrpc/clnt.o
-  CC      net/ipv4/tcp_offload.o
-  CC      drivers/firmware/dmi-id.o
-  CC      fs/debugfs/inode.o
-  CC      drivers/firmware/raspberrypi.o
-  CC      lib/chacha20.o
-  CC      sound/soc/sh/rcar/src.o
-  CC      drivers/clk/qcom/clk-regmap-mux.o
-  CC      mm/hugetlb_cgroup.o
-  CC      fs/devpts/inode.o
-  CC [M]  fs/btrfs/lzo.o
-  CC      drivers/acpi/acpica/rsaddr.o
-  CC      drivers/acpi/thermal.o
-  CC      drivers/acpi/acpi_memhotplug.o
-  CC      drivers/clk/qcom/reset.o
-  CC      lib/clz_tab.o
-  CC      net/ipv6/fib6_notifier.o
-  AR      drivers/clk/renesas/built-in.o
-  CC      lib/cmdline.o
-  AR      sound/soc/sti/built-in.o
-  CC      drivers/acpi/acpica/rscalc.o
-  CC      kernel/acct.o
-  CC      drivers/acpi/hed.o
-  CC      net/unix/af_unix.o
-  CC      drivers/firmware/qcom_scm.o
-  CC [M]  net/netfilter/nf_conntrack_l3proto_generic.o
-  CC      drivers/clk/qcom/gdsc.o
-  CC      fs/debugfs/file.o
-  CC      lib/cpumask.o
-  AR      sound/soc/stm/built-in.o
-  CC      net/unix/garbage.o
-  AR      fs/devpts/devpts.o
-  AR      fs/devpts/built-in.o
-  CC      sound/soc/sh/rcar/ctu.o
-  CC      mm/page_isolation.o
-  CC      drivers/gpu/drm/drm_crtc_helper.o
-  CC      drivers/acpi/acpica/rscreate.o
-  CC      net/ipv4/datagram.o
-  CC [M]  fs/btrfs/zstd.o
-  CC      drivers/clk/rockchip/clk-rockchip.o
-  CC      lib/ctype.o
-  CC      lib/dec_and_lock.o
-  CC      drivers/clk/qcom/gcc-ipq8074.o
-  CC      drivers/firmware/qcom_scm-64.o
-  CC      lib/decompress.o
-  CC      net/ipv6/sysctl_net_ipv6.o
-  CC      net/unix/sysctl_net_unix.o
-  CC      lib/decompress_bunzip2.o
-  CC      kernel/crash_core.o
-  CC      drivers/acpi/acpica/rsdumpinfo.o
-  CC      drivers/clk/rockchip/clk.o
-  CC [M]  net/netfilter/nf_conntrack_proto_generic.o
-  CC      mm/early_ioremap.o
-  CC      net/sunrpc/xprt.o
-  CC      drivers/clk/qcom/gcc-msm8916.o
-  CC      drivers/acpi/acpica/rsinfo.o
-  CC [M]  fs/btrfs/compression.o
-  CC      drivers/clk/samsung/clk.o
-  CC      net/ipv4/raw.o
-  CC      sound/soc/sh/rcar/mix.o
-  AR      fs/debugfs/debugfs.o
-  AR      fs/debugfs/built-in.o
-  CC      drivers/gpio/gpiolib-legacy.o
-  CC      drivers/clk/sunxi/clk-sunxi.o
-  CC      kernel/kexec_core.o
-  AR      drivers/firmware/broadcom/built-in.o
-  CC      net/ipv6/xfrm6_policy.o
-  CC      drivers/firmware/efi/efi.o
-  CC      drivers/clk/rockchip/clk-pll.o
-  CC      drivers/firmware/meson/meson_sm.o
-  CC      drivers/gpu/drm/drm_dp_helper.o
-  CC      lib/decompress_inflate.o
-  CC      mm/cma.o
-  CC      drivers/acpi/acpica/rsio.o
-  CC      drivers/clk/qcom/gcc-msm8994.o
-  CC      drivers/gpio/gpiolib-devprop.o
-  CC [M]  net/netfilter/nf_conntrack_proto_tcp.o
-  CC      sound/soc/sh/rcar/dvc.o
-  CC      drivers/clk/samsung/clk-pll.o
-  CC      lib/decompress_unlz4.o
-  AR      drivers/firmware/meson/built-in.o
-  CC      drivers/clk/sunxi/clk-factors.o
-  CC      drivers/acpi/acpica/rsirq.o
-  CC      lib/decompress_unlzma.o
-  CC      drivers/clk/qcom/gcc-msm8996.o
-  CC      net/mac80211/spectmgmt.o
-  CC      drivers/clk/rockchip/clk-cpu.o
-  CC      drivers/gpio/gpiolib-of.o
-  CC      mm/balloon_compaction.o
-  CC      drivers/acpi/acpica/rslist.o
-  CC      drivers/clk/qcom/mmcc-msm8996.o
-  CC      drivers/clk/sunxi/clk-a10-codec.o
-  CC      drivers/clk/rockchip/clk-inverter.o
-  CC      drivers/firmware/efi/vars.o
-  CC      net/ipv6/xfrm6_state.o
-  AR      net/unix/unix.o
-  AR      net/unix/built-in.o
-  CC      net/ipv6/xfrm6_input.o
-  CC      net/sunrpc/socklib.o
-  CC      sound/soc/sh/rcar/cmd.o
-  CC      kernel/kexec.o
-  CC      drivers/gpu/drm/drm_probe_helper.o
-  CC      drivers/acpi/acpica/rsmemory.o
-  AR      sound/soc/sunxi/built-in.o
-  CC      drivers/clk/samsung/clk-cpu.o
-  CC [M]  fs/btrfs/delayed-ref.o
-  CC      net/ipv4/udp.o
-  AR      drivers/gpu/host1x/built-in.o
-  CC      drivers/clk/sunxi/clk-a10-hosc.o
-  CC [M]  drivers/gpu/host1x/bus.o
-  CC      drivers/gpio/gpiolib-sysfs.o
-  CC      drivers/clk/rockchip/clk-mmc-phase.o
-  CC      lib/decompress_unlzo.o
-  CC      drivers/clk/qcom/clk-smd-rpm.o
-  CC      mm/frame_vector.o
-  CC      net/mac80211/tx.o
-  CC      drivers/acpi/acpica/rsmisc.o
-  CC      drivers/clk/samsung/clk-exynos5433.o
-  CC [M]  net/netfilter/nf_conntrack_proto_udp.o
-  CC      kernel/compat.o
-  CC      drivers/clk/rockchip/clk-muxgrf.o
-  CC      drivers/clk/sunxi/clk-a10-mod1.o
-  CC      drivers/clk/rockchip/clk-ddr.o
-  CC      net/sunrpc/xprtsock.o
-  AR      sound/soc/sh/rcar/snd-soc-rcar.o
-  AR      sound/soc/sh/rcar/built-in.o
-  CC      lib/decompress_unxz.o
-  AR      sound/soc/sh/built-in.o
-  AR      sound/soc/tegra/built-in.o
-  CC      drivers/gpu/drm/drm_plane_helper.o
-  CC      net/ipv6/xfrm6_output.o
-  AR      sound/soc/txx9/built-in.o
-  CC      drivers/acpi/acpica/rsserial.o
-  AR      sound/soc/ux500/built-in.o
-  CC      drivers/firmware/efi/reboot.o
-  AR      mm/built-in.o
-  CC [M]  drivers/gpu/host1x/syncpt.o
-  AR      sound/soc/xtensa/built-in.o
-  AR      sound/soc/zte/built-in.o
-  AR      sound/soc/snd-soc-core.o
-  CC      fs/efivarfs/inode.o
-  AR      drivers/clk/qcom/clk-qcom.o
-  AR      drivers/clk/qcom/built-in.o
-  CC      drivers/gpio/gpiolib-acpi.o
-  CC      net/sunrpc/sched.o
-  CC      lib/dump_stack.o
-  CC      drivers/clk/samsung/clk-exynos-audss.o
-  AR      sound/soc/built-in.o
-  CC      drivers/clk/sunxi/clk-a10-pll2.o
-  AR      sound/built-in.o
-  CC      drivers/clk/rockchip/softrst.o
-  CC      lib/earlycpio.o
-  CC      drivers/hid/hid-core.o
-  CC      drivers/acpi/acpica/rsutils.o
-  CC [M]  fs/btrfs/relocation.o
-  CC [M]  drivers/gpu/host1x/dev.o
-  CC      drivers/firmware/efi/memattr.o
-  CC      lib/extable.o
-  CC [M]  net/netfilter/nf_conntrack_extend.o
-  CC      fs/efivarfs/file.o
-  CC      drivers/clk/rockchip/clk-rv1108.o
-  CC      drivers/clk/sunxi/clk-a10-ve.o
-  CC      drivers/clk/samsung/clk-exynos-clkout.o
-  CC      lib/fdt.o
-  CC      kernel/utsname.o
-  CC      drivers/gpu/drm/drm_dp_mst_topology.o
-  CC      drivers/acpi/acpica/rsxface.o
-  CC      net/ipv6/xfrm6_protocol.o
-  CC      drivers/clk/rockchip/clk-rk3036.o
-  CC      drivers/firmware/efi/capsule.o
-  CC      drivers/firmware/efi/memmap.o
-  CC [M]  drivers/gpu/host1x/intr.o
-  CC      lib/fdt_empty_tree.o
-  CC      drivers/clk/sunxi/clk-a20-gmac.o
-  CC      fs/efivarfs/super.o
-  CC      kernel/user_namespace.o
-  CC      drivers/clk/samsung/clk-exynos7.o
-  CC      lib/fdt_ro.o
-  CC      drivers/clk/rockchip/clk-rk3128.o
-  CC      drivers/hid/hid-input.o
-  CC      drivers/acpi/acpica/tbdata.o
-  CC [M]  net/netfilter/nf_conntrack_acct.o
-  CC      drivers/gpio/gpio-mmio.o
-  CC      drivers/clk/sunxi/clk-mod0.o
-  AR      drivers/clk/samsung/built-in.o
-  CC      drivers/gpu/imx/imx8_pc.o
-  CC      drivers/firmware/tegra/bpmp.o
-  CC      net/sunrpc/auth.o
-  CC      net/ipv6/netfilter.o
-  CC      lib/fdt_rw.o
-  AR      fs/efivarfs/efivarfs.o
-  AR      fs/efivarfs/built-in.o
-  CC      drivers/firmware/efi/esrt.o
-  CC      net/ipv6/proc.o
-  CC      drivers/clk/rockchip/clk-rk3188.o
-  CC      net/sunrpc/auth_null.o
-  CC [M]  drivers/gpu/host1x/cdma.o
-  CC      drivers/acpi/acpica/tbfadt.o
-  CC      drivers/clk/sunxi/clk-simple-gates.o
-  CC      drivers/gpu/imx/imx8_prg.o
-  CC      net/ipv4/udplite.o
-  CC      lib/fdt_strerror.o
-  CC      drivers/gpio/gpio-brcmstb.o
-  CC      drivers/clk/rockchip/clk-rk3228.o
-  CC      kernel/pid_namespace.o
-  CC      lib/fdt_sw.o
-  CC [M]  net/netfilter/nf_conntrack_seqadj.o
-  CC      drivers/acpi/acpica/tbfind.o
-  CC      drivers/firmware/tegra/ivc.o
-  CC      drivers/clk/sunxi/clk-sun4i-display.o
-  CC      drivers/firmware/efi/cper.o
-  CC [M]  drivers/gpu/host1x/channel.o
-  CC      lib/fdt_wip.o
-  CC      net/ipv4/udp_offload.o
-  CC      drivers/clk/rockchip/clk-rk3288.o
-  CC      drivers/gpio/gpio-dwapb.o
-  CC      drivers/gpu/imx/imx8_dprc.o
-  CC      lib/flex_proportions.o
-  CC      drivers/acpi/acpica/tbinstal.o
-  CC      net/sunrpc/auth_unix.o
-  CC      drivers/acpi/acpica/tbprint.o
-  CC      net/mac80211/key.o
-  CC      drivers/hid/hid-debug.o
-  CC      drivers/gpu/drm/drm_atomic_helper.o
-  GZIP    kernel/config_data.gz
-  CC      drivers/gpu/vga/vgaarb.o
-  CC      kernel/stop_machine.o
-  AR      net/ipv6/netfilter/built-in.o
-  CC [M]  net/ipv6/netfilter/ip6_tables.o
-  CC      drivers/clk/rockchip/clk-rk3328.o
-  CC      drivers/clk/sunxi/clk-sun4i-pll3.o
-  AR      drivers/firmware/tegra/built-in.o
-  CC      lib/idr.o
-  CC      drivers/acpi/acpica/tbutils.o
-  CC      drivers/hid/hid-generic.o
-  CC [M]  drivers/gpu/host1x/job.o
-  CC      drivers/hid/hid-a4tech.o
-  CC      drivers/clk/rockchip/clk-rk3368.o
-  CC      drivers/gpu/imx/dcss/dcss-common.o
-  CC      drivers/firmware/efi/runtime-wrappers.o
-  CC      drivers/clk/sunxi/clk-sun4i-tcon-ch1.o
-  CC [M]  net/netfilter/nf_conntrack_ecache.o
-  CC      net/ipv4/arp.o
-  CC      drivers/gpio/gpio-max732x.o
-  CC      drivers/acpi/acpica/tbxface.o
-  CC      lib/int_sqrt.o
-  CC      net/ipv4/icmp.o
-  CC      net/sunrpc/auth_generic.o
-  CC [M]  net/ipv6/netfilter/ip6table_filter.o
-  CC      lib/ioremap.o
-  CC      kernel/audit.o
-  CC      drivers/hid/hid-apple.o
-  CC      drivers/clk/rockchip/clk-rk3399.o
-  CC [M]  fs/btrfs/delayed-inode.o
-  CC      drivers/clk/sunxi/clk-sun8i-bus-gates.o
-  CC      drivers/acpi/acpica/tbxfload.o
-  CC [M]  drivers/gpu/host1x/debug.o
-  AR      drivers/gpu/vga/built-in.o
-  CC      net/mac80211/util.o
-  CC      drivers/gpu/imx/dcss/dcss-blkctl.o
-  CC      drivers/gpio/gpio-max77620.o
-  CC      drivers/firmware/efi/libstub/arm-stub.o
-  CC      lib/irq_regs.o
-  CC      drivers/hid/hid-belkin.o
-  AR      drivers/clk/rockchip/built-in.o
-  CC      net/mac80211/wme.o
-  CC      drivers/acpi/acpica/tbxfroot.o
-  CC      drivers/clk/sunxi/clk-sun8i-mbus.o
-  CC      drivers/hid/hid-cherry.o
-  CC      lib/is_single_threaded.o
-  CC      drivers/gpu/drm/drm_kms_helper_common.o
-  CC [M]  net/netfilter/nf_conntrack_proto_dccp.o
-  CC      net/sunrpc/svc.o
-  CC      drivers/gpu/imx/dcss/dcss-ctxld.o
-  CC      drivers/gpio/gpio-mvebu.o
-  CC      net/sunrpc/svcsock.o
-  CC [M]  drivers/gpu/host1x/mipi.o
-  CC      drivers/clk/sunxi/clk-sun9i-core.o
-  CC      drivers/firmware/efi/libstub/arm64-stub.o
-  CC [M]  net/ipv6/netfilter/ip6table_mangle.o
-  CC      drivers/acpi/acpica/utaddress.o
-  CC      net/ipv4/devinet.o
-  CC      drivers/hid/hid-chicony.o
-  CC      lib/klist.o
-  CC      drivers/hid/hid-cypress.o
-  CC      kernel/auditfilter.o
-  CC      drivers/gpu/drm/drm_dp_dual_mode_helper.o
-  CC      drivers/firmware/efi/libstub/efi-stub-helper.o
-  CC [M]  fs/btrfs/scrub.o
-  CC      lib/kobject.o
-  CC      drivers/gpu/imx/dpu/dpu-common.o
-  CC      drivers/acpi/acpica/utalloc.o
-  CC [M]  drivers/gpu/host1x/hw/host1x01.o
-  CC      drivers/clk/sunxi/clk-sun9i-mmc.o
-  CC      drivers/hid/hid-ezkey.o
-  CC      drivers/gpu/imx/dcss/dcss-dpr.o
-  CC      drivers/gpu/imx/dpu-blit/dpu-blit.o
-  CC [M]  net/netfilter/nf_conntrack_proto_sctp.o
-  CC [M]  net/ipv6/netfilter/ip6table_nat.o
-  CC      drivers/gpio/gpio-mxc.o
-  CC      drivers/gpu/imx/lcdif/lcdif-common.o
-  CC      drivers/acpi/acpica/utascii.o
-  CC      drivers/gpu/drm/drm_simple_kms_helper.o
-  CC      drivers/hid/hid-kensington.o
-  CC      drivers/clk/sunxi/clk-usb.o
-  CC      drivers/firmware/efi/libstub/fdt.o
-  CC      drivers/acpi/acpica/utbuffer.o
-  CC      lib/kobject_uevent.o
-  CC      drivers/clk/sunxi-ng/ccu-sun50i-a64.o
-  CC      net/sunrpc/svcauth.o
-  AR      drivers/gpu/imx/dpu-blit/imx-dpu-blit.o
-  AR      drivers/gpu/imx/dpu-blit/built-in.o
-  CC      drivers/clk/sunxi-ng/ccu-sun8i-h3.o
-  CC      drivers/hid/hid-lg.o
-  CC [M]  drivers/gpu/host1x/hw/host1x02.o
-  AR      drivers/clk/sunxi/built-in.o
-  CC      drivers/clk/sunxi-ng/ccu-sun8i-r.o
-  CC [M]  net/ipv6/netfilter/nf_conntrack_l3proto_ipv6.o
-  CC      drivers/acpi/acpica/utcopy.o
-  AR      drivers/gpu/imx/lcdif/imx-lcdif-core.o
-  CC      drivers/gpu/imx/dcss/dcss-dtg.o
-  AR      drivers/gpu/imx/lcdif/built-in.o
-  CC      drivers/hid/hid-microsoft.o
-  CC      kernel/auditsc.o
-  CC      drivers/gpio/gpio-pca953x.o
-  CC      drivers/gpu/drm/drm_modeset_helper.o
-  CC      net/mac80211/chan.o
-  CC      kernel/audit_watch.o
-  CC      drivers/acpi/acpica/utexcep.o
-  CC      drivers/gpu/imx/dpu/dpu-constframe.o
-  CC [M]  net/netfilter/nf_log_common.o
-  CC      drivers/firmware/efi/libstub/gop.o
-  CC      drivers/clk/sunxi-ng/ccu_common.o
-  CC      net/sunrpc/svcauth_unix.o
-  AR      fs/exofs/built-in.o
-  CC      net/ipv4/af_inet.o
-  CC [M]  net/ipv6/netfilter/nf_conntrack_proto_icmpv6.o
-  CC      drivers/acpi/acpica/utdebug.o
-  CC      drivers/hid/hid-monterey.o
-  CC      lib/nmi_backtrace.o
-  CC      drivers/clk/sunxi-ng/ccu_div.o
-  CC      drivers/gpu/drm/drm_scdc_helper.o
-  CC      drivers/gpu/imx/dcss/dcss-ss.o
-  CC      drivers/gpu/imx/dpu/dpu-disengcfg.o
-  CC      drivers/firmware/efi/libstub/lib-fdt.o
-  CC      drivers/clk/sunxi-ng/ccu_frac.o
-  CC [M]  drivers/gpu/host1x/hw/host1x04.o
-  CC      drivers/hid/hid-multitouch.o
-  CC      drivers/acpi/acpica/utdecode.o
-  CC      lib/nodemask.o
-  CC      drivers/firmware/efi/libstub/lib-fdt_empty_tree.o
-  CC      drivers/gpio/gpio-pl061.o
-  CC [M]  net/netfilter/nf_nat_core.o
-  CC      lib/plist.o
-  CC      drivers/firmware/efi/libstub/lib-fdt_ro.o
-  CC      drivers/gpu/imx/dcss/dcss-hdr10.o
-  CC      drivers/firmware/efi/libstub/lib-fdt_rw.o
-  CC      drivers/acpi/acpica/utdelete.o
-  CC      net/ipv4/igmp.o
-  CC [M]  fs/btrfs/reada.o
-  CC      drivers/clk/sunxi-ng/ccu_gate.o
-  CC      drivers/gpu/imx/dpu/dpu-extdst.o
-  CC      lib/radix-tree.o
-  CC [M]  net/ipv6/netfilter/nf_nat_l3proto_ipv6.o
-  CC      drivers/gpu/drm/drm_gem_framebuffer_helper.o
-  CC      net/wireless/core.o
-  CC      drivers/gpio/gpio-rcar.o
-  CC      drivers/firmware/efi/libstub/lib-fdt_sw.o
-  CC      drivers/acpi/acpica/uterror.o
-  CC      drivers/gpu/imx/dcss/dcss-scaler.o
-  CC      net/sunrpc/addr.o
-  CC      drivers/clk/sunxi-ng/ccu_mmc_timing.o
-  CC      drivers/hid/usbhid/hid-core.o
-  CC      kernel/audit_fsnotify.o
-  CC      drivers/clk/sunxi-ng/ccu_mp.o
-  CC      drivers/firmware/efi/libstub/lib-fdt_wip.o
-  CC [M]  drivers/gpu/host1x/hw/host1x05.o
-  CC      drivers/firmware/efi/libstub/lib-sort.o
-  CC      net/mac80211/trace.o
-  CC      drivers/acpi/acpica/uteval.o
-  CC      net/ipv6/addrconf_core.o
-  CC      drivers/hwmon/hwmon.o
-  CC      drivers/firmware/efi/libstub/random.o
-  CC      drivers/gpu/imx/dpu/dpu-fetchdecode.o
-  CC      drivers/gpu/drm/bridge/panel.o
-  CC      drivers/gpio/gpio-tegra.o
-  CC      drivers/clk/sunxi-ng/ccu_mult.o
-  CC [M]  net/netfilter/nf_nat_proto_unknown.o
-  CC [M]  fs/btrfs/backref.o
-  CC      drivers/gpu/imx/dcss/dcss-dtrc.o
-  CC      kernel/audit_tree.o
-  CC      drivers/acpi/acpica/utglobal.o
-  CC [M]  net/ipv6/netfilter/nf_nat_proto_icmpv6.o
-  CC      drivers/firmware/efi/libstub/secureboot.o
-  CC      net/sunrpc/rpcb_clnt.o
-  CC      drivers/clk/sunxi-ng/ccu_mux.o
-  CC      drivers/hwmon/scpi-hwmon.o
-  CC      net/mac80211/mlme.o
-  CC [M]  net/ipv6/netfilter/nf_nat_masquerade_ipv6.o
-  CC      drivers/gpu/drm/drm_fb_helper.o
-  CC      drivers/acpi/acpica/uthex.o
-  CC      lib/ratelimit.o
-  CC      drivers/gpu/imx/dcss/dcss-dec400d.o
-  LD [M]  drivers/gpu/host1x/host1x.o
-  CC      drivers/hid/usbhid/hid-quirks.o
-  CC      drivers/gpu/drm/drm_fb_cma_helper.o
-  CC      drivers/gpu/imx/dpu/dpu-fetcheco.o
-  CC      drivers/gpio/gpio-xgene.o
-  CC      drivers/firmware/efi/libstub/string.o
-  CC      net/wireless/sysfs.o
-  CC [M]  net/netfilter/nf_nat_proto_common.o
-  CC      lib/rbtree.o
-  CC      drivers/clk/sunxi-ng/ccu_nk.o
-  STUBCPY drivers/firmware/efi/libstub/arm-stub.stub.o
-  STUBCPY drivers/firmware/efi/libstub/arm64-stub.stub.o
-  CC      drivers/acpi/acpica/utids.o
-  STUBCPY drivers/firmware/efi/libstub/efi-stub-helper.stub.o
-  CC [M]  drivers/hwmon/ina2xx.o
-  STUBCPY drivers/firmware/efi/libstub/fdt.stub.o
-  STUBCPY drivers/firmware/efi/libstub/gop.stub.o
-  STUBCPY drivers/firmware/efi/libstub/lib-fdt.stub.o
-  CC      drivers/gpu/imx/dcss/dcss-wrscl.o
-  STUBCPY drivers/firmware/efi/libstub/lib-fdt_empty_tree.stub.o
-  STUBCPY drivers/firmware/efi/libstub/lib-fdt_ro.stub.o
-  STUBCPY drivers/firmware/efi/libstub/lib-fdt_rw.stub.o
-  STUBCPY drivers/firmware/efi/libstub/lib-fdt_sw.stub.o
-  CC      drivers/gpu/imx/dcss/dcss-rdsrc.o
-  STUBCPY drivers/firmware/efi/libstub/lib-fdt_wip.stub.o
-  STUBCPY drivers/firmware/efi/libstub/lib-sort.stub.o
-  STUBCPY drivers/firmware/efi/libstub/random.stub.o
-  AR      drivers/hid/usbhid/usbhid.o
-  STUBCPY drivers/firmware/efi/libstub/secureboot.stub.o
-  AR      drivers/hid/usbhid/built-in.o
-  CC      kernel/seccomp.o
-  AR      drivers/hid/hid.o
-  STUBCPY drivers/firmware/efi/libstub/string.stub.o
-  AR      drivers/hid/hid-logitech.o
-  AR      drivers/firmware/efi/libstub/lib.a
-  EXPORTS drivers/firmware/efi/libstub/lib-ksyms.o
-  AR      drivers/hid/built-in.o
-  CC      lib/seq_buf.o
-  CC      fs/exportfs/expfs.o
-  AR      drivers/firmware/efi/libstub/built-in.o
-  CC      drivers/clk/sunxi-ng/ccu_nkm.o
-  CC      net/sunrpc/timer.o
-  CC      drivers/firmware/efi/arm-init.o
-  CC      drivers/gpu/imx/dpu/dpu-fetchlayer.o
-  CC      drivers/acpi/acpica/utinit.o
-  CC      net/sunrpc/xdr.o
-  CC [M]  net/ipv6/netfilter/nf_defrag_ipv6_hooks.o
-  CC      net/ipv4/fib_frontend.o
-  CC      drivers/gpio/gpio-xgene-sb.o
-  CC [M]  fs/btrfs/ulist.o
-  CC      drivers/clk/sunxi-ng/ccu_nkmp.o
-  CC [M]  net/netfilter/nf_nat_proto_udp.o
-  CC [M]  drivers/hwmon/lm90.o
-  CC      net/wireless/radiotap.o
-  AR      drivers/gpu/imx/dcss/imx-dcss-core.o
-  AR      drivers/gpu/imx/dcss/built-in.o
-  CC      net/mac80211/tdls.o
-  CC      lib/sha1.o
-  AR      fs/exportfs/exportfs.o
-  CC      drivers/acpi/acpica/utlock.o
-  CC      net/ipv6/exthdrs_core.o
-  AR      fs/exportfs/built-in.o
-  CC      drivers/acpi/acpica/utmath.o
-  CC      drivers/firmware/efi/arm-runtime.o
-  CC      drivers/clk/sunxi-ng/ccu_nm.o
-  CC      drivers/clk/tegra/clk.o
-  AR      drivers/gpio/gpio-generic.o
-  AR      drivers/gpio/built-in.o
-  CC      lib/show_mem.o
-  CC      drivers/acpi/acpica/utmisc.o
-  CC      drivers/gpu/imx/dpu/dpu-fetchwarp.o
-  CC [M]  net/ipv6/netfilter/nf_conntrack_reasm.o
-  CC [M]  net/ipv6/netfilter/nf_log_ipv6.o
-  CC      drivers/gpu/drm/drm_auth.o
-  CC [M]  net/netfilter/nf_nat_proto_tcp.o
-  CC      net/wireless/util.o
-  CC      net/sunrpc/sunrpc_syms.o
-  CC      kernel/relay.o
-  CC      drivers/firmware/efi/capsule-loader.o
-  CC      drivers/clk/sunxi-ng/ccu_phase.o
-  CC      lib/siphash.o
-  CC      drivers/acpi/acpica/utmutex.o
-  AR      drivers/hwmon/built-in.o
-  AR      drivers/clk/ti/built-in.o
-  CC [M]  fs/btrfs/qgroup.o
-  CC      drivers/gpu/drm/drm_bufs.o
-  CC      drivers/clk/tegra/clk-audio-sync.o
-  CC      net/wireless/reg.o
-  CC      drivers/clk/sunxi-ng/ccu_reset.o
-  CC      net/ipv4/fib_semantics.o
-  CC      kernel/utsname_sysctl.o
-  CC      drivers/gpu/imx/dpu/dpu-fetchunit.o
-  AR      drivers/firmware/efi/built-in.o
-  CC      net/ipv4/fib_trie.o
-  AR      drivers/firmware/built-in.o
-  CC      drivers/acpi/acpica/utnonansi.o
-  CC      lib/string.o
-  CC      net/ipv4/fib_notifier.o
-  CC      drivers/clk/tegra/clk-dfll.o
-  CC [M]  net/netfilter/nf_nat_helper.o
-  AR      drivers/clk/sunxi-ng/lib.a
-  EXPORTS drivers/clk/sunxi-ng/lib-ksyms.o
-  CC      drivers/clk/tegra/clk-divider.o
-  AR      drivers/clk/sunxi-ng/built-in.o
-  CC [M]  fs/btrfs/send.o
-  CC      drivers/acpi/cppc_acpi.o
-  CC      net/sunrpc/cache.o
-  CC [M]  net/ipv6/netfilter/nf_reject_ipv6.o
-  CC      fs/ext2/balloc.o
-  CC      drivers/acpi/acpica/utobject.o
-  CC      kernel/delayacct.o
-  CC      net/mac80211/ocb.o
-  CC      drivers/gpu/imx/dpu/dpu-framegen.o
-  CC      lib/timerqueue.o
-  CC      drivers/gpu/imx/dpu/dpu-hscaler.o
-  CC      kernel/taskstats.o
-  CC      net/mac80211/led.o
-  CC      drivers/acpi/acpica/utosi.o
-  CC      lib/vsprintf.o
-  CC [M]  net/netfilter/nf_nat_proto_dccp.o
-  CC      drivers/clk/tegra/clk-periph.o
-  CC [M]  net/ipv6/netfilter/ip6t_MASQUERADE.o
-  CC      net/ipv4/inet_fragment.o
-  CC      drivers/gpu/drm/drm_cache.o
-  CC      drivers/gpu/imx/dpu/dpu-layerblend.o
-  CC      fs/ext2/dir.o
-  CC      drivers/acpi/acpica/utownerid.o
-  CC      drivers/clk/tegra/clk-periph-fixed.o
-  CC [M]  net/ipv6/netfilter/ip6t_REJECT.o
-  CC [M]  net/netfilter/nf_nat_proto_sctp.o
-  CC      net/xfrm/xfrm_policy.o
-  CC      net/ipv6/ip6_checksum.o
-  CC      net/xfrm/xfrm_state.o
-  CC      kernel/tsacct.o
-  CC      net/xfrm/xfrm_hash.o
-  CC      net/mac80211/pm.o
-  CC      drivers/acpi/acpica/utpredef.o
-  CC      drivers/gpu/drm/drm_context.o
-  CC      drivers/clk/tegra/clk-periph-gate.o
-  CC      drivers/clk/tegra/clk-pll.o
-  CC      drivers/gpu/imx/dpu/dpu-store.o
-  CC      net/sunrpc/rpc_pipe.o
-  CC      kernel/elfcore.o
-  CC      net/wireless/scan.o
-  LD [M]  net/ipv6/netfilter/nf_conntrack_ipv6.o
-  LD [M]  net/ipv6/netfilter/nf_nat_ipv6.o
-  LD [M]  net/ipv6/netfilter/nf_defrag_ipv6.o
-  CC      drivers/clk/tegra/clk-pll-out.o
-  CC [M]  fs/btrfs/dev-replace.o
-  CC      net/ipv6/ip6_icmp.o
-  CC      fs/ext2/file.o
-  CC      drivers/acpi/spcr.o
-  CC      drivers/acpi/acpica/utresdecode.o
-  CC      drivers/hwspinlock/hwspinlock_core.o
-  CC      net/ipv4/ping.o
-  CC [M]  net/netfilter/x_tables.o
-  CC      kernel/irq_work.o
-  CC      drivers/gpu/imx/dpu/dpu-tcon.o
-  CC      drivers/acpi/acpica/utresrc.o
-  CC      drivers/gpu/drm/drm_dma.o
-  CC      fs/ext4/balloc.o
-  CC      net/mac80211/rc80211_minstrel.o
-  CC      lib/win_minmax.o
-  CC      fs/ext2/ialloc.o
-  CC      drivers/hwspinlock/qcom_hwspinlock.o
-  CC      drivers/acpi/acpica/utstate.o
-  CC [M]  lib/libcrc32c.o
-  CC      kernel/cpu_pm.o
-  CC      drivers/gpu/imx/dpu/dpu-vscaler.o
-  CC [M]  lib/xxhash.o
-  CC [M]  fs/btrfs/raid56.o
-  CC      net/ipv6/output_core.o
-  CC      drivers/acpi/acpica/utstring.o
-  CC      drivers/gpu/drm/drm_file.o
-  AR      drivers/hwspinlock/built-in.o
-  CC      kernel/crash_dump.o
-  CC      fs/ext2/inode.o
-  CC      drivers/clk/tegra/clk-super.o
-  CC      net/ipv4/ip_tunnel_core.o
-  CC      drivers/acpi/acpica/utstrtoul64.o
-  CC      net/sunrpc/svc_xprt.o
-  CC      fs/fat/cache.o
-  CC      fs/ext4/bitmap.o
-  CC      net/mac80211/rc80211_minstrel_ht.o
-  AR      drivers/gpu/imx/dpu/imx-dpu-core.o
-  GEN     lib/crc32table.h
-  AR      drivers/gpu/imx/dpu/built-in.o
-  CC      lib/oid_registry.o
-  CC      fs/fat/dir.o
-  AR      drivers/gpu/imx/built-in.o
-  CC      kernel/jump_label.o
-  CC      net/wireless/nl80211.o
-  CC      net/wireless/mlme.o
-  CC      net/wireless/ibss.o
-  CC      drivers/clk/tegra/clk-tegra-audio.o
-  CC      net/ipv6/protocol.o
-  CC      drivers/acpi/acpica/utxface.o
-  CC      drivers/gpu/drm/drm_gem.o
-  CC      drivers/gpu/drm/drm_ioctl.o
-  CC [M]  net/netfilter/xt_tcpudp.o
-  AR      lib/lib.a
-  CC      lib/crc32.o
-  CC      fs/ext4/block_validity.o
-  EXPORTS lib/lib-ksyms.o
-  CC      drivers/clk/tegra/clk-tegra-periph.o
-  CC      drivers/acpi/acpica/utxfinit.o
-  CC      net/ipv4/gre_offload.o
-  CC      net/wireless/sme.o
-  CC      net/xfrm/xfrm_input.o
-  CC      net/ipv6/ip6_offload.o
-  CC      fs/ext2/ioctl.o
-  CC      kernel/memremap.o
-  CC      drivers/clk/tegra/clk-tegra-pmc.o
-  CC      fs/ext2/namei.o
-  CC      drivers/acpi/acpica/utxferror.o
-  AR      lib/built-in.o
-  CC      fs/ext2/super.o
-  CC [M]  fs/btrfs/uuid-tree.o
-  CC      fs/ext4/dir.o
-  AR      drivers/acpi/acpi.o
-  CC [M]  net/netfilter/xt_nat.o
-  CC [M]  net/netfilter/xt_CHECKSUM.o
-  CC      drivers/clk/uniphier/clk-uniphier-core.o
-  CC      net/sunrpc/xprtmultipath.o
-  CC      drivers/gpu/drm/drm_irq.o
-  CC      drivers/clk/tegra/clk-tegra-fixed.o
-  CC      fs/fat/fatent.o
-  CC      drivers/clk/uniphier/clk-uniphier-cpugear.o
-  CHK     kernel/config_data.h
-  UPD     kernel/config_data.h
-  CC      kernel/configs.o
-  AR      net/mac80211/mac80211.o
-  AR      net/mac80211/built-in.o
-  CC      drivers/acpi/acpica/utxfmutex.o
-  CC      net/ipv4/sysctl_net_ipv4.o
-  CC      drivers/clk/uniphier/clk-uniphier-fixed-factor.o
-  CC      drivers/clk/tegra/clk-tegra-super-gen4.o
-  CC      drivers/clk/versatile/clk-sp810.o
-  CC      net/wireless/chan.o
-  AR      drivers/acpi/acpica/acpi.o
-  AR      kernel/built-in.o
-  CC      fs/fat/file.o
-  AR      drivers/acpi/acpica/built-in.o
-  CC      net/compat.o
-  CC      net/wireless/ethtool.o
-  CC      net/xfrm/xfrm_output.o
-  AR      drivers/acpi/processor.o
-  AR      drivers/acpi/built-in.o
-  CC      net/ipv6/tcpv6_offload.o
-  CC [M]  net/netfilter/xt_LOG.o
-  CC      net/sunrpc/backchannel_rqst.o
-  CC [M]  fs/btrfs/props.o
-  CC [M]  fs/btrfs/hash.o
-  CC      drivers/clk/uniphier/clk-uniphier-fixed-rate.o
-  CC      drivers/clk/tegra/clk-tegra124.o
-  CC      drivers/clk/versatile/clk-vexpress-osc.o
-  CC      fs/ext4/ext4_jbd2.o
-  CC      drivers/gpu/drm/drm_lock.o
-  CC      fs/ext4/extents.o
-  CC      drivers/clk/uniphier/clk-uniphier-gate.o
-  CC      fs/ext2/symlink.o
-  CC      fs/ext4/extents_status.o
-  CC      fs/ext4/file.o
-  CC      drivers/clk/tegra/cvb.o
-  AR      drivers/clk/versatile/built-in.o
-  CC      drivers/gpu/drm/drm_memory.o
-  AR      drivers/hwtracing/intel_th/built-in.o
-  CC      net/ipv4/proc.o
-  CC      fs/fat/inode.o
-  CC      drivers/clk/zte/clk.o
-  CC [M]  net/netfilter/xt_addrtype.o
-  AR      fs/ext2/ext2.o
-  AR      fs/ext2/built-in.o
-  CC      drivers/clk/uniphier/clk-uniphier-mux.o
-  CC      fs/fat/misc.o
-  CC      net/ipv4/xfrm4_mode_beet.o
-  CC      net/sunrpc/stats.o
-  CC      net/ipv6/exthdrs_offload.o
-  CC      drivers/clk/tegra/clk-tegra210.o
-  CC      net/xfrm/xfrm_sysctl.o
-  CC      drivers/gpu/drm/drm_drv.o
-  CC      fs/ext4/fsmap.o
-  CC      drivers/clk/uniphier/clk-uniphier-sys.o
-  CC      fs/ext4/fsync.o
-  CC      net/xfrm/xfrm_replay.o
-  CC [M]  fs/btrfs/free-space-tree.o
-  CC      drivers/clk/uniphier/clk-uniphier-mio.o
-  CC      drivers/clk/zte/clk-zx296718.o
-  CC      drivers/clk/uniphier/clk-uniphier-peri.o
-  CC      fs/ext4/hash.o
-  CC      fs/fat/nfs.o
-  AR      drivers/clk/uniphier/built-in.o
-  CC      drivers/gpu/drm/drm_scatter.o
-  CC      fs/fat/namei_vfat.o
-  CC      net/ipv6/inet6_hashtables.o
-  CC      drivers/clk/tegra/clk-bpmp.o
-  CC [M]  net/netfilter/xt_conntrack.o
-  CC      net/sunrpc/sysctl.o
-  CC      net/sunrpc/auth_gss/auth_gss.o
-  CC      net/wireless/mesh.o
-  CC      drivers/i2c/i2c-boardinfo.o
-  AR      drivers/clk/zte/built-in.o
-  CC      net/ipv4/xfrm4_mode_transport.o
-  CC [M]  fs/btrfs/tree-checker.o
-  CC [M]  fs/btrfs/acl.o
-  AR      fs/fuse/built-in.o
-  CC [M]  fs/fuse/dev.o
-  CC [M]  fs/fuse/dir.o
-  CC [M]  fs/fuse/file.o
-  CC      net/sysctl_net.o
-  AR      drivers/clk/tegra/built-in.o
-  AR      drivers/clk/built-in.o
-  CC      net/xfrm/xfrm_device.o
-  CC      drivers/i2c/i2c-core-base.o
-  CC      net/ipv6/mcast_snoop.o
-  CC      drivers/gpu/drm/drm_pci.o
-  CC      net/wireless/ap.o
-  CC      net/ipv4/xfrm4_mode_tunnel.o
-  CC [M]  fs/fuse/inode.o
-  AR      net/netfilter/netfilter.o
-  LD [M]  net/netfilter/nf_conntrack.o
-  CC      drivers/i2c/i2c-core-smbus.o
-  LD [M]  net/netfilter/nf_nat.o
-  AR      net/netfilter/built-in.o
-  CC      net/sunrpc/auth_gss/gss_generic_token.o
-  CC      fs/hugetlbfs/inode.o
-  AR      fs/fat/fat.o
-  AR      fs/fat/vfat.o
-  AR      fs/fat/built-in.o
+  CC      net/ipv4/inet_hashtables.o
+  CC      net/bluetooth/bnep/sock.o
+  CC [M]  lib/raid6/int32.o
+  CC      fs/autofs4/dev-ioctl.o
+  CC      crypto/cast5_generic.o
+  CC      kernel/time/timer.o
+  CC      drivers/acpi/acpica/exstorob.o
+  CC      drivers/extcon/extcon.o
+  CC      mm/sparse-vmemmap.o
+  CC [M]  lib/raid6/neon1.o
+  CC      crypto/cast6_generic.o

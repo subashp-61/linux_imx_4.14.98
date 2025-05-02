@@ -1529,7 +1529,7 @@
 				map0 {
 					trip = <&cpu_alert1>;
 					cooling-device =
-					<&	 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+					<&A72_0	 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
 				};
 			};
 		};
