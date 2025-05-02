@@ -69,20 +69,11 @@
 			pads = <
 				SC_P_UART2_RX
 				SC_P_UART2_TX
+				SC_P_SPI0_SCK_ADMA_SPI0_SCK
+				SC_P_SPI0_SDO_ADMA_SPI0_SDO
+				SC_P_SPI0_SDI_ADMA_SPI0_SDI
+				SC_P_SPI0_CS0_LSIO_GPIO1_IO08
 			>;
-	
-			gpios = <&gpio1 13 GPIO_ACTIVE_LOW>,
-				<&gpio1 27 GPIO_ACTIVE_LOW>,
-				<&gpio1 28 GPIO_ACTIVE_LOW>,
-				<&gpio4 6 GPIO_ACTIVE_LOW>,
-				<&gpio4 9 GPIO_ACTIVE_LOW>,
-				<&gpio4 11 GPIO_ACTIVE_HIGH>,
-				<&gpio4 19 GPIO_ACTIVE_HIGH>,
-				<&gpio4 22 GPIO_ACTIVE_LOW>,
-				<&gpio4 26 GPIO_ACTIVE_HIGH>,
-				<&gpio4 25 GPIO_ACTIVE_HIGH>,
-				<&gpio4 27 GPIO_ACTIVE_LOW>,
-				<&gpio4 29 GPIO_ACTIVE_LOW>;
 
 			/* Resources that will be transferred between
 			 * M41 and AP, when support android auto.
@@ -150,3 +141,6 @@
 	xen,passthrough;
 };
 
+&lpspi0{
+	xen,passthrough;
+}
