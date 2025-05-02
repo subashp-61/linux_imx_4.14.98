@@ -143,4 +143,4 @@
 
 &lpspi0{
 	xen,passthrough;
-}
+};
