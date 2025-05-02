@@ -40,7 +40,7 @@
 
 
     aliases {
-        serial1 = &lpuart1;
+        serial2 = &lpuart2;
     };
 
 	cpus {
