@@ -30,7 +30,8 @@
 
 
 / {
-    model = "Ensemble i.MX8QXP v1"; compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp, "xen,xenvm-4.10", "xen,xenvm";
+    model = "Ensemble i.MX8QXP v1"; 
+	compatible = "fsl,imx8qxp-mek", "fsl,imx8qxp", "xen,xenvm-4.10", "xen,xenvm";
 	interrupt-parent = <&gic>;
 	#address-cells = <0x2>;
 	#size-cells = <0x2>;
