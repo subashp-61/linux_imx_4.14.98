@@ -51,28 +51,24 @@
 			device_type = "cpu";
 			compatible = "arm,armv8";
 			enable-method = "psci";
-			reg = <0x0 0x0>;
+			reg = <0x0 0x2>;
+			/delete-property/ cpu-idle-states;
 		};
 
 		cpu@1 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
 			enable-method = "psci";
-			reg = <0x0 0x1>;
+			reg = <0x0 0x3>;
+			/delete-property/ cpu-idle-states;
 		};
 
 		cpu@2 {
-			device_type = "cpu";
-			compatible = "arm,armv8";
-			enable-method = "psci";
-			reg = <0x0 0x2>;
+			/delete-property/ cpu-idle-states;
 		};
 
 		cpu@3 {
-			device_type = "cpu";
-			compatible = "arm,armv8";
-			enable-method = "psci";
-			reg = <0x0 0x3>;
+			/delete-property/ cpu-idle-states;
 		};
 	};
 
@@ -88,6 +84,11 @@
 			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>, /* Virtual */
 			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>; /* Hypervisor */
 		clock-frequency = <8333333>;
+	};
+
+	clk: clk {
+		compatible = "fsl,imx8qxp-clk";
+		#clock-cells = <1>;
 	};
 
 	reserved-memory {
