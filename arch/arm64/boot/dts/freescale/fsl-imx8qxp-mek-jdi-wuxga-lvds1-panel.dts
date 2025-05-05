@@ -236,7 +236,6 @@
 
 /delete-node/ &lpuart2;
 /delete-node/ &lpuart3;
-/delete-node/ &lpuart4;
 /*
 &iomuxc {
 	imx8qxp-mek {
