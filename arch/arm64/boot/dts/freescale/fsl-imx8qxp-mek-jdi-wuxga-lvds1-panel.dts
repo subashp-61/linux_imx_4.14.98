@@ -51,24 +51,28 @@
 			device_type = "cpu";
 			compatible = "arm,armv8";
 			enable-method = "psci";
-			reg = <0x0 0x2>;
-			/delete-property/ cpu-idle-states;
+			reg = <0x0 0x0>;
 		};
 
 		cpu@1 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
 			enable-method = "psci";
-			reg = <0x0 0x3>;
-			/delete-property/ cpu-idle-states;
+			reg = <0x0 0x1>;
 		};
 
 		cpu@2 {
-			/delete-property/ cpu-idle-states;
+			device_type = "cpu";
+			compatible = "arm,armv8";
+			enable-method = "psci";
+			reg = <0x0 0x2>;
 		};
 
 		cpu@3 {
-			/delete-property/ cpu-idle-states;
+			device_type = "cpu";
+			compatible = "arm,armv8";
+			enable-method = "psci";
+			reg = <0x0 0x3>;
 		};
 	};
 
