@@ -1209,6 +1209,7 @@ int of_phandle_iterator_next(struct of_phandle_iterator *it)
 			if (!it->node) {
 				pr_err("%pOF: could not find phandle\n",
 				       it->parent);
+				WARN_ON(1);
 				goto err;
 			}
 
