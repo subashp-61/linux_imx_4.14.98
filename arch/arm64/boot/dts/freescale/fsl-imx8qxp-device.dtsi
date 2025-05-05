@@ -2612,7 +2612,7 @@
 			dma-names = "tx","rx";
 			dmas = <&edma2 13 0 0>,
 				<&edma2 12 0 1>;
-			status = "disabled";
+			status = "okay";
 		};
 
 		lpuart3: serial@5a090000 {
