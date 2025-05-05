@@ -1273,6 +1273,12 @@
 			};
 		};
 
+		uart2_fixed: uart2_fixed {
+			compatible = "fsl,imx8qxp-clk";
+			#clock-cells = <1>;
+			clock-frequency = <80000000>;
+		};		
+
 		irqsteer_csi: irqsteer@58220000 {
 			compatible = "nxp,imx-irqsteer";
 			reg = <0x0 0x58220000 0x0 0x1000>;
@@ -2597,6 +2603,9 @@
 			compatible = "fsl,imx8qm-lpuart";
 			reg = <0x0 0x5a080000 0x0 0x1000>;
 			interrupts = <GIC_SPI 347 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-parent = <&wu>;
+			clocks = <&uart2_fixed>,<&uart2_fixed>;
+			clock-names = "per", "ipg";
 			status = "disabled";
 		};
 
