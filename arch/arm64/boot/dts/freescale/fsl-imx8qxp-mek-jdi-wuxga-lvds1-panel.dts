@@ -40,7 +40,7 @@
 
 
     aliases {
-        serial2 = &lpuart2;
+        serial2 = &lpuart1;
     };
 
 	cpus {
@@ -224,17 +224,19 @@
 	};
 };
 
-&lpuart2 {
-	compatible = "fsl,imx8qxp-lpuart", "fsl,imx7ulp-lpuart";
-	reg = <0x0 0x5a080000 0x0 0x1000>;
-	interrupt-parent = <&gic>;
-	interrupts = <GIC_SPI 347 IRQ_TYPE_LEVEL_HIGH>; // Update this with correct IRQ
-	clocks = <&clk IMX8QXP_UART2_CLK>,<&clk IMX8QXP_UART2_IPG_CLK>;
+/delete-node/ &lpuart0;
+
+&lpuart1 {
+	/delete-property/ interrupt-parent;
+	reg = <0x0 0x5a070000 0 0x1000>;
+	dmas = <&edma01 10 0 0>, <&edma01 11 0 1>;
 	pinctrl-names = "default";
 	status = "okay";
 };
 
-
+/delete-node/ &lpuart2;
+/delete-node/ &lpuart3;
+/delete-node/ &lpuart4;
 /*
 &iomuxc {
 	imx8qxp-mek {

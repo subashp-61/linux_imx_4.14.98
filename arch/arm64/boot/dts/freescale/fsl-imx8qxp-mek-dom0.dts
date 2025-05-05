@@ -137,10 +137,6 @@
 	/delete-property/ reg-names;
 };
 
-&lpuart2 {
-	xen,passthrough;
-};
-
-&lpspi0{
+&lpuart1 {
 	xen,passthrough;
 };
