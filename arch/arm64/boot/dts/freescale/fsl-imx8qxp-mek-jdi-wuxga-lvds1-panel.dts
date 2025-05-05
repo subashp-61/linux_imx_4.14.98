@@ -86,11 +86,6 @@
 		clock-frequency = <8333333>;
 	};
 
-	clk: clk {
-		compatible = "fsl,imx8qxp-clk";
-		#clock-cells = <1>;
-	};
-
 	reserved-memory {
 		#address-cells = <2>;
 		#size-cells = <2>;
