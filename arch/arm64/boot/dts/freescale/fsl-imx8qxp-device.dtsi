@@ -1273,11 +1273,6 @@
 			};
 		};
 
-	clk: clk {
-		compatible = "fsl,imx8qxp-clk";
-		#clock-cells = <1>;
-	};		
-
 		irqsteer_csi: irqsteer@58220000 {
 			compatible = "nxp,imx-irqsteer";
 			reg = <0x0 0x58220000 0x0 0x1000>;
